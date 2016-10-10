@@ -1,47 +1,83 @@
 // Core (Main Style)
 
-.container {
+.top-post-container {
+    &.is-width-full {
+    }
     &.is-width-limited {
-        width: 1140px;
-        margin: 0 auto;
     }
 }
 
+// page-index
+
+// 投稿サムネイル
 .index-post-wrapper {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    &.margin-thin {
-        margin: 0 -.1666%;
+    // ちょっとマージンあける設定
+    &.margin-narrow {
+        margin-left: -1px;
     }
-    &.margin-heavy {
-        margin: 0 -2%;
+    // 多めにマージンあける設定
+    &.margin-wide {
+        margin-left: -2%;
     }
 }
 
-.post {
-    width: 33.3333%;
+.index-post {
     overflow: hidden;
-    // ちょっとマージンあける設定のとき
-    .margin-thin & {
-        width: 33%;
-        margin: 0 .1666% .3333vw;
+    box-sizing: border-box;
+    // ちょっとマージンあける設定
+    .margin-narrow & {
+        padding-left: 1px;
+        padding-bottom: 1px;
     }
-    // おおめにマージンあける設定のとき
-    .margin-heavy & {
-        width: 28%;
-        margin: 0 2% 2vw;
-    }
-    img {
-        max-width: 100%;
-        max-height: 100%;
-        display: block;
+    // 多めにマージンあける設定
+    .margin-wide & {
+        padding-left: 2%;
+        padding-bottom: 2vw;
     }
 }
 
+// サムネイルサイズ
+.size-xs {
+    .index-post {
+        width: 20%;
+    }
+}
+.size-s {
+    .index-post {
+        width: 25%;
+    }
+}
+.size-m {
+    .index-post {
+        width: 33.3333%;
+    }
+}
+.size-l {
+    .index-post {
+        width: 50%;
+    }
+}
+
+
+// divにbackground-imageでサムネイル表示してるとき
 .post-photo-thumb {
     background-size: cover;
-    height: 33.3333vw; // 正方形
     background-position: center;
     background-repeat: no-repeat;
+
+    .size-xs & {
+        height: 20vw;
+    }
+    .size-s & {
+        height: 25vw;
+    }
+    .size-m & {
+        height: 33.3333vw;
+    }
+    .size-l & {
+        height: 50vw;
+    }
 }

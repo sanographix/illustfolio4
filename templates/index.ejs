@@ -56,12 +56,15 @@ pageId = "index";
 {block:IndexPage}
 
   <div class="section-post">
-    <div class="container">
+    <div class="top-post-container
+    {block:ifNotExpandToppageColumnWidth}l-container is-width-limited{/block:ifNotExpandToppageColumnWidth}
+     {block:ifExpandToppageColumnWidth}is-width-full{/block:ifExpandToppageColumnWidth}
+     ">
 
       <!-- Post -->
-      <div class="index-post-wrapper margin-thin">
+      <div class="index-post-wrapper {select:Thumbnails Margin} {select:Thumbnails Size}">
         {block:Posts}
-          <article class="post {PostType}">
+          <article class="post index-post {PostType}">
             <div class="post-inner">
 
               <!-- post: text -->
