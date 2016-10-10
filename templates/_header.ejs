@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<!--
+  Theme: Illustfolio 3
+  by @sanographix
+  http://www.sanographix.net
+  (c) 2014 Showkaku Sano
+  MIT License
+-->
+
+<html prefix="og: http://ogp.me/ns#">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- Variables -->
+
+  <meta name="select:Header Color" content="header-white" title="White">
+  <meta name="select:Header Color" content="header-black" title="Black">
+
+  <meta name="if:Enable Header Image" content="1" />
+  <meta name="if:Enable Tag List" content="1" />
+  <meta name="if:Enable Profile Section" content="1" />
+
+  <meta name="text:Your Name" content="" />
+  <meta name="text:Profile" content="" />
+
+  <meta name="text:Your Website URL" content=""/>
+  <meta name="text:Your Twitter Username" content=""/>
+  <meta name="text:Your Facebook Username" content=""/>
+  <meta name="text:Your Google Plus ID" content=""/>
+  <meta name="text:Your Pixiv ID" content=""/>
+  <meta name="text:Your Instagram Username" content=""/>
+
+  <meta name="text:Google Analytics ID" content=""/>
+
+  <meta name="color:Accent" content="#A77DC2"/>
+
+  <title>{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}</title>
+
+  <meta name="viewport" content="width=device-width">
+  <link rel="shortcut icon" href="{Favicon}">
+  <link rel="alternate" type="application/rss+xml" href="{RSS}">
+  <link rel="apple-touch-icon" href="{PortraitURL-128}">
+
+  <link rel="stylesheet" type="text/css" media="screen" href="http://files.sanographix.org/dev/illustfolio4/css/style.css" />
+
+  <!-- OGP -->
+  <meta property="og:title" content="{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}" />
+  <meta property="og:type" content="article" />
+
+  <meta name="twitter:card" content="summary_large_image">
+  {block:IndexPage}
+    <meta property="og:image" content="{HeaderImage}" />
+    <meta name="twitter:image" content="{HeaderImage}" />
+  {/block:IndexPage}
+  {block:PermalinkPage}
+    {block:Posts}
+      {block:Photo}
+        <meta property="og:image" content="{PhotoURL-HighRes}" />
+        <meta name="twitter:image" content="{PhotoURL-HighRes}" />
+      {/block:Photo}
+      {block:Photoset}
+        {block:Photos}
+        <meta property="og:image" content="{PhotoURL-HighRes}" />
+        <meta name="twitter:image" content="{PhotoURL-HighRes}" />
+        {/block:Photos}
+      {/block:Photoset}
+    {/block:Posts}
+  {/block:PermalinkPage}
+
+  <meta property="og:site_name" content="{Title}" />
+  {block:Description}
+    <meta property="og:description" content="{MetaDescription}">
+  {/block:Description}
+  {block:IndexPage}
+    <link rel="canonical" href="{BlogURL}"/>
+    <meta property="og:url" content="{BlogURL}" />
+  {/block:IndexPage}
+  {block:PermalinkPage}
+    <link rel="canonical" href="{Permalink}"/>
+    <meta property="og:url" content="{Permalink}" />
+  {/block:PermalinkPage}
+
+</head>
+
+<body class="
+{block:IndexPage}page-index{/block:IndexPage}
+{block:TagPage}page-tag{/block:TagPage}
+{block:PermalinkPage}page-permalink page-{PostID}{/block:PermalinkPage}">
+
+  <style>
+  {CustomCSS}
+
+
+  </style>

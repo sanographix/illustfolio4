@@ -1,0 +1,441 @@
+<% var
+pageId = "index";
+%>
+<% include _header %>
+
+<!-- Index page -->
+{block:IndexPage}
+
+  <div class="section-post">
+    <div class="container">
+
+      <!-- Post -->
+      <div class="index-post-wrapper">
+        {block:Posts}
+          <article class="post {PostType}">
+            <div class="post-inner">
+
+              <!-- post: text -->
+              {block:Text}
+                <div class="post-content">
+                  <header class="entry-header">
+                    {block:Title}
+                      <h1 class="entry-title"><a href="{Permalink}">{Title}</a></h1>
+                    {/block:Title}
+                  </header>
+                  <div class="entry-content">
+                    {Body}
+                  </div>
+                  <div class="index-entry-footer">
+                    <img src="http://static.tumblr.com/xlsgtjb/p7Yned8qd/icon-link.svg" class="icon-link">
+                    <a href="{Permalink}">
+                      Permalink
+                    </a>
+                  </div>
+                </div>
+              {/block:Text}
+
+              <!-- post: photo -->
+              {block:Photo}
+                <a href="{Permalink}">
+                  <img src="{PhotoURL-400}" alt="{PhotoAlt}"/>
+                </a>
+              {/block:Photo}
+
+              <!-- post: photoset -->
+              {block:Photoset}
+                {block:Photos}
+                  <a href="{Permalink}">
+                    <img src="{PhotoURL-400}" alt="{PhotoAlt}"/>
+                  </a>
+                {/block:Photos}
+              {/block:Photoset}
+
+              <!-- post: quote -->
+              {block:Quote}
+                <div class="post-content">
+                  <div class="entry-content {Length}">
+                    <a href="{Permalink}">“{Quote}”</a>
+                  </div>
+                  <div class="index-entry-footer">
+                    <img src="http://static.tumblr.com/xlsgtjb/p7Yned8qd/icon-link.svg" class="icon-link">
+                    <a href="{Permalink}">
+                      Permalink
+                    </a>
+                  </div>
+                </div>
+              {/block:Quote}
+
+              <!-- post: link -->
+              {block:Link}
+                <div class="post-content">
+                  <header class="entry-header">
+                    <h1 class="entry-title">
+                      <a href="{Permalink}" class="link-url" {Target}>{Name}</a>
+                    </h1>
+                  </header>
+                  <div class="entry-content">
+                    {block:Description}
+                      <div class="link-description">{Description}</div>
+                    {/block:Description}
+                  </div>
+                  <div class="index-entry-footer">
+                    <img src="http://static.tumblr.com/xlsgtjb/p7Yned8qd/icon-link.svg" class="icon-link">
+                    <a href="{Permalink}">
+                      Permalink
+                    </a>
+                  </div>
+                </div>
+              {/block:Link}
+
+              <!-- post: chat -->
+              {block:Chat}
+                <div class="post-content">
+                  {block:Title}
+                    <h1 class="entry-title"><a href="{Permalink}">{Title}</a></h1>
+                  {/block:Title}
+                  <div class="entry-content">
+                    <ul class="ul-chat">
+                      {block:Lines}
+                      <li class="{Alt} user_{UserNumber}">
+                      {block:Label}
+                      <span class="label">{Label}</span>
+                      {/block:Label}
+                      {Line}
+                      </li>
+                      {/block:Lines}
+                    </ul>
+                  </div>
+                  <div class="index-entry-footer">
+                    <img src="http://static.tumblr.com/xlsgtjb/p7Yned8qd/icon-link.svg" class="icon-link">
+                    <a href="{Permalink}">
+                      Permalink
+                    </a>
+                  </div>
+                </div>
+              {/block:Chat}
+
+              <!-- post: video -->
+              {block:Video}
+                <div class="post-content">
+                  <div class="entry-content video-iframe">
+                    {Video-700}
+                    {block:Caption}
+                      <div class="caption">
+                        {Caption}
+                      </div>
+                    {/block:Caption}
+                  </div>
+                  <div class="index-entry-footer">
+                    <img src="http://static.tumblr.com/xlsgtjb/p7Yned8qd/icon-link.svg" class="icon-link">
+                    <a href="{Permalink}">
+                      Permalink
+                    </a>
+                  </div>
+                </div>
+              {/block:Video}
+
+              <!-- post: audio -->
+              {block:Audio}
+                <div class="post-content">
+                  <div class="entry-content">
+                    {AudioPlayerBlack}
+                    {block:Caption}
+                      <div class="caption">
+                        {Caption}
+                      </div>
+                    {/block:Caption}
+                  </div>
+                  <div class="index-entry-footer">
+                    <img src="http://static.tumblr.com/xlsgtjb/p7Yned8qd/icon-link.svg" class="icon-link">
+                    <a href="{Permalink}">
+                      Permalink
+                    </a>
+                  </div>
+                </div>
+              {/block:Audio}
+
+              <!-- post: answer -->
+              {block:Answer}
+                <div class="post-content">
+                  <div class="asker-group">
+                    <img src="{AskerPortraitURL-24}" width="24" height="24" /> {Asker}
+                  </div>
+                  <h1 class="entry-title">
+                    <a href="{Permalink}">
+                      {Question}
+                    </a>
+                  </h1>
+                  <div class="entry-content">
+                    <div class="answer cont">{Answer}</div>
+                  </div>
+                  <div class="index-entry-footer">
+                    <img src="http://static.tumblr.com/xlsgtjb/p7Yned8qd/icon-link.svg" class="icon-link">
+                    <a href="{Permalink}">
+                      Permalink
+                    </a>
+                  </div>
+                </div>
+              {/block:Answer}
+
+            </div>
+          </article>
+        {/block:Posts}
+      </div>
+
+    </div>
+  </div>
+
+  <!-- pager of index -->
+  {block:Pagination}
+    <div class="container">
+      <div class="pagenation pagenation-index">
+        {block:PreviousPage}
+          <a href="{PreviousPage}">Prev</a>
+        {/block:PreviousPage}
+        {block:NextPage}
+          <a href="{NextPage}" class="next" rel="next">Next</a>
+        {/block:NextPage}
+      </div>
+    </div>
+  {/block:Pagination}
+
+{/block:IndexPage}
+
+  <!-- Permalink page -->
+{block:PermalinkPage}
+  {block:Posts}
+    <article class="post permalink-post {TagsAsClasses} {PostType}">
+
+      <!-- full-width image (photo and photoset post only) -->
+      <div class="container full-image">
+        {block:Photo}
+          {LinkOpenTag}
+            <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
+          {LinkCloseTag}
+        {/block:Photo}
+
+        {block:Photoset}
+          {Photoset-700}
+        {/block:Photoset}
+      </div>
+
+      <div class="container-mini section">
+
+        <!-- post: text -->
+        {block:Text}
+          <header class="entry-header">
+            {block:Title}
+              <h1 class="entry-title"><a href="{Permalink}">{Title}</a></h1>
+            {/block:Title}
+          </header>
+          <div class="entry-content">
+            {Body}
+          </div>
+        {/block:Text}
+
+        <!-- post: photo -->
+        {block:Photo}
+          <div class="entry-content">
+            {block:Caption}
+              <div class="caption">
+                {Caption}
+              </div>
+            {/block:Caption}
+          </div>
+        {/block:Photo}
+
+        <!-- post: photoset -->
+        {block:Photoset}
+          <div class="entry-content">
+            {block:Caption}
+              <div class="caption">
+                {Caption}
+              </div>
+            {/block:Caption}
+          </div>
+        {/block:Photoset}
+
+        <!-- post: quote -->
+        {block:Quote}
+          <div class="entry-content {Length}">
+            <blockquote>“{Quote}”</blockquote>
+            {block:Source}
+              <p class="quote-source">
+                {Source}
+              </p>
+            {/block:Source}
+          </div>
+        {/block:Quote}
+
+        <!-- post: link -->
+        {block:Link}
+          <header class="entry-header">
+            <h1 class="entry-title">
+              <a href="{URL}" class="link-url" {Target}>{Name}</a>
+            </h1>
+          </header>
+          <div class="entry-content">
+            {block:Description}
+              <div class="link-description">{Description}</div>
+            {/block:Description}
+          </div>
+        {/block:Link}
+
+        <!-- post: chat -->
+        {block:Chat}
+          <div class="entry-content">
+            {block:Title}
+              <h1 class="entry-title"><a href="{Permalink}">{Title}</a></h1>
+            {/block:Title}
+            <ul class="ul-chat">
+              {block:Lines}
+              <li class="{Alt} user_{UserNumber}">
+              {block:Label}
+              <span class="label">{Label}</span>
+              {/block:Label}
+              {Line}
+              </li>
+              {/block:Lines}
+            </ul>
+          </div>
+        {/block:Chat}
+
+        <!-- post: video -->
+        {block:Video}
+          <div class="entry-content video-iframe">
+            {Video-700}
+            {block:Caption}
+              <div class="caption">
+                {Caption}
+              </div>
+            {/block:Caption}
+          </div>
+        {/block:Video}
+
+        <!-- post: audio -->
+        {block:Audio}
+          <div class="entry-content">
+            {AudioPlayerBlack}
+            {block:Caption}
+              <div class="caption">
+                {Caption}
+              </div>
+            {/block:Caption}
+          </div>
+        {/block:Audio}
+
+        <!-- post: answer -->
+        {block:Answer}
+          <div class="asker-group">
+            <img src="{AskerPortraitURL-24}" width="24" height="24" /> {Asker}
+          </div>
+          <header class="entry-header">
+            <h1 class="entry-title question">
+              {Question}
+            </h1>
+          </header>
+          <div class="entry-content">
+            <div class="answer cont">{Answer}</div>
+          </div>
+        {/block:Answer}
+
+        <!-- do not show in pages-->
+        {block:Date}
+          <!-- entry footer -->
+          <footer class="entry-footer">
+
+            <div class="entry-footer-section article-meta">
+              <span class="meta-elements date">
+                <a href="{Permalink}">{ShortMonth} {DayOfMonthWithZero}, {Year}</a>
+              </span>
+              {block:ContentSource}
+                <span class="meta-elements content-source">
+                  <a href="{SourceURL}">
+                    {lang:Source}:
+                    {block:SourceLogo}
+                      <img src="{BlackLogoURL}" width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
+                    {/block:SourceLogo}
+                    {block:NoSourceLogo}
+                        {SourceTitle}
+                    {/block:NoSourceLogo}
+                  </a>
+                </span>
+              {/block:ContentSource}
+            </div>
+
+            <div class="entry-footer-section share">
+              <h3>Share</h3>
+              <ul class="like_and_reblog_buttons">
+                <li>{ReblogButton size="20"}</li>
+                <li>{LikeButton size="20"}</li>
+                <li>
+                  <a href="https://twitter.com/share?text={block:PostSummary}{URLEncodedPostSummary}{/block:PostSummary}&url={URLEncodedPermalink}">
+                    <img src="http://static.tumblr.com/xlsgtjb/HFfneerjd/social-twitter.svg" class="social-icon">
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.facebook.com/sharer.php?u={URLEncodedPermalink}">
+                    <img src="http://static.tumblr.com/xlsgtjb/evRneeqts/social-facebook.svg" class="social-icon">
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {block:HasTags}
+              <div class="entry-footer-section hastags">
+                <h3>Tagged</h3>
+                <span class="meta-elements">
+                  {block:Tags}
+                    <a href="{TagURL}">#{Tag}</a>
+                  {/block:Tags}
+                </span>
+              </div>
+            {/block:HasTags}
+
+            {block:RebloggedFrom}
+              <div class="entry-footer-section rebloggedfrom">
+                <div class="entry-footer-section-inner">
+                  <h3>Reblogged from</h3>
+                  <a href="{ReblogParentURL}"><img src="{ReblogParentPortraitURL-16}" class="favicon"/> {ReblogParentName}</a>
+                </div>
+                <div class="entry-footer-section-inner">
+                  <h3>Originally posted by</h3>
+                  <a href="{ReblogRootURL}"><img src="{ReblogRootPortraitURL-16}" class="favicon"/> {ReblogRootName}</a>
+                </div>
+              </div>
+            {/block:RebloggedFrom}
+
+            {block:NoteCount}
+              <div class="entry-footer-section notecount">
+                <h3>{NoteCount} Notes</h3>
+                <div class="notecontainer">
+                  {PostNotes}
+                </div>
+              </div>
+            {/block:NoteCount}
+
+          </footer>
+
+        {/block:Date}
+
+      </div><!-- container -->
+
+    </article>
+
+  {/block:Posts}
+{/block:PermalinkPage}
+
+<!-- permalink pagination -->
+{block:PermalinkPagination}
+  <div class="pagenation pagenation-permalink">
+    {block:NextPost}
+      <a href="{NextPost}" class="next" rel="next">Newer Post</a>
+    {/block:NextPost}
+    {block:PreviousPost}
+      <a href="{PreviousPost}">Older Post</a>
+    {/block:PreviousPost}
+  </div>
+{/block:PermalinkPagination}
+
+<% include _footer %>

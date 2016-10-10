@@ -1,0 +1,93 @@
+<footer id="footer">
+  <div class="container">
+
+    {block:PermalinkPage}
+      <div class="footer-container">
+        <div class="row">
+          <div class="span4">
+            <h4>About</h4>
+            <div class="footer-content blog-description">
+              {Description}
+            </div>
+          </div>
+          {block:IfYourName}
+            <div class="span4">
+              <h4>Profile</h4>
+              <div class="footer-content profile">
+                <div class="profile-image">
+                  <img src="{PortraitURL-128}" class="profile-image-url">
+                </div>
+                <div class="profile-content">
+                  <h3>{text:Your Name}</h3>
+                  <p>{text:Profile}</p>
+                </div>
+              </div>
+            </div>
+          {/block:IfYourName}
+          <div class="span4">
+            <h4>Contact Me</h4>
+            <div class="footer-content contact">
+              <ul class="list">
+                {block:IfYourWebsiteURL}
+                <li class="li-website">
+                  <a href="{text:Your Website URL}" target="_blank">
+                    Website
+                  </a>
+                </li>
+                {/block:IfYourWebsiteURL}
+                {block:IfYourTwitterUsername}
+                <li class="li-twitter">
+                  <a href="http://twitter.com/{text:Your Twitter Username}" target="_blank">
+                    Twitter
+                  </a>
+                </li>
+                {/block:IfYourTwitterUsername}
+                {block:IfYourFacebookUsername}
+                <li class="li-facebook">
+                  <a href="http://www.facebook.com/{text:Your Facebook Username}" target="_blank">
+                    Facebook
+                  </a>
+                </li>
+                {/block:IfYourFacebookUsername}
+                {block:IfYourGooglePlusID}
+                <li class="li-googleplus">
+                  <a href="http://plus.google.com/{text:Your Google Plus ID}" target="_blank">
+                    Google+
+                  </a>
+                </li>
+                {/block:IfYourGooglePlusID}
+                {block:IfYourPixivID}
+                <li class="li-pixiv">
+                  <a href="http://www.pixiv.net/member.php?id={text:Your Pixiv ID}" target="_blank">
+                    Pixiv
+                  </a>
+                </li>
+                {/block:IfYourPixivID}
+                {block:IfYourInstagramUsername}
+                <li class="li-instagram">
+                  <a href="http://instagram.com/{text:Your Instagram Username}" target="_blank">
+                    Instagram
+                  </a>
+                </li>
+                {/block:IfYourInstagramUsername}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    {/block:PermalinkPage}
+
+    <div class="copyright">
+      ©{CopyrightYears} {Title}<br/>
+
+      <!-- Note: Do not delete this link. -->
+      <a href="http://sanographix.github.io/tumblr/illustfolio3/" target="_blank">Illustfolio 3</a> theme designed by <a href="http://www.sanographix.net/" target="_blank">SANOGRAPHIX.NET</a>
+      <div class="install-button">
+        <a href="http://sanographix.github.io/tumblr/illustfolio3/" class="btn btn-ghost" target="_blank">Install theme</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
