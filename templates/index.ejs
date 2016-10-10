@@ -3,6 +3,55 @@ pageId = "index";
 %>
 <% include _header %>
 
+<div class="header">
+  <div class="container">
+    <div class="header-wrapper">
+      <div class="header-box-title">
+        <header id="header" class="header">
+          <h1 class="blog-title">
+            <a href="/">{Title}</a>
+          </h1>
+        </header>
+      </div>
+      <div class="header-box-nav">
+        <nav class="nav" role="navigation">
+          <ul>
+            <li>
+              <a href="/">Home</a>
+            </li>
+            {block:HasPages}
+              {block:Pages}
+              <li>
+                <a href="{URL}">{Label}</a>
+              </li>
+              {/block:Pages}
+            {/block:HasPages}
+            {block:AskEnabled}
+              <li>
+                <a href="/ask">{AskLabel}</a>
+              </li>
+            {/block:AskEnabled}
+            {block:IfEnableTagList}
+              <li class="header-tags">
+                <a href="/">Tags</a>
+              </li>
+            {/block:IfEnableTagList}
+            <li>
+              <a href="/archive">Archive</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+
+{block:IndexPage}
+  {block:ifEnableHeaderImage}
+    <div class="cover-image" style="background-image: url('{HeaderImage}');"></div>
+  {/block:ifEnableHeaderImage}
+{/block:IndexPage}
+
 <!-- Index page -->
 {block:IndexPage}
 
