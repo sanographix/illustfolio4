@@ -2,10 +2,10 @@
 <!DOCTYPE html>
 
 <!--
-  Theme: Illustfolio 3
+  Theme: Illustfolio 4
   by @sanographix
   http://www.sanographix.net
-  (c) 2014 Showkaku Sano
+  (c) 2016 Showkaku Sano
   MIT License
 -->
 
@@ -13,10 +13,9 @@
 <head>
   <meta charset="UTF-8">
 
-  <!-- Variables -->
-
-  <meta name="select:Header Color" content="header-white" title="White">
-  <meta name="select:Header Color" content="header-black" title="Black">
+  
+  <meta name="image:Background Image" content=""/>
+  <meta name="image:Title Logo" content=""/>
 
   <meta name="if:Enable Header Image" content="1" />
   <meta name="if:Enable Tag List" content="1" />
@@ -28,11 +27,8 @@
   <meta name="text:Your Website URL" content=""/>
   <meta name="text:Your Twitter Username" content=""/>
   <meta name="text:Your Facebook Username" content=""/>
-  <meta name="text:Your Google Plus ID" content=""/>
   <meta name="text:Your Pixiv ID" content=""/>
   <meta name="text:Your Instagram Username" content=""/>
-
-  <meta name="text:Google Analytics ID" content=""/>
 
   <meta name="color:Accent" content="#A77DC2"/>
 
@@ -45,25 +41,25 @@
 
   <link rel="stylesheet" type="text/css" media="screen" href="http://files.sanographix.org/dev/illustfolio4/css/style.css" />
 
-  <!-- OGP -->
+  
   <meta property="og:title" content="{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}" />
   <meta property="og:type" content="article" />
 
   <meta name="twitter:card" content="summary_large_image">
   {block:IndexPage}
     <meta property="og:image" content="{HeaderImage}" />
-    <meta name="twitter:image" content="{HeaderImage}" />
+    <meta name="twitter:image:src" content="{HeaderImage}" />
   {/block:IndexPage}
   {block:PermalinkPage}
     {block:Posts}
       {block:Photo}
         <meta property="og:image" content="{PhotoURL-HighRes}" />
-        <meta name="twitter:image" content="{PhotoURL-HighRes}" />
+        <meta name="twitter:image:src" content="{PhotoURL-HighRes}" />
       {/block:Photo}
       {block:Photoset}
         {block:Photos}
         <meta property="og:image" content="{PhotoURL-HighRes}" />
-        <meta name="twitter:image" content="{PhotoURL-HighRes}" />
+        <meta name="twitter:image:src" content="{PhotoURL-HighRes}" />
         {/block:Photos}
       {/block:Photoset}
     {/block:Posts}
@@ -87,14 +83,66 @@
 <body class="
 {block:IndexPage}page-index{/block:IndexPage}
 {block:TagPage}page-tag{/block:TagPage}
-{block:PermalinkPage}page-permalink page-{PostID}{/block:PermalinkPage}">
+{block:PermalinkPage}page-permalink page-{PostID}{/block:PermalinkPage}"
+{block:IfBackgroundImageImage}
+  style="background-image: url('{image:Background Image}');"
+{/block:IfBackgroundImageImage}
+>
 
   <style>
   {CustomCSS}
 
-
   </style>
 
+
+<div class="header">
+  <div class="container">
+    <div class="header-wrapper">
+      <div class="header-box-title">
+        <header id="header" class="header">
+          <h1 class="blog-title">
+            <a href="/">{Title}</a>
+          </h1>
+        </header>
+      </div>
+      <div class="header-box-nav">
+        <nav class="nav" role="navigation">
+          <ul>
+            <li>
+              <a href="/">Home</a>
+            </li>
+            {block:HasPages}
+              {block:Pages}
+              <li>
+                <a href="{URL}">{Label}</a>
+              </li>
+              {/block:Pages}
+            {/block:HasPages}
+            {block:AskEnabled}
+              <li>
+                <a href="/ask">{AskLabel}</a>
+              </li>
+            {/block:AskEnabled}
+            {block:IfEnableTagList}
+              <li class="header-tags">
+                <a href="/">Tags</a>
+              </li>
+            {/block:IfEnableTagList}
+            <li>
+              <a href="/archive">Archive</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+
+{block:IndexPage}
+  {block:ifEnableHeaderImage}
+    <div class="cover-image" style="background-image: url('{HeaderImage}');"></div>
+  {/block:ifEnableHeaderImage}
+{/block:IndexPage}
 
 <!-- Index page -->
 {block:IndexPage}
