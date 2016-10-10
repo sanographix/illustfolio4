@@ -10,7 +10,7 @@ pageId = "index";
     <div class="container">
 
       <!-- Post -->
-      <div class="index-post-wrapper">
+      <div class="index-post-wrapper margin-thin">
         {block:Posts}
           <article class="post {PostType}">
             <div class="post-inner">
@@ -38,7 +38,7 @@ pageId = "index";
               <!-- post: photo -->
               {block:Photo}
                 <a href="{Permalink}">
-                  <img src="{PhotoURL-400}" alt="{PhotoAlt}"/>
+                  <div class="post-photo-thumb" style="background-image: url('{PhotoURL-HighRes}')" alt="{PhotoAlt}"/></div>
                 </a>
               {/block:Photo}
 
@@ -46,7 +46,7 @@ pageId = "index";
               {block:Photoset}
                 {block:Photos}
                   <a href="{Permalink}">
-                    <img src="{PhotoURL-400}" alt="{PhotoAlt}"/>
+                    <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
                   </a>
                 {/block:Photos}
               {/block:Photoset}
@@ -199,6 +199,27 @@ pageId = "index";
       </div>
     </div>
   {/block:Pagination}
+
+
+
+    <!-- TODO: Imgで実装するやつ Post -->
+    <div class="container is-width-limited">
+      <div class="index-post-wrapper margin-heavy">
+        {block:Posts}
+          <article class="post {PostType}">
+            <div class="post-inner">
+              <!-- post: photo -->
+              {block:Photo}
+                <a href="{Permalink}" class="post-photo-a">
+                  <img class="post-photo-img" src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
+                </a>
+              {/block:Photo}
+            </div>
+          </article>
+        {/block:Posts}
+      </div>
+    </div>
+
 
 {/block:IndexPage}
 
