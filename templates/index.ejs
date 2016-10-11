@@ -4,7 +4,7 @@ pageId = "index";
 <% include _header %>
 
 <div class="header">
-  <div class="container">
+  <div class="l-container">
     <div class="header-wrapper">
       <div class="header-box-title">
         <header id="header" class="header">
@@ -89,7 +89,12 @@ pageId = "index";
               <!-- post: photo -->
               {block:Photo}
                 <a href="{Permalink}">
-                  <div class="post-photo-thumb" style="background-image: url('{PhotoURL-HighRes}')" alt="{PhotoAlt}"/></div>
+                  {block:IfCropThumbnails}
+                    <div class="post-photo-thumb" style="background-image: url('{PhotoURL-HighRes}');"></div>
+                  {/block:IfCropThumbnails}
+                  {block:IfNotCropThumbnails}
+                    <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" class="post-photo-img">
+                  {/block:IfNotCropThumbnails}
                 </a>
               {/block:Photo}
 
@@ -250,26 +255,6 @@ pageId = "index";
       </div>
     </div>
   {/block:Pagination}
-
-
-
-    <!-- TODO: Imgで実装するやつ Post -->
-    <div class="container is-width-limited">
-      <div class="index-post-wrapper margin-heavy">
-        {block:Posts}
-          <article class="post {PostType}">
-            <div class="post-inner">
-              <!-- post: photo -->
-              {block:Photo}
-                <a href="{Permalink}" class="post-photo-a">
-                  <img class="post-photo-img" src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
-                </a>
-              {/block:Photo}
-            </div>
-          </article>
-        {/block:Posts}
-      </div>
-    </div>
 
 
 {/block:IndexPage}

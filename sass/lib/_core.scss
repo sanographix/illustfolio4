@@ -1,5 +1,40 @@
 // Core (Main Style)
 
+
+// header
+.header-wrapper {
+    display: flex;
+    align-items: center;
+}
+.header-box-title {
+    @media #{$mq-sm} {
+        width: 50%;
+    }
+}
+.header-box-nav {
+    @media #{$mq-sm} {
+        width: 50%;
+    }
+}
+.nav {
+    ul {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+        justify-content: flex-end;
+    }
+    li {
+        margin-left: 1.5em;
+        a {
+            color: $base;
+            &:hover {
+                color: $hover;
+            }
+        }
+    }
+}
+
 .top-post-container {
     &.is-width-full {
     }
@@ -43,29 +78,43 @@
 .size-xs {
     @include l-container();
     .index-post {
-        width: 20%;
+        width: 33.3333%;
+        @media #{$mq-sm} {
+            width: 20%;
+        }
     }
 }
 .size-s {
     @include l-container();
     .index-post {
-        width: 25%;
+        width: 33.3333%;
+        @media #{$mq-sm} {
+            width: 25%;
+        }
     }
 }
 .size-m {
     .index-post {
-        width: 25%;
+        width: 50%;
+        @media #{$mq-sm} {
+            width: 25%;
+        }
     }
 }
 .size-l {
     .index-post {
-        width: 33.3333%;
+        width: 50%;
+        @media #{$mq-sm} {
+            width: 33.3333%;
+        }
     }
 }
-
 .size-xl {
     .index-post {
-        width: 50%;
+        width: 100%;
+        @media #{$mq-sm} {
+            width: 50%;
+        }
     }
 }
 
@@ -74,20 +123,56 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
     .size-xs & {
-        height: 20vw;
+        height: 33.3333vw;
+        @media #{$mq-sm} {
+            height: 144px;
+        }
+        @media #{$mq-md} {
+            height: 188px;
+        }
+        @media #{$mq-lg} {
+            height: 228px;
+        }
     }
     .size-s & {
-        height: 25vw;
+        height: 33.3333vw;
+        @media #{$mq-sm} {
+            height: 180px;
+        }
+        @media #{$mq-md} {
+            height: 235px;
+        }
+        @media #{$mq-lg} {
+            height: 285px;
+        }
     }
     .size-m & {
-        height: 25vw;
+        height: 50vw;
+        @media #{$mq-sm} {
+            height: 20vw;
+        }
     }
     .size-l & {
-        height: 33.3333vw;
+        height: 50vw;
+        @media #{$mq-sm} {
+            height: 25vw;
+        }
     }
     .size-xl & {
-        height: 50vw;
+        height: 100vw;
+        @media #{$mq-sm} {
+            height: 33.3333vw;
+        }
+    }
+}
+
+// サムネイルをクロップしない表示にしてるとき
+.post-photo-img {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    @media #{$mq-sm} {
+        max-height: 80vw;
     }
 }
