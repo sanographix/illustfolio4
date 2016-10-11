@@ -5,7 +5,10 @@
 .header {
     margin: 1.5em 0;
     @media #{$mq-sm} {
-        margin: 2em 0;
+        margin: 4em 0;
+    }
+    @media #{$mq-lg} {
+        margin: 5em 0;
     }
 }
 .header-wrapper {
@@ -101,7 +104,8 @@
 }
 
 // サムネイルサイズ
-.size-xs {
+.size-xs,
+.size-xxs {
     @include l-container();
     .index-post {
         width: 33.3333%;
@@ -149,6 +153,15 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    .size-xxs & {
+        height: 15vw;
+        @media #{$mq-sm} {
+            height: 10vw;
+        }
+        @media #{$mq-md} {
+            height: 7vw;
+        }
+    }
     .size-xs & {
         height: 33.3333vw;
         @media #{$mq-sm} {
