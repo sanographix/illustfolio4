@@ -44,7 +44,7 @@
 }
 [class*="l-span"] {
     margin-bottom: 1em;
-    @media #{$mq-sm} {
+@media #{$mq-sm} {
         float: left;
         padding-right: 15px;
         padding-left: 15px;
