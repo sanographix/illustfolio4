@@ -25,12 +25,11 @@
   <meta name="select:Thumbnails Size" content="size-s" title="S">
   <meta name="select:Thumbnails Size" content="size-m" title="M">
   <meta name="select:Thumbnails Size" content="size-l" title="L">
+  <meta name="select:Thumbnails Size" content="size-xl" title="XL">
 
   <meta name="if:Enable Header Image" content="1" />
   <meta name="if:Enable Tag List" content="1" />
   <meta name="if:Enable Profile Section" content="1" />
-
-  <meta name="if:Expand Toppage Column Width" content="1" />
 
   <meta name="text:Your Name" content="" />
   <meta name="text:Profile" content="" />
@@ -160,12 +159,11 @@
 
   <div class="section-post">
     <div class="top-post-container
-    {block:ifNotExpandToppageColumnWidth}l-container is-width-limited{/block:ifNotExpandToppageColumnWidth}
-     {block:ifExpandToppageColumnWidth}is-width-full{/block:ifExpandToppageColumnWidth}
+      {select:Thumbnails Size}
      ">
 
       <!-- Post -->
-      <div class="index-post-wrapper {select:Thumbnails Margin} {select:Thumbnails Size}">
+      <div class="index-post-wrapper {select:Thumbnails Margin}">
         {block:Posts}
           <article class="post index-post {PostType}">
             <div class="post-inner">
