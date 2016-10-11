@@ -41,26 +41,33 @@
 
 // サムネイルサイズ
 .size-xs {
+    @include l-container();
     .index-post {
         width: 20%;
     }
 }
 .size-s {
+    @include l-container();
     .index-post {
         width: 25%;
     }
 }
 .size-m {
     .index-post {
-        width: 33.3333%;
+        width: 25%;
     }
 }
 .size-l {
     .index-post {
-        width: 50%;
+        width: 33.3333%;
     }
 }
 
+.size-xl {
+    .index-post {
+        width: 50%;
+    }
+}
 
 // divにbackground-imageでサムネイル表示してるとき
 .post-photo-thumb {
@@ -75,9 +82,12 @@
         height: 25vw;
     }
     .size-m & {
-        height: 33.3333vw;
+        height: 25vw;
     }
     .size-l & {
+        height: 33.3333vw;
+    }
+    .size-xl & {
         height: 50vw;
     }
 }

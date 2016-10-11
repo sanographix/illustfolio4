@@ -16,6 +16,25 @@
     }
 
 }
+
+@mixin l-container() {
+    width: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+    @media #{$mq-sm} {
+        width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    @media #{$mq-md} {
+        width: 940px;
+    }
+    @media #{$mq-lg} {
+        width: 1140px;
+    }
+
+}
+
 .l-row {
     @include clearfix();
     @media #{$mq-sm} {
