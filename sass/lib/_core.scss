@@ -2,9 +2,19 @@
 
 
 // header
+.header {
+    margin: 1.5em 0;
+    @media #{$mq-sm} {
+        margin: 2em 0;
+    }
+}
 .header-wrapper {
     display: flex;
     align-items: center;
+    flex-direction: column;
+    @media #{$mq-sm} {
+        flex-direction: row;
+    }
 }
 .header-box-title {
     @media #{$mq-sm} {
@@ -16,6 +26,13 @@
         width: 50%;
     }
 }
+.header-blog-title {
+    margin: 0 0 .6em;
+    font-size: 1.5rem;
+    @media #{$mq-sm} {
+        margin: 0;
+    }
+}
 .nav {
     ul {
         list-style: none;
@@ -25,7 +42,10 @@
         justify-content: flex-end;
     }
     li {
-        margin-left: 1.5em;
+        margin: 0 1em;
+        @media #{$mq-sm} {
+            margin: 0 0 0 1.5em;
+        }
         a {
             color: $base;
             &:hover {
@@ -35,10 +55,16 @@
     }
 }
 
-.top-post-container {
-    &.is-width-full {
-    }
-    &.is-width-limited {
+// カバー画像
+.cover-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 3em;
+    height: 50vw;
+    @media #{$mq-sm} {
+        height: 40vw;
+        max-height: 400px;
     }
 }
 

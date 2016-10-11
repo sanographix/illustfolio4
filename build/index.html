@@ -14,8 +14,13 @@
   <meta charset="UTF-8">
 
   
+  <meta name="font:Title" content="Helvetica Neue"/>
+  <meta name="font:Body" content="Helvetica Neue"/>
+
   <meta name="image:Background Image" content=""/>
   <meta name="image:Title Logo" content=""/>
+
+  <meta name="color:Accent" content="#A77DC2"/>
 
   <meta name="select:Thumbnails Margin" content="margin-none" title="None">
   <meta name="select:Thumbnails Margin" content="margin-narrow" title="Narrow">
@@ -28,7 +33,7 @@
   <meta name="select:Thumbnails Size" content="size-xl" title="XL">
 
   <meta name="if:Crop Thumbnails" content="1" />
-  <meta name="if:Enable Header Image" content="1" />
+  <meta name="if:Enable Cover Image" content="1" />
   <meta name="if:Enable Tag List" content="1" />
   <meta name="if:Enable Profile Section" content="1" />
 
@@ -41,7 +46,6 @@
   <meta name="text:Your Pixiv ID" content=""/>
   <meta name="text:Your Instagram Username" content=""/>
 
-  <meta name="color:Accent" content="#A77DC2"/>
 
   <title>{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}</title>
 
@@ -103,6 +107,27 @@
   <style>
   {CustomCSS}
 
+  body {
+    font-family: {font:Body};
+  }
+
+  h1,h2,h3,h4,h5,h6 {
+    font-family: {font:Title};
+  }
+
+  a {
+      color: {color:Accent};
+  }
+
+  .btn {
+      color: {color:Accent};
+      border-color: {color:Accent};
+  }
+
+  .btn:hover {
+    background-color: {color:Accent};
+  }
+
   </style>
 
 
@@ -110,9 +135,9 @@
   <div class="l-container">
     <div class="header-wrapper">
       <div class="header-box-title">
-        <header id="header" class="header">
-          <h1 class="blog-title">
-            <a href="/">{Title}</a>
+        <header class="header-title">
+          <h1 class="header-blog-title">
+            <a href="{BlogURL}">{Title}</a>
           </h1>
         </header>
       </div>
@@ -150,9 +175,9 @@
 </div>
 
 {block:IndexPage}
-  {block:ifEnableHeaderImage}
+  {block:ifEnableCoverImage}
     <div class="cover-image" style="background-image: url('{HeaderImage}');"></div>
-  {/block:ifEnableHeaderImage}
+  {/block:ifEnableCoverImage}
 {/block:IndexPage}
 
 <!-- Index page -->

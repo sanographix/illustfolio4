@@ -7,9 +7,9 @@ pageId = "index";
   <div class="l-container">
     <div class="header-wrapper">
       <div class="header-box-title">
-        <header id="header" class="header">
-          <h1 class="blog-title">
-            <a href="/">{Title}</a>
+        <header class="header-title">
+          <h1 class="header-blog-title">
+            <a href="{BlogURL}">{Title}</a>
           </h1>
         </header>
       </div>
@@ -47,9 +47,9 @@ pageId = "index";
 </div>
 
 {block:IndexPage}
-  {block:ifEnableHeaderImage}
+  {block:ifEnableCoverImage}
     <div class="cover-image" style="background-image: url('{HeaderImage}');"></div>
-  {/block:ifEnableHeaderImage}
+  {/block:ifEnableCoverImage}
 {/block:IndexPage}
 
 <!-- Index page -->
