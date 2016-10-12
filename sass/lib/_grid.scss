@@ -14,7 +14,6 @@
     @media #{$mq-lg} {
         width: 1140px;
     }
-
 }
 
 @mixin l-container() {
@@ -32,7 +31,11 @@
     @media #{$mq-lg} {
         width: 1140px;
     }
+}
 
+.l-container-mini {
+    @include l-container();
+    max-width: 700px;
 }
 
 .l-row {

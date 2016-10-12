@@ -372,6 +372,74 @@
     }
 }
 
+// 記事フッタ
+.entry-footer {
+    color: $light;
+    font-size: 95%;
+    margin-top: 3em;
+    &:before {
+        content: "";
+        display: block;
+        background: $light;
+        width: 15px;
+        height: 1px;
+        margin-bottom: .5em;
+    }
+    a {
+        color: $light;
+        text-decoration: none;
+        &:hover {
+            color: $hover;
+        }
+    }
+}
+.entry-footer-section {
+    margin-bottom: 3em;
+    h3 {
+        text-transform: uppercase;
+        font-size: 110%;
+        margin: 0 0 .8em 0;
+        color: $base;
+    }
+}
+.article-meta {
+    .meta-elements {
+        margin-left: 1em;
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+}
+.like_and_reblog_buttons {
+    margin: 1em 0;
+    padding: 0;
+    display: table;
+    > li {
+        display: table-cell;
+        text-align: center;
+        padding-right: 1.5em;
+        vertical-align: middle;
+        .social-icon {
+            width: 20px;
+            height: auto;
+            vertical-align: top;
+        }
+    }
+}
+.rebloggedfrom {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    .entry-footer-section-inner {
+        display: table-cell;
+    }
+    .favicon {
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+        vertical-align: middle;
+    }
+}
 
 // footer
 .section-footer {
