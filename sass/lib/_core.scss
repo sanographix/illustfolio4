@@ -156,7 +156,8 @@
 }
 
 // divにbackground-imageでサムネイル表示してるとき
-.post-photo-thumb {
+.post-photo-thumb,
+.post-content-anchor {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -220,6 +221,45 @@
     max-width: 100%;
     @media #{$mq-sm} {
         max-height: 80vw;
+    }
+}
+
+// 写真以外の投稿, indexでグリッドになってる部品
+.post-content-anchor {
+    background-color: $bg-light;
+    display: block;
+    box-sizing: border-box;
+    padding: .6em;
+    color: $base;
+    overflow: hidden;
+}
+.index-post-content {
+    > p:first-child {
+        margin-top: 0;
+    }
+}
+.post-content-posttype {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: .9rem;
+    color: $light;
+    margin-bottom: .5em;
+}
+
+// indexページの記事フッタ TODO: 有り無し選択できるように
+.index-entry-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1.5em;
+    font-size: .7rem;
+    a {
+        color: $light;
+    }
+    .meta-elements {
+        display: block;
+        margin-bottom: .4em;
     }
 }
 
@@ -430,6 +470,9 @@
             width: 20px;
             height: auto;
             vertical-align: top;
+        }
+        &:last-child {
+            padding-right: 0em;
         }
     }
 }

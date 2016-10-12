@@ -52,7 +52,7 @@ pageId = "index";
   {/block:ifEnableCoverImage}
 {/block:IndexPage}
 
-<!-- Index page -->
+<%# Index page %>
 {block:IndexPage}
 
   <div class="section-post">
@@ -60,22 +60,25 @@ pageId = "index";
       {select:Thumbnails Size}
      ">
 
-      <!-- Post -->
+      <%# Post %>
       <div class="index-post-wrapper {select:Thumbnails Margin}">
         {block:Posts}
           <article class="post index-post {PostType}">
             <div class="post-inner">
 
-              <!-- post: text -->
+              <%# Post: text %>
               {block:Text}
-                <a href="{Permalink}" class="post-content">
+                <a href="{Permalink}" class="post-content-anchor">
+                  <div class="post-content-posttype">
+                    {PostType}
+                  </div>
                   {block:Title}
-                    <div class="index-post-content">{Title}</div>
+                    <div class="index-post-content index-post-title">{Title}</div>
                   {/block:Title}
                 </a>
               {/block:Text}
 
-              <!-- post: photo -->
+              <%# Post: photo %>
               {block:Photo}
                 <a href="{Permalink}">
                   {block:IfCropThumbnails}
@@ -87,7 +90,7 @@ pageId = "index";
                 </a>
               {/block:Photo}
 
-              <!-- post: photoset -->
+              <%# Post: photoset %>
               {block:Photoset}
                 {block:Photos}
                   <a href="{Permalink}">
@@ -101,38 +104,50 @@ pageId = "index";
                 {/block:Photos}
               {/block:Photoset}
 
-              <!-- post: quote -->
+              <%# Post: quote %>
               {block:Quote}
-                <a href="{Permalink}" class="post-content">
+                <a href="{Permalink}" class="post-content-anchor">
+                  <div class="post-content-posttype">
+                    {PostType}
+                  </div>
                   <div class="index-post-content">
                     {Quote}
                   </div>
                 </a>
               {/block:Quote}
 
-              <!-- post: link -->
+              <%# Post: link %>
               {block:Link}
-                <a href="{Permalink}" class="post-content">
+                <a href="{Permalink}" class="post-content-anchor">
+                  <div class="post-content-posttype">
+                    {PostType}
+                  </div>
                   <div class="index-post-content">
                     {Name}
                   </div>
                 </a>
               {/block:Link}
 
-              <!-- post: chat -->
+              <%# Post: chat %>
               {block:Chat}
-                <a href="{Permalink}" class="post-content">
+                <a href="{Permalink}" class="post-content-anchor">
+                  <div class="post-content-posttype">
+                    {PostType}
+                  </div>
                   {block:Title}
-                    <div class="index-post-content">
+                    <div class="index-post-content index-post-title">
                       {Title}
                     </div>
                   {/block:Title}
                 </a>
               {/block:Chat}
 
-              <!-- post: video -->
+              <%# Post: video %>
               {block:Video}
-                <a href="{Permalink}" class="post-content">
+                <a href="{Permalink}" class="post-content-anchor">
+                  <div class="post-content-posttype">
+                    {PostType}
+                  </div>
                   {block:Caption}
                     <div class="index-post-content">
                       {Caption}
@@ -141,9 +156,12 @@ pageId = "index";
                 </a>
               {/block:Video}
 
-              <!-- post: audio -->
+              <%# Post: audio %>
               {block:Audio}
-                <a href="{Permalink}" class="post-content">
+                <a href="{Permalink}" class="post-content-anchor">
+                  <div class="post-content-posttype">
+                    {PostType}
+                  </div>
                   {block:Caption}
                     <div class="index-post-content">
                       {Caption}
@@ -152,15 +170,37 @@ pageId = "index";
                 </a>
               {/block:Audio}
 
-              <!-- post: answer -->
+              <%# Post: answer %>
               {block:Answer}
-                <a href="{Permalink}" class="post-content">
-                  <div class="index-post-content">
+                <a href="{Permalink}" class="post-content-anchor">
+                  <div class="post-content-posttype">
+                    {PostType}
+                  </div>
+                  <div class="index-post-content index-post-title">
                     {Question}
                   </div>
                 </a>
               {/block:Answer}
 
+              <%# indexページにもreblogボタンとかつける %>
+              <footer class="index-entry-footer">
+                <div class="index-entry-footer-meta">
+                  <span class="meta-elements date">
+                    <a href="{Permalink}">{ShortMonth} {DayOfMonthWithZero}, {Year}</a>
+                  </span>
+                  {block:HasTags}
+                    <span class="meta-elements">
+                      {block:Tags}
+                        <a href="{TagURL}">#{Tag}</a>
+                      {/block:Tags}
+                    </span>
+                  {/block:HasTags}
+                </div>
+                <ul class="like_and_reblog_buttons">
+                  <li>{ReblogButton size="18"}</li>
+                  <li>{LikeButton size="18"}</li>
+                </ul>
+              </footer>
             </div>
           </article>
         {/block:Posts}
@@ -169,7 +209,7 @@ pageId = "index";
     </div>
   </div>
 
-  <!-- pager of index -->
+  <%# Pager-index %>
   {block:Pagination}
     <div class="l-container">
       <div class="pagenation pagenation-index">
@@ -186,7 +226,7 @@ pageId = "index";
 
 {/block:IndexPage}
 
-  <!-- Permalink page -->
+<%# Permalink Page %>
 {block:PermalinkPage}
   {block:Posts}
     <article class="post permalink-post {TagsAsClasses} {PostType}">
