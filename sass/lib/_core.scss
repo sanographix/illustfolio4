@@ -3,7 +3,7 @@
 
 // header
 .header {
-    margin: 1.5em 0;
+    margin: 2em 0;
     @media #{$mq-sm} {
         margin: 4em 0;
     }
@@ -45,7 +45,7 @@
         justify-content: flex-end;
     }
     li {
-        margin: 0 1em;
+        margin: 0 .8em;
         @media #{$mq-sm} {
             margin: 0 0 0 1.5em;
         }
@@ -100,6 +100,13 @@
     .margin-wide & {
         padding-left: 2%;
         padding-bottom: 2vw;
+    }
+}
+
+// フォトセット投稿は2番目以降消す
+.index-post.photo {
+    .post-inner > a:not(:first-child) {
+        display: none;
     }
 }
 

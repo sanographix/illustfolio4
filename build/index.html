@@ -197,22 +197,11 @@
 
               <!-- post: text -->
               {block:Text}
-                <div class="post-content">
-                  <header class="entry-header">
-                    {block:Title}
-                      <h1 class="entry-title"><a href="{Permalink}">{Title}</a></h1>
-                    {/block:Title}
-                  </header>
-                  <div class="entry-content">
-                    {Body}
-                  </div>
-                  <div class="index-entry-footer">
-                    <img src="http://static.tumblr.com/xlsgtjb/p7Yned8qd/icon-link.svg" class="icon-link">
-                    <a href="{Permalink}">
-                      Permalink
-                    </a>
-                  </div>
-                </div>
+                <a href="{Permalink}" class="post-content">
+                  {block:Title}
+                    <div class="index-post-content">{Title}</div>
+                  {/block:Title}
+                </a>
               {/block:Text}
 
               <!-- post: photo -->
@@ -231,136 +220,74 @@
               {block:Photoset}
                 {block:Photos}
                   <a href="{Permalink}">
-                    <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
+                    {block:IfCropThumbnails}
+                      <div class="post-photo-thumb" style="background-image: url('{PhotoURL-HighRes}');"></div>
+                    {/block:IfCropThumbnails}
+                    {block:IfNotCropThumbnails}
+                      <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" class="post-photo-img">
+                    {/block:IfNotCropThumbnails}
                   </a>
                 {/block:Photos}
               {/block:Photoset}
 
               <!-- post: quote -->
               {block:Quote}
-                <div class="post-content">
-                  <div class="entry-content {Length}">
-                    <a href="{Permalink}">“{Quote}”</a>
+                <a href="{Permalink}" class="post-content">
+                  <div class="index-post-content">
+                    {Quote}
                   </div>
-                  <div class="index-entry-footer">
-                    <img src="http://static.tumblr.com/xlsgtjb/p7Yned8qd/icon-link.svg" class="icon-link">
-                    <a href="{Permalink}">
-                      Permalink
-                    </a>
-                  </div>
-                </div>
+                </a>
               {/block:Quote}
 
               <!-- post: link -->
               {block:Link}
-                <div class="post-content">
-                  <header class="entry-header">
-                    <h1 class="entry-title">
-                      <a href="{Permalink}" class="link-url" {Target}>{Name}</a>
-                    </h1>
-                  </header>
-                  <div class="entry-content">
-                    {block:Description}
-                      <div class="link-description">{Description}</div>
-                    {/block:Description}
+                <a href="{Permalink}" class="post-content">
+                  <div class="index-post-content">
+                    {Name}
                   </div>
-                  <div class="index-entry-footer">
-                    <img src="http://static.tumblr.com/xlsgtjb/p7Yned8qd/icon-link.svg" class="icon-link">
-                    <a href="{Permalink}">
-                      Permalink
-                    </a>
-                  </div>
-                </div>
+                </a>
               {/block:Link}
 
               <!-- post: chat -->
               {block:Chat}
-                <div class="post-content">
+                <a href="{Permalink}" class="post-content">
                   {block:Title}
-                    <h1 class="entry-title"><a href="{Permalink}">{Title}</a></h1>
+                    <div class="index-post-content">
+                      {Title}
+                    </div>
                   {/block:Title}
-                  <div class="entry-content">
-                    <ul class="ul-chat">
-                      {block:Lines}
-                      <li class="{Alt} user_{UserNumber}">
-                      {block:Label}
-                      <span class="label">{Label}</span>
-                      {/block:Label}
-                      {Line}
-                      </li>
-                      {/block:Lines}
-                    </ul>
-                  </div>
-                  <div class="index-entry-footer">
-                    <img src="http://static.tumblr.com/xlsgtjb/p7Yned8qd/icon-link.svg" class="icon-link">
-                    <a href="{Permalink}">
-                      Permalink
-                    </a>
-                  </div>
-                </div>
+                </a>
               {/block:Chat}
 
               <!-- post: video -->
               {block:Video}
-                <div class="post-content">
-                  <div class="entry-content video-iframe">
-                    {Video-700}
-                    {block:Caption}
-                      <div class="caption">
-                        {Caption}
-                      </div>
-                    {/block:Caption}
-                  </div>
-                  <div class="index-entry-footer">
-                    <img src="http://static.tumblr.com/xlsgtjb/p7Yned8qd/icon-link.svg" class="icon-link">
-                    <a href="{Permalink}">
-                      Permalink
-                    </a>
-                  </div>
-                </div>
+                <a href="{Permalink}" class="post-content">
+                  {block:Caption}
+                    <div class="index-post-content">
+                      {Caption}
+                    </div>
+                  {/block:Caption}
+                </a>
               {/block:Video}
 
               <!-- post: audio -->
               {block:Audio}
-                <div class="post-content">
-                  <div class="entry-content">
-                    {AudioPlayerBlack}
-                    {block:Caption}
-                      <div class="caption">
-                        {Caption}
-                      </div>
-                    {/block:Caption}
-                  </div>
-                  <div class="index-entry-footer">
-                    <img src="http://static.tumblr.com/xlsgtjb/p7Yned8qd/icon-link.svg" class="icon-link">
-                    <a href="{Permalink}">
-                      Permalink
-                    </a>
-                  </div>
-                </div>
+                <a href="{Permalink}" class="post-content">
+                  {block:Caption}
+                    <div class="index-post-content">
+                      {Caption}
+                    </div>
+                  {/block:Caption}
+                </a>
               {/block:Audio}
 
               <!-- post: answer -->
               {block:Answer}
-                <div class="post-content">
-                  <div class="asker-group">
-                    <img src="{AskerPortraitURL-24}" width="24" height="24" /> {Asker}
+                <a href="{Permalink}" class="post-content">
+                  <div class="index-post-content">
+                    {Question}
                   </div>
-                  <h1 class="entry-title">
-                    <a href="{Permalink}">
-                      {Question}
-                    </a>
-                  </h1>
-                  <div class="entry-content">
-                    <div class="answer cont">{Answer}</div>
-                  </div>
-                  <div class="index-entry-footer">
-                    <img src="http://static.tumblr.com/xlsgtjb/p7Yned8qd/icon-link.svg" class="icon-link">
-                    <a href="{Permalink}">
-                      Permalink
-                    </a>
-                  </div>
-                </div>
+                </a>
               {/block:Answer}
 
             </div>
