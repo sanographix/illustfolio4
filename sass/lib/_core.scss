@@ -441,6 +441,51 @@
     }
 }
 
+// tags
+.hastags {
+    .meta-elements {
+        a {
+            margin-right: .5em;
+        }
+    }
+}
+
+// notescount
+.notecontainer {
+    margin-bottom: 1em;
+    .notes {
+        margin: 0;
+        padding: 0;
+        li {
+            list-style: none;
+            padding: .5em 0;
+            border-bottom: 1px solid $border;
+            color: $light;
+            font-size: 90%;
+            a {
+                font-weight: bold;
+                color: $light;
+                text-decoration: none;
+            }
+            .avatar {
+                max-height: 16px;
+                width: auto;
+                vertical-align: middle;
+                margin-right: 3px;
+            }
+            blockquote {
+                margin: 1em 1em 1em 0;
+                padding-left: 1em;
+                border-left: 3px solid $border;
+                a {
+                    font-weight: normal;
+                    color: $light;
+                }
+            }
+        }
+    }
+}
+
 // footer
 .section-footer {
     margin-bottom: 1em;
