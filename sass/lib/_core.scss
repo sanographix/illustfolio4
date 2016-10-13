@@ -39,15 +39,18 @@
 .nav {
     ul {
         list-style: none;
-        display: flex;
         margin: 0;
         padding: 0;
-        justify-content: flex-end;
+        text-align: center;
+        @media #{$mq-sm} {
+            text-align: right;
+        }
     }
     li {
-        margin: 0 .8em;
+        margin: .4em .8em;
+        display: inline-block;
         @media #{$mq-sm} {
-            margin: 0 0 0 1.5em;
+            margin: .4em 0 .4em 1.5em;
         }
         a {
             color: $base;
