@@ -334,6 +334,16 @@
     }
 }
 
+// シングルカラムモード
+.top-single-column {
+    .post {
+        margin: 4em 0;
+        @media #{$mq-sm} {
+            margin: 6em 0;
+        }
+    }
+}
+
 // pager
 .pagenation {
     margin: 3em 0;
@@ -663,7 +673,8 @@
     }
 }
 .profile-content {
-    h3 {
+    h2 {
+        font-size: 1rem;
         margin: .5em 0;
     }
     p {
@@ -750,11 +761,6 @@
 .footer-title {
     display: block;
     font-size: .9rem;
-}
-.footer-archive {
-    font-weight: normal !important;
-    margin-left: .2em;
-    font-size: .8rem;
 }
 .footer-theme-author {
     padding-right: 1em;
