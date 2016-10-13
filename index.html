@@ -37,6 +37,7 @@
   <meta name="if:Enable Cover Image" content="1" />
   <meta name="if:Enable Tag List" content="1" />
   <meta name="if:Enable Profile Section" content="1" />
+  <meta name="if:Enable Index Entry Footer" content="0" />
 
   <meta name="text:Your Name" content="" />
   <meta name="text:Profile" content="" />
@@ -327,22 +328,24 @@
               {/block:Answer}
 
               
-              <footer class="index-entry-footer">
-                <div class="index-entry-footer-meta">
-                  <span class="meta-elements date">
-                    <a href="{Permalink}">{ShortMonth} {DayOfMonthWithZero}, {Year}</a>
-                  </span>
-                  {block:NoteCount}
-                    <span class="meta-elements notecount">
-                      <a href="{Permalink}">{NoteCount} Notes</a>
+              {block:IfEnableIndexEntryFooter}
+                <footer class="index-entry-footer">
+                  <div class="index-entry-footer-meta">
+                    <span class="meta-elements date">
+                      <a href="{Permalink}">{ShortMonth} {DayOfMonthWithZero}, {Year}</a>
                     </span>
-                  {/block:NoteCount}
-                </div>
-                <ul class="like_and_reblog_buttons">
-                  <li>{ReblogButton size="18"}</li>
-                  <li>{LikeButton size="18"}</li>
-                </ul>
-              </footer>
+                    {block:NoteCount}
+                      <span class="meta-elements notecount">
+                        <a href="{Permalink}">{NoteCount} Notes</a>
+                      </span>
+                    {/block:NoteCount}
+                  </div>
+                  <ul class="like_and_reblog_buttons">
+                    <li>{ReblogButton size="18"}</li>
+                    <li>{LikeButton size="18"}</li>
+                  </ul>
+                </footer>
+              {/block:IfEnableIndexEntryFooter}
             </div>
           </article>
         {/block:Posts}
