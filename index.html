@@ -116,7 +116,8 @@
     font-family: {font:Title};
   }
 
-  a {
+  a,
+  .post-content-anchor:hover {
       color: {color:Accent};
   }
 
@@ -198,12 +199,14 @@
               
               {block:Text}
                 <a href="{Permalink}" class="post-content-anchor">
-                  <div class="post-content-posttype">
-                    {PostType}
+                  <div class="post-content-wrapper">
+                    <div class="post-content-posttype">
+                      {PostType}
+                    </div>
+                    {block:Title}
+                      <div class="index-post-content index-post-title">{Title}</div>
+                    {/block:Title}
                   </div>
-                  {block:Title}
-                    <div class="index-post-content index-post-title">{Title}</div>
-                  {/block:Title}
                 </a>
               {/block:Text}
 
@@ -236,11 +239,13 @@
               
               {block:Quote}
                 <a href="{Permalink}" class="post-content-anchor">
-                  <div class="post-content-posttype">
-                    {PostType}
-                  </div>
-                  <div class="index-post-content">
-                    {Quote}
+                  <div class="post-content-wrapper">
+                    <div class="post-content-posttype">
+                      {PostType}
+                    </div>
+                    <div class="index-post-content">
+                      {Quote}
+                    </div>
                   </div>
                 </a>
               {/block:Quote}
@@ -248,11 +253,13 @@
               
               {block:Link}
                 <a href="{Permalink}" class="post-content-anchor">
-                  <div class="post-content-posttype">
-                    {PostType}
-                  </div>
-                  <div class="index-post-content">
-                    {Name}
+                  <div class="post-content-wrapper">
+                    <div class="post-content-posttype">
+                      {PostType}
+                    </div>
+                    <div class="index-post-content">
+                      {Name}
+                    </div>
                   </div>
                 </a>
               {/block:Link}
@@ -260,53 +267,61 @@
               
               {block:Chat}
                 <a href="{Permalink}" class="post-content-anchor">
-                  <div class="post-content-posttype">
-                    {PostType}
-                  </div>
-                  {block:Title}
-                    <div class="index-post-content index-post-title">
-                      {Title}
+                  <div class="post-content-wrapper">
+                    <div class="post-content-posttype">
+                      {PostType}
                     </div>
-                  {/block:Title}
+                    {block:Title}
+                      <div class="index-post-content index-post-title">
+                        {Title}
+                      </div>
+                    {/block:Title}
+                  </div>
                 </a>
               {/block:Chat}
 
               
               {block:Video}
                 <a href="{Permalink}" class="post-content-anchor">
-                  <div class="post-content-posttype">
-                    {PostType}
-                  </div>
-                  {block:Caption}
-                    <div class="index-post-content">
-                      {Caption}
+                  <div class="post-content-wrapper">
+                    <div class="post-content-posttype">
+                      {PostType}
                     </div>
-                  {/block:Caption}
+                    {block:Caption}
+                      <div class="index-post-content">
+                        {Caption}
+                      </div>
+                    {/block:Caption}
+                  </div>
                 </a>
               {/block:Video}
 
               
               {block:Audio}
                 <a href="{Permalink}" class="post-content-anchor">
-                  <div class="post-content-posttype">
-                    {PostType}
-                  </div>
-                  {block:Caption}
-                    <div class="index-post-content">
-                      {Caption}
+                  <div class="post-content-wrapper">
+                    <div class="post-content-posttype">
+                      {PostType}
                     </div>
-                  {/block:Caption}
+                    {block:Caption}
+                      <div class="index-post-content">
+                        {Caption}
+                      </div>
+                    {/block:Caption}
+                  </div>
                 </a>
               {/block:Audio}
 
               
               {block:Answer}
                 <a href="{Permalink}" class="post-content-anchor">
-                  <div class="post-content-posttype">
-                    {PostType}
-                  </div>
-                  <div class="index-post-content index-post-title">
-                    {Question}
+                  <div class="post-content-wrapper">
+                    <div class="post-content-posttype">
+                      {PostType}
+                    </div>
+                    <div class="index-post-content index-post-title">
+                      {Question}
+                    </div>
                   </div>
                 </a>
               {/block:Answer}
@@ -317,13 +332,11 @@
                   <span class="meta-elements date">
                     <a href="{Permalink}">{ShortMonth} {DayOfMonthWithZero}, {Year}</a>
                   </span>
-                  {block:HasTags}
-                    <span class="meta-elements">
-                      {block:Tags}
-                        <a href="{TagURL}">#{Tag}</a>
-                      {/block:Tags}
+                  {block:NoteCount}
+                    <span class="meta-elements notecount">
+                      <a href="{Permalink}">{NoteCount} Notes</a>
                     </span>
-                  {/block:HasTags}
+                  {/block:NoteCount}
                 </div>
                 <ul class="like_and_reblog_buttons">
                   <li>{ReblogButton size="18"}</li>
