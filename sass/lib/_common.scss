@@ -19,9 +19,8 @@ body {
 }
 a {
     color: $link;
-    transition: all .2s;
     text-decoration: none;
-    &:hover:not(.btn) {
+    &:hover {
         text-decoration: underline;
     }
 }

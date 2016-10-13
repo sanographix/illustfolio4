@@ -161,6 +161,9 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    &:hover {
+        text-decoration: none;
+    }
     .size-xxs & {
         height: 15vw;
         @media #{$mq-sm} {
@@ -233,9 +236,69 @@
     color: $base;
     overflow: hidden;
 }
+// 写真以外の投稿ではhiddenする
+.post-content-wrapper {
+    overflow: hidden;
+    .size-xxs & {
+        height: calc(15vw - 1.2em);
+        @media #{$mq-sm} {
+            height: calc(10vw - 1.2em);
+        }
+        @media #{$mq-md} {
+            height: calc(7vw - 1.2em);
+        }
+    }
+    .size-xs & {
+        height: calc(33.3333vw - 1.2em);
+        @media #{$mq-sm} {
+            height: calc(144px - 1.2em);
+        }
+        @media #{$mq-md} {
+            height: calc(188px - 1.2em);
+        }
+        @media #{$mq-lg} {
+            height: calc(228px - 1.2em);
+        }
+    }
+    .size-s & {
+        height: calc(33.3333vw - 1.2em);
+        @media #{$mq-sm} {
+            height: calc(180px - 1.2em);
+        }
+        @media #{$mq-md} {
+            height: calc(235px - 1.2em);
+        }
+        @media #{$mq-lg} {
+            height: calc(285px - 1.2em);
+        }
+    }
+    .size-m & {
+        height: calc(50vw - 1.2em);
+        @media #{$mq-sm} {
+            height: calc(20vw - 1.2em);
+        }
+    }
+    .size-l & {
+        height: calc(50vw - 1.2em);
+        @media #{$mq-sm} {
+            height: calc(25vw - 1.2em);
+        }
+    }
+    .size-xl & {
+        height: calc(100vw - 1.2em);
+        @media #{$mq-sm} {
+            height: calc(33.3333vw - 1.2em);
+        }
+    }
+}
 .index-post-content {
     > p:first-child {
         margin-top: 0;
+    }
+    &.index-post-title {
+        @media #{$mq-sm} {
+            font-size: 1.4rem;
+        }
     }
 }
 .post-content-posttype {
@@ -254,12 +317,18 @@
     width: 100%;
     margin-bottom: 1.5em;
     font-size: .7rem;
+    box-sizing: border-box;
+    padding-left: .7em;
+    padding-right: .7em;
     a {
         color: $light;
     }
     .meta-elements {
         display: block;
-        margin-bottom: .4em;
+        margin-bottom: .2em;
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
 }
 
