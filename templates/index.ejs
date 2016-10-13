@@ -197,22 +197,24 @@ pageId = "index";
               {/block:Answer}
 
               <%# indexページにもreblogボタンとかつける %>
-              <footer class="index-entry-footer">
-                <div class="index-entry-footer-meta">
-                  <span class="meta-elements date">
-                    <a href="{Permalink}">{ShortMonth} {DayOfMonthWithZero}, {Year}</a>
-                  </span>
-                  {block:NoteCount}
-                    <span class="meta-elements notecount">
-                      <a href="{Permalink}">{NoteCount} Notes</a>
+              {block:IfEnableIndexEntryFooter}
+                <footer class="index-entry-footer">
+                  <div class="index-entry-footer-meta">
+                    <span class="meta-elements date">
+                      <a href="{Permalink}">{ShortMonth} {DayOfMonthWithZero}, {Year}</a>
                     </span>
-                  {/block:NoteCount}
-                </div>
-                <ul class="like_and_reblog_buttons">
-                  <li>{ReblogButton size="18"}</li>
-                  <li>{LikeButton size="18"}</li>
-                </ul>
-              </footer>
+                    {block:NoteCount}
+                      <span class="meta-elements notecount">
+                        <a href="{Permalink}">{NoteCount} Notes</a>
+                      </span>
+                    {/block:NoteCount}
+                  </div>
+                  <ul class="like_and_reblog_buttons">
+                    <li>{ReblogButton size="18"}</li>
+                    <li>{LikeButton size="18"}</li>
+                  </ul>
+                </footer>
+              {/block:IfEnableIndexEntryFooter}
             </div>
           </article>
         {/block:Posts}
