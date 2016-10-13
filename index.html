@@ -147,9 +147,6 @@
       <div class="header-box-nav">
         <nav class="nav" role="navigation">
           <ul>
-            <li>
-              <a href="/">Home</a>
-            </li>
             {block:HasPages}
               {block:Pages}
               <li>
@@ -162,14 +159,6 @@
                 <a href="/ask">{AskLabel}</a>
               </li>
             {/block:AskEnabled}
-            {block:IfEnableTagList}
-              <li class="header-tags">
-                <a href="/">Tags</a>
-              </li>
-            {/block:IfEnableTagList}
-            <li>
-              <a href="/archive">Archive</a>
-            </li>
           </ul>
         </nav>
       </div>
@@ -607,6 +596,60 @@
   </div>
 {/block:PermalinkPagination}
 
+{block:IndexPage}
+  {block:IfEnableProfileSection}
+    <section class="section-profile section">
+      <div class="l-container-mini">
+        <div class="profile-wrapper">
+          <div class="profile-image">
+            <img src="{PortraitURL-128}">
+          </div>
+          <div class="profile-content">
+            <h2>{text:Your Name}</h2>
+            <p>{text:Profile}</p>
+            <ul class="social-accounts">
+              {block:IfYourWebsiteURL}
+              <li class="li-website">
+                <a href="{text:Your Website URL}" target="_blank">
+                  <img src="http://static.tumblr.com/xlsgtjb/x3Aned804/icon-home.svg" width="18px">
+                </a>
+              </li>
+              {/block:IfYourWebsiteURL}
+              {block:IfYourTwitterUsername}
+              <li class="li-twitter">
+                <a href="http://twitter.com/{text:Your Twitter Username}" target="_blank">
+                <img src="http://static.tumblr.com/xlsgtjb/BBuned82o/icon-twitter.svg" width="16px">
+                </a>
+              </li>
+              {/block:IfYourTwitterUsername}
+              {block:IfYourFacebookUsername}
+              <li class="li-facebook">
+                <a href="http://www.facebook.com/{text:Your Facebook Username}" target="_blank">
+                  <img src="http://static.tumblr.com/xlsgtjb/gJuned7zf/icon-facebook.svg" width="16px">
+                </a>
+              </li>
+              {/block:IfYourFacebookUsername}
+              {block:IfYourPixivID}
+              <li class="li-pixiv">
+                <a href="http://www.pixiv.net/member.php?id={text:Your Pixiv ID}" target="_blank">
+                  <img src="http://static.tumblr.com/xlsgtjb/gAened81u/icon-pixiv.svg" width="16px">
+                </a>
+              </li>
+              {/block:IfYourPixivID}
+              {block:IfYourInstagramUsername}
+              <li class="li-instagram">
+                <a href="http://instagram.com/{text:Your Instagram Username}" target="_blank">
+                  <img src="http://static.tumblr.com/xlsgtjb/KCkned80r/icon-instagram.svg" width="16px">
+                </a>
+              </li>
+              {/block:IfYourInstagramUsername}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  {/block:IfEnableProfileSection}
+{/block:IndexPage}
 
 <!-- Note: Do not delete the following section.
 ここから先のセクションは消去しないでください -->
@@ -620,7 +663,8 @@
           </a>
         </span>
         <span class="footer-copyright">
-          ©{CopyrightYears}
+          ©{CopyrightYears} {text:Your Name}
+          <a href="/archive" class="footer-archive">(Archive)</a>
         </span>
       </div>
       <div class="footer-theme">
