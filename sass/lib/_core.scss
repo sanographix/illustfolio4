@@ -342,6 +342,18 @@
             margin: 6em 0;
         }
     }
+    .l-container-mini {
+        max-width: 500px;
+        @media (min-width: 540px) {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    iframe.photoset {
+        @media (min-width: 540px) {
+            width: 500px;
+        }
+    }
 }
 
 // pager
@@ -370,9 +382,12 @@
     margin-bottom: 2em;
     margin-left: 0;
     margin-right: 0;
-    @media #{$mq-sm} {
-        margin-left: auto;
-        margin-right: auto;
+    iframe.photoset {
+        display: block;
+        width: 100vw;
+        @media #{$mq-sm} {
+            width: 700px;
+        }
     }
     img {
         max-width: 100%;

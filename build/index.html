@@ -354,6 +354,20 @@
         {block:Posts}
           <article class="post permalink-post {TagsAsClasses} {PostType}">
 
+            
+            {block:Photo}
+              <div class="l-container full-image">
+                {LinkOpenTag}
+                  <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
+                {LinkCloseTag}
+              </div>
+            {/block:Photo}
+            {block:Photoset}
+              <div class="l-container full-image">
+                {Photoset}
+              </div>
+            {/block:Photoset}
+
             <div class="l-container-mini section">
               {block:Text}
                 <header class="entry-header">
@@ -368,9 +382,6 @@
 
               {block:Photo}
                 <div class="entry-content">
-                  {LinkOpenTag}
-                    <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
-                  {LinkCloseTag}
                   {block:Caption}
                     <div class="caption">
                       {Caption}
@@ -381,7 +392,6 @@
 
               {block:Photoset}
                 <div class="entry-content">
-                  {Photoset-700}
                   {block:Caption}
                     <div class="caption">
                       {Caption}
@@ -433,7 +443,7 @@
               {/block:Chat}
 
               {block:Video}
-                <div class="entry-content video-iframe">
+                <div class="entry-content">
                   {Video-700}
                   {block:Caption}
                     <div class="caption">
@@ -525,7 +535,7 @@
         {/block:Photo}
 
         {block:Photoset}
-          {Photoset-700}
+          {Photoset}
         {/block:Photoset}
       </div>
 
@@ -612,7 +622,7 @@
 
         <!-- post: video -->
         {block:Video}
-          <div class="entry-content video-iframe">
+          <div class="entry-content">
             {Video-700}
             {block:Caption}
               <div class="caption">

@@ -222,6 +222,20 @@ pageId = "index";
         {block:Posts}
           <article class="post permalink-post {TagsAsClasses} {PostType}">
 
+            <%# full-width image (photo and photoset post only) %>
+            {block:Photo}
+              <div class="l-container full-image">
+                {LinkOpenTag}
+                  <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
+                {LinkCloseTag}
+              </div>
+            {/block:Photo}
+            {block:Photoset}
+              <div class="l-container full-image">
+                {Photoset}
+              </div>
+            {/block:Photoset}
+
             <div class="l-container-mini section">
               {block:Text}
                 <header class="entry-header">
@@ -236,9 +250,6 @@ pageId = "index";
 
               {block:Photo}
                 <div class="entry-content">
-                  {LinkOpenTag}
-                    <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
-                  {LinkCloseTag}
                   {block:Caption}
                     <div class="caption">
                       {Caption}
@@ -249,7 +260,6 @@ pageId = "index";
 
               {block:Photoset}
                 <div class="entry-content">
-                  {Photoset-700}
                   {block:Caption}
                     <div class="caption">
                       {Caption}
@@ -301,7 +311,7 @@ pageId = "index";
               {/block:Chat}
 
               {block:Video}
-                <div class="entry-content video-iframe">
+                <div class="entry-content">
                   {Video-700}
                   {block:Caption}
                     <div class="caption">
@@ -393,7 +403,7 @@ pageId = "index";
         {/block:Photo}
 
         {block:Photoset}
-          {Photoset-700}
+          {Photoset}
         {/block:Photoset}
       </div>
 
@@ -480,7 +490,7 @@ pageId = "index";
 
         <!-- post: video -->
         {block:Video}
-          <div class="entry-content video-iframe">
+          <div class="entry-content">
             {Video-700}
             {block:Caption}
               <div class="caption">
