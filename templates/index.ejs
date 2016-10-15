@@ -341,24 +341,26 @@ pageId = "index";
                 </div>
               {/block:Answer}
 
-              {block:IfShowIndexEntryFooter}
-                <footer class="index-entry-footer">
-                  <div class="index-entry-footer-meta">
-                    <span class="meta-elements date">
-                      <a href="{Permalink}">{ShortMonth} {DayOfMonthWithZero}, {Year}</a>
-                    </span>
+              <footer class="index-entry-footer">
+                <div class="index-entry-footer-meta">
+                  <span class="meta-elements date">
+                    <a href="{Permalink}">{ShortMonth} {DayOfMonthWithZero}, {Year}</a>
+                  </span>
+                  {block:IfShowIndexEntryFooter}
                     {block:NoteCount}
                       <span class="meta-elements notecount">
                         <a href="{Permalink}">{NoteCount} Notes</a>
                       </span>
                     {/block:NoteCount}
-                  </div>
+                  {/block:IfShowIndexEntryFooter}
+                </div>
+                {block:IfShowIndexEntryFooter}
                   <ul class="like_and_reblog_buttons">
                     <li>{ReblogButton size="18"}</li>
                     <li>{LikeButton size="18"}</li>
                   </ul>
-                </footer>
-              {/block:IfShowIndexEntryFooter}
+                {/block:IfShowIndexEntryFooter}
+              </footer>
 
             </div>
           </article>
