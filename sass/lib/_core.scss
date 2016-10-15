@@ -413,10 +413,16 @@
     margin-bottom: 2em;
     margin-left: 0;
     margin-right: 0;
+    @media #{$mq-sm} {
+      margin-left: auto;
+      margin-right: auto;
+    }
     // フォトセットがスマホで崩れる対策
     iframe.photoset {
         display: block;
         width: 100vw;
+        margin-left: auto;
+        margin-right: auto;
         @media #{$mq-sm} {
             width: 700px;
         }
