@@ -191,7 +191,7 @@ pageId = "index";
                 {/block:Answer}
 
                 <%# indexページにもreblogボタンとかつける %>
-                {block:IfEnableIndexEntryFooter}
+                {block:IfShowIndexEntryFooter}
                   <footer class="index-entry-footer">
                     <div class="index-entry-footer-meta">
                       <span class="meta-elements date">
@@ -208,7 +208,7 @@ pageId = "index";
                       <li>{LikeButton size="18"}</li>
                     </ul>
                   </footer>
-                {/block:IfEnableIndexEntryFooter}
+                {/block:IfShowIndexEntryFooter}
               </div>
             </article>
           {/block:Posts}
@@ -341,7 +341,7 @@ pageId = "index";
                 </div>
               {/block:Answer}
 
-              {block:IfEnableIndexEntryFooter}
+              {block:IfShowIndexEntryFooter}
                 <footer class="index-entry-footer">
                   <div class="index-entry-footer-meta">
                     <span class="meta-elements date">
@@ -358,7 +358,7 @@ pageId = "index";
                     <li>{LikeButton size="18"}</li>
                   </ul>
                 </footer>
-              {/block:IfEnableIndexEntryFooter}
+              {/block:IfShowIndexEntryFooter}
 
             </div>
           </article>
@@ -389,7 +389,7 @@ pageId = "index";
   {block:Posts}
     <article class="post permalink-post {TagsAsClasses} {PostType}">
 
-      <!-- full-width image (photo and photoset post only) -->
+      <%# full-width image (photo and photoset post only) %>
       <div class="l-container full-image">
         {block:Photo}
           {LinkOpenTag}
@@ -404,7 +404,7 @@ pageId = "index";
 
       <div class="l-container-mini section">
 
-        <!-- post: text -->
+        <%# post: text %>
         {block:Text}
           <header class="entry-header">
             {block:Title}
@@ -416,7 +416,7 @@ pageId = "index";
           </div>
         {/block:Text}
 
-        <!-- post: photo -->
+        <%# post: photo %>
         {block:Photo}
           <div class="entry-content">
             {block:Caption}
@@ -427,7 +427,7 @@ pageId = "index";
           </div>
         {/block:Photo}
 
-        <!-- post: photoset -->
+        <%# post: photoset %>
         {block:Photoset}
           <div class="entry-content">
             {block:Caption}
@@ -438,7 +438,7 @@ pageId = "index";
           </div>
         {/block:Photoset}
 
-        <!-- post: quote -->
+        <%# post: quote %>
         {block:Quote}
           <div class="entry-content {Length}">
             <blockquote>“{Quote}”</blockquote>
@@ -450,7 +450,7 @@ pageId = "index";
           </div>
         {/block:Quote}
 
-        <!-- post: link -->
+        <%# post: link %>
         {block:Link}
           <header class="entry-header">
             <h1 class="entry-title">
@@ -464,7 +464,7 @@ pageId = "index";
           </div>
         {/block:Link}
 
-        <!-- post: chat -->
+        <%# post: chat %>
         {block:Chat}
           <div class="entry-content">
             {block:Title}
@@ -483,7 +483,7 @@ pageId = "index";
           </div>
         {/block:Chat}
 
-        <!-- post: video -->
+        <%# post: video %>
         {block:Video}
           <div class="entry-content">
             {Video-700}
@@ -495,7 +495,7 @@ pageId = "index";
           </div>
         {/block:Video}
 
-        <!-- post: audio -->
+        <%# post: audio %>
         {block:Audio}
           <div class="entry-content">
             {AudioPlayerBlack}
@@ -507,7 +507,7 @@ pageId = "index";
           </div>
         {/block:Audio}
 
-        <!-- post: answer -->
+        <%# post: answer %>
         {block:Answer}
           <div class="asker-group">
             <img src="{AskerPortraitURL-24}" width="24" height="24" /> {Asker}
@@ -522,9 +522,9 @@ pageId = "index";
           </div>
         {/block:Answer}
 
-        <!-- do not show in pages-->
+        <%# do not show in pages %>
         {block:Date}
-          <!-- entry footer -->
+          <%# entry footer %>
           <footer class="entry-footer">
 
             <div class="entry-footer-section article-meta">
@@ -601,14 +601,14 @@ pageId = "index";
 
         {/block:Date}
 
-      </div><!-- container -->
+      </div><%# container %>
 
     </article>
 
   {/block:Posts}
 {/block:PermalinkPage}
 
-<!-- permalink pagination -->
+<%# permalink pagination %>
 {block:PermalinkPagination}
   <div class="pagenation pagenation-permalink">
     {block:NextPost}
