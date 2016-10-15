@@ -160,6 +160,7 @@
 // divにbackground-imageでサムネイル表示してるとき
 .post-photo-thumb,
 .post-content-anchor {
+    background-color: $bg-light;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
