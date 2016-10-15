@@ -39,9 +39,9 @@ pageId = "index";
 </div>
 
 {block:IndexPage}
-  {block:ifEnableCoverImage}
+  {block:ifShowCoverImage}
     <div class="cover-image" style="background-image: url('{HeaderImage}');"></div>
-  {/block:ifEnableCoverImage}
+  {/block:ifShowCoverImage}
 {/block:IndexPage}
 
 <%# Index page %>
@@ -486,7 +486,9 @@ pageId = "index";
         <%# post: video %>
         {block:Video}
           <div class="entry-content">
-            {Video-700}
+            <div class="video-wrap">
+              {Video-700}
+            </div>
             {block:Caption}
               <div class="caption">
                 {Caption}
@@ -621,7 +623,7 @@ pageId = "index";
 {/block:PermalinkPagination}
 
 {block:IndexPage}
-  {block:IfEnableProfileSection}
+  {block:IfShowProfileSection}
     <section class="section-profile section">
       <div class="l-container-mini">
         <div class="profile-wrapper">
@@ -672,7 +674,7 @@ pageId = "index";
         </div>
       </div>
     </section>
-  {/block:IfEnableProfileSection}
+  {/block:IfShowProfileSection}
 {/block:IndexPage}
 
 <!-- Note: Do not delete the following section.

@@ -334,6 +334,16 @@
         }
     }
 }
+.index-entry-footer-meta {
+    .size-xxs &,
+    .size-xs &,
+    .size-s & {
+        display: none;
+        @media #{$mq-sm} {
+            display: block;
+        }
+    }
+}
 
 // シングルカラムモード
 .top-single-column {

@@ -34,9 +34,9 @@
   <meta name="select:Thumbnails Size" content="size-xl" title="XL">
 
   <meta name="if:Crop Thumbnails" content="1" />
-  <meta name="if:Enable Cover Image" content="1" />
   <meta name="if:Enable Tag List" content="1" />
-  <meta name="if:Enable Profile Section" content="1" />
+  <meta name="if:Show Cover Image" content="0" />
+  <meta name="if:Show Profile Section" content="1" />
   <meta name="if:Show Index Entry Footer" content="0" />
   <meta name="if:Single Column Mode" content="0" />
 
@@ -171,9 +171,9 @@
 </div>
 
 {block:IndexPage}
-  {block:ifEnableCoverImage}
+  {block:ifShowCoverImage}
     <div class="cover-image" style="background-image: url('{HeaderImage}');"></div>
-  {/block:ifEnableCoverImage}
+  {/block:ifShowCoverImage}
 {/block:IndexPage}
 
 
@@ -618,7 +618,9 @@
         
         {block:Video}
           <div class="entry-content">
-            {Video-700}
+            <div class="video-wrap">
+              {Video-700}
+            </div>
             {block:Caption}
               <div class="caption">
                 {Caption}
@@ -753,7 +755,7 @@
 {/block:PermalinkPagination}
 
 {block:IndexPage}
-  {block:IfEnableProfileSection}
+  {block:IfShowProfileSection}
     <section class="section-profile section">
       <div class="l-container-mini">
         <div class="profile-wrapper">
@@ -804,7 +806,7 @@
         </div>
       </div>
     </section>
-  {/block:IfEnableProfileSection}
+  {/block:IfShowProfileSection}
 {/block:IndexPage}
 
 <!-- Note: Do not delete the following section.
