@@ -17,10 +17,9 @@
   <meta name="font:Title" content="Helvetica Neue"/>
   <meta name="font:Body" content="Helvetica Neue"/>
 
-  <meta name="image:Background Image" content=""/>
   <meta name="image:Title Logo" content=""/>
 
-  <meta name="color:Accent" content="#A77DC2"/>
+  <meta name="color:Accent" content="#616ed5"/>
 
   <meta name="select:Thumbnails Margin" content="margin-none" title="None">
   <meta name="select:Thumbnails Margin" content="margin-narrow" title="Narrow">
@@ -40,6 +39,7 @@
   <meta name="if:Show Index Entry Footer" content="0" />
   <meta name="if:Single Column Mode" content="0" />
 
+  <meta name="text:Title Logo Width" content="" />
   <meta name="text:Your Name" content="" />
   <meta name="text:Profile" content="" />
 
@@ -102,36 +102,28 @@
 {block:IndexPage}page-index{/block:IndexPage}
 {block:TagPage}page-tag{/block:TagPage}
 {block:PermalinkPage}page-permalink page-{PostID}{/block:PermalinkPage}"
-{block:IfBackgroundImageImage}
-  style="background-image: url('{image:Background Image}');"
-{/block:IfBackgroundImageImage}
 >
 
   <style>
   {CustomCSS}
-
   body {
-    font-family: {font:Body};
+      font-family: {font:Body};
   }
-
   h1,h2,h3,h4,h5,h6 {
-    font-family: {font:Title};
+      font-family: {font:Title};
   }
-
   a,
   .post-content-anchor:hover {
       color: {color:Accent};
   }
-
   .btn {
       color: {color:Accent};
       border-color: {color:Accent};
   }
-
-  .btn:hover {
-    background-color: {color:Accent};
+  .btn:hover,
+  .link-url {
+      background-color: {color:Accent};
   }
-
   </style>
 
 
@@ -141,7 +133,14 @@
       <div class="header-box-title">
         <header class="header-title">
           <h1 class="header-blog-title">
-            <a href="{BlogURL}">{Title}</a>
+            <a href="{BlogURL}">
+              {block:IfTitleLogoImage}
+                <img class="header-blog-title-logo" src="{image:Title Logo}" alt="{title}" style="width: {text:Title Logo Width}px;">
+              {/block:IfTitleLogoImage}
+              {block:IfNotTitleLogoImage}
+                {Title}
+              {/block:IfNotTitleLogoImage}
+            </a>
           </h1>
         </header>
       </div>
