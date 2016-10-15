@@ -353,21 +353,6 @@
       <div class="top-post-container top-single-column">
         {block:Posts}
           <article class="post permalink-post {TagsAsClasses} {PostType}">
-
-            
-            {block:Photo}
-              <div class="l-container full-image">
-                {LinkOpenTag}
-                  <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
-                {LinkCloseTag}
-              </div>
-            {/block:Photo}
-            {block:Photoset}
-              <div class="l-container full-image">
-                {Photoset}
-              </div>
-            {/block:Photoset}
-
             <div class="l-container-mini section">
               {block:Text}
                 <header class="entry-header">
@@ -382,6 +367,11 @@
 
               {block:Photo}
                 <div class="entry-content">
+                  {LinkOpenTag}
+                    <div class="top-single-column-photo-content">
+                      <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
+                    </div>
+                  {LinkCloseTag}
                   {block:Caption}
                     <div class="caption">
                       {Caption}
@@ -392,6 +382,9 @@
 
               {block:Photoset}
                 <div class="entry-content">
+                  <div class="top-single-column-photo-content">
+                    {Photoset}
+                  </div>
                   {block:Caption}
                     <div class="caption">
                       {Caption}
@@ -444,7 +437,9 @@
 
               {block:Video}
                 <div class="entry-content">
-                  {Video-700}
+                  <div class="video-wrap">
+                    {Video-500}
+                  </div>
                   {block:Caption}
                     <div class="caption">
                       {Caption}
