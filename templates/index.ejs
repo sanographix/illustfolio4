@@ -399,17 +399,19 @@ pageId = "index";
     <article class="post permalink-post {TagsAsClasses} {PostType}">
 
       <%# full-width image (photo and photoset post only) %>
-      <div class="l-container full-image">
-        {block:Photo}
+      {block:Photo}
+        <div class="l-container full-image">
           {LinkOpenTag}
             <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
           {LinkCloseTag}
-        {/block:Photo}
+        </div>
+      {/block:Photo}
 
-        {block:Photoset}
+      {block:Photoset}
+        <div class="l-container full-image">
           {Photoset}
-        {/block:Photoset}
-      </div>
+        </div>
+      {/block:Photoset}
 
       <div class="l-container-mini section">
 
