@@ -9,7 +9,14 @@ pageId = "index";
       <div class="header-box-title">
         <header class="header-title">
           <h1 class="header-blog-title">
-            <a href="{BlogURL}">{Title}</a>
+            <a href="{BlogURL}">
+              {block:IfTitleLogoImage}
+                <img class="header-blog-title-logo" src="{image:Title Logo}" alt="{title}" style="width: {text:Title Logo Width}px;">
+              {/block:IfTitleLogoImage}
+              {block:IfNotTitleLogoImage}
+                {Title}
+              {/block:IfNotTitleLogoImage}
+            </a>
           </h1>
         </header>
       </div>

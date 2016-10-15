@@ -403,7 +403,6 @@
 }
 
 // page-permalink
-
 .permalink-post {
     margin: 2.5em auto;
 }
@@ -427,6 +426,14 @@
         .post.photo & {
             max-height: 1000px;
         }
+    }
+}
+
+// entry
+.entry-title {
+    font-size: 150%;
+    @media #{$mq-sm} {
+        font-size: 200%;
     }
 }
 
@@ -463,22 +470,34 @@
         line-height: 1.3;
     }
     h1 {
-        font-size: 170%;
+        font-size: 150%;
+        @media #{$mq-md} {
+            font-size: 170%;
+        }
     }
     h2 {
-        font-size: 160%;
+        font-size: 140%;
+        @media #{$mq-md} {
+            font-size: 160%;
+        }
     }
     h3 {
-        font-size: 140%;
+        font-size: 130%;
+        @media #{$mq-md} {
+            font-size: 140%;
+        }
     }
     h4 {
-        font-size: 130%;
+        font-size: 120%;
+        @media #{$mq-md} {
+            font-size: 130%;
+        }
     }
     h5 {
-        font-size: 110%;
-    }
-    h6 {
         font-size: 100%;
+        @media #{$mq-md} {
+            font-size: 110%;
+        }
     }
     ul,
     ol,
@@ -607,7 +626,7 @@
     display: block;
     background-color: $link;
     color: #fff;
-    padding: 1.5em 0;
+    padding: 1em .5em;
     &:hover {
         color: #fff;
     }
