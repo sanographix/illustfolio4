@@ -343,9 +343,25 @@
             margin: 6em 0;
         }
     }
-    .l-container-mini {
-        max-width: 500px;
+    .top-single-column-photo-content {
+      margin-left: -10px;
+      margin-right: -10px;
         @media (min-width: 540px) {
+          margin-left: 0;
+          margin-right: 0;
+        }
+        // フォトセットがスマホで崩れる対策
+        iframe.photoset {
+            display: block;
+            width: 100vw;
+            @media (min-width: 540px) {
+                width: 500px;
+            }
+        }
+    }
+    .l-container-mini {
+        @media (min-width: 540px) {
+            max-width: 500px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -383,6 +399,7 @@
     margin-bottom: 2em;
     margin-left: 0;
     margin-right: 0;
+    // フォトセットがスマホで崩れる対策
     iframe.photoset {
         display: block;
         width: 100vw;
@@ -428,7 +445,7 @@
     h5,
     h6 {
         margin: 1em 0 0.8em 0;
-        line-height: 1.5;
+        line-height: 1.3;
     }
     h1 {
         font-size: 170%;
@@ -522,6 +539,24 @@
         margin: 3em auto;
         border: 0;
         border-top: 3px solid $border;
+    }
+}
+
+// video post
+.video-wrap {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 100%;
+    overflow: hidden;
+    iframe,
+    object,
+    embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
     }
 }
 
