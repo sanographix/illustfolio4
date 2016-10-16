@@ -114,7 +114,7 @@
 
 // サムネイルサイズ
 .size-xs,
-.size-xxs {
+.size-s {
     @include l-container();
     .index-post {
         width: 33.3333%;
@@ -123,18 +123,10 @@
         }
     }
 }
-.size-s {
+.size-m {
     @include l-container();
     .index-post {
         width: 33.3333%;
-        @media #{$mq-sm} {
-            width: 25%;
-        }
-    }
-}
-.size-m {
-    .index-post {
-        width: 50%;
         @media #{$mq-sm} {
             width: 25%;
         }
@@ -144,15 +136,15 @@
     .index-post {
         width: 50%;
         @media #{$mq-sm} {
-            width: 33.3333%;
+            width: 25%;
         }
     }
 }
 .size-xl {
     .index-post {
-        width: 100%;
+        width: 50%;
         @media #{$mq-sm} {
-            width: 50%;
+            width: 33.3333%;
         }
     }
 }
@@ -167,7 +159,7 @@
     &:hover {
         text-decoration: none;
     }
-    .size-xxs & {
+    .size-xs & {
         height: 15vw;
         @media #{$mq-sm} {
             height: 10vw;
@@ -176,7 +168,7 @@
             height: 7vw;
         }
     }
-    .size-xs & {
+    .size-s & {
         height: 33.3333vw;
         @media #{$mq-sm} {
             height: 144px;
@@ -188,7 +180,7 @@
             height: 228px;
         }
     }
-    .size-s & {
+    .size-m & {
         height: 33.3333vw;
         @media #{$mq-sm} {
             height: 180px;
@@ -200,22 +192,16 @@
             height: 285px;
         }
     }
-    .size-m & {
+    .size-l & {
         height: 50vw;
         @media #{$mq-sm} {
             height: 20vw;
         }
     }
-    .size-l & {
+    .size-xl & {
         height: 50vw;
         @media #{$mq-sm} {
             height: 25vw;
-        }
-    }
-    .size-xl & {
-        height: 100vw;
-        @media #{$mq-sm} {
-            height: 33.3333vw;
         }
     }
 }
@@ -242,7 +228,7 @@
 // 写真以外の投稿ではhiddenする
 .post-content-wrapper {
     overflow: hidden;
-    .size-xxs & {
+    .size-xs & {
         height: calc(15vw - 1.2em);
         @media #{$mq-sm} {
             height: calc(10vw - 1.2em);
@@ -251,7 +237,7 @@
             height: calc(7vw - 1.2em);
         }
     }
-    .size-xs & {
+    .size-s & {
         height: calc(33.3333vw - 1.2em);
         @media #{$mq-sm} {
             height: calc(144px - 1.2em);
@@ -263,7 +249,7 @@
             height: calc(228px - 1.2em);
         }
     }
-    .size-s & {
+    .size-m & {
         height: calc(33.3333vw - 1.2em);
         @media #{$mq-sm} {
             height: calc(180px - 1.2em);
@@ -275,22 +261,16 @@
             height: calc(285px - 1.2em);
         }
     }
-    .size-m & {
+    .size-l & {
         height: calc(50vw - 1.2em);
         @media #{$mq-sm} {
             height: calc(20vw - 1.2em);
         }
     }
-    .size-l & {
+    .size-xl & {
         height: calc(50vw - 1.2em);
         @media #{$mq-sm} {
             height: calc(25vw - 1.2em);
-        }
-    }
-    .size-xl & {
-        height: calc(100vw - 1.2em);
-        @media #{$mq-sm} {
-            height: calc(33.3333vw - 1.2em);
         }
     }
 }
