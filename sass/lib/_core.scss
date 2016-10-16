@@ -82,7 +82,7 @@
     align-items: center;
     // ちょっとマージンあける設定
     &.margin-narrow {
-        margin-left: -1px;
+        margin-left: -2px;
     }
     // 多めにマージンあける設定
     &.margin-wide {
@@ -95,8 +95,8 @@
     box-sizing: border-box;
     // ちょっとマージンあける設定
     .margin-narrow & {
-        padding-left: 1px;
-        padding-bottom: 1px;
+        padding-left: 2px;
+        padding-bottom: 2px;
     }
     // 多めにマージンあける設定
     .margin-wide & {
@@ -124,7 +124,9 @@
     }
 }
 .size-m {
-    @include l-container();
+    @media #{$mq-sm} {
+        @include l-container();
+    }
     .index-post {
         width: 33.3333%;
         @media #{$mq-sm} {
