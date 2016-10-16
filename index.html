@@ -32,7 +32,7 @@
   <meta name="select:Thumbnails Size" content="size-xl" title="XL">
 
   <meta name="if:Crop Thumbnails" content="1" />
-  <meta name="if:Enable Tag List" content="1" />
+  <meta name="if:Show Tag List" content="1" />
   <meta name="if:Show Cover Image" content="0" />
   <meta name="if:Show Profile Section" content="1" />
   <meta name="if:Show Index Entry Footer" content="0" />
@@ -120,7 +120,8 @@
       border-color: {color:Accent};
   }
   .btn:hover,
-  .link-url {
+  .link-url,
+  .tag-list ul li a:hover {
       background-color: {color:Accent};
   }
   </style>
@@ -811,6 +812,13 @@
   {/block:IfShowProfileSection}
 {/block:IndexPage}
 
+{block:IfShowTagList}
+  <div class="l-container l-section tag-list">
+    <h3>Tags</h3>
+    <ul id="tags" class="tagCloud"></ul>
+  </div>
+{/block:IfShowTagList}
+
 <!-- Note: Do not delete the following section.
 ここから先のセクションは消去しないでください -->
 <footer class="l-section section-footer">
@@ -845,6 +853,8 @@
 </footer>
 
 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://files.sanographix.org/dev/illustfolio4/js/scripts.js"></script>
 </body>
 </html>
 
