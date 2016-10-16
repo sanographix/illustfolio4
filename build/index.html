@@ -209,10 +209,10 @@
                 {block:Photo}
                   <a href="{Permalink}">
                     {block:IfCropThumbnails}
-                      <div class="post-photo-thumb" style="background-image: url('{PhotoURL-HighRes}');"></div>
+                      <div class="post-photo-thumb" style="background-image: url('{PhotoURL-500}');"></div>
                     {/block:IfCropThumbnails}
                     {block:IfNotCropThumbnails}
-                      <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" class="post-photo-img">
+                      <img src="{PhotoURL-500}" alt="{PhotoAlt}" class="post-photo-img">
                     {/block:IfNotCropThumbnails}
                   </a>
                 {/block:Photo}
@@ -222,10 +222,10 @@
                   {block:Photos}
                     <a href="{Permalink}">
                       {block:IfCropThumbnails}
-                        <div class="post-photo-thumb" style="background-image: url('{PhotoURL-HighRes}');"></div>
+                        <div class="post-photo-thumb" style="background-image: url('{PhotoURL-500}');"></div>
                       {/block:IfCropThumbnails}
                       {block:IfNotCropThumbnails}
-                        <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" class="post-photo-img">
+                        <img src="{PhotoURL-500}" alt="{PhotoAlt}" class="post-photo-img">
                       {/block:IfNotCropThumbnails}
                     </a>
                   {/block:Photos}
