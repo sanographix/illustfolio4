@@ -384,6 +384,39 @@
     }
 }
 
+// タグリスト
+.tag-list {
+    ul {
+        margin: 0;
+        padding: 0;
+        li {
+            list-style: none;
+            display: inline-block;
+            margin-right: .5em;
+            color: $light;
+            line-height: 2.5;
+            font-size: .8rem;
+            @media #{$mq-sm} {
+                font-size: .5rem;
+            }
+            a {
+                display: inline-block;
+                color: $light;
+                border: 1px solid $border;
+                padding: .2em .6em;
+                border-radius: 2em;
+                margin-bottom: .5em;
+                line-height: 1.4em;
+                &:hover {
+                    color: #fff;
+                    text-decoration: none;
+                    border-color: #fff;
+                }
+            }
+        }
+    }
+}
+
 // page-permalink
 .permalink-post {
     margin: 2.5em auto;

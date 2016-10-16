@@ -688,6 +688,13 @@ pageId = "index";
   {/block:IfShowProfileSection}
 {/block:IndexPage}
 
+{block:IfShowTagList}
+  <div class="l-container l-section tag-list">
+    <h3>Tags</h3>
+    <ul id="tags" class="tagCloud"></ul>
+  </div>
+{/block:IfShowTagList}
+
 <!-- Note: Do not delete the following section.
 ここから先のセクションは消去しないでください -->
 <footer class="l-section section-footer">
