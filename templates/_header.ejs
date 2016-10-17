@@ -13,7 +13,6 @@
   <meta charset="UTF-8">
 
   <%# テーマオプション類 %>
-  <meta name="font:Title" content="Helvetica Neue"/>
   <meta name="font:Body" content="Helvetica Neue"/>
 
   <meta name="image:Title Logo" content=""/>
@@ -105,10 +104,11 @@
   <style>
   {CustomCSS}
   body {
-      font-family: {font:Body};
+      font-family: {font:Body}, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
   h1,h2,h3,h4,h5,h6 {
-      font-family: {font:Title};
+      font-family: {font:Title}, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-weight: {TitleFontWeight};
   }
   a,
   .post-content-anchor:hover {

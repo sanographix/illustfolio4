@@ -197,7 +197,7 @@
     .size-l & {
         height: 50vw;
         @media #{$mq-sm} {
-            height: 20vw;
+            height: 22vw;
         }
     }
     .size-xl & {
@@ -397,7 +397,7 @@
             line-height: 2.5;
             font-size: .8rem;
             @media #{$mq-sm} {
-                font-size: .5rem;
+                font-size: .85rem;
             }
             a {
                 display: inline-block;
