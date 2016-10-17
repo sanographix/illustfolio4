@@ -32,7 +32,6 @@
 
   <meta name="if:Crop Thumbnails" content="1" />
   <meta name="if:Show Tag List" content="1" />
-  <meta name="if:Show Cover Image" content="0" />
   <meta name="if:Show Profile Section" content="1" />
   <meta name="if:Show Index Entry Footer" content="0" />
   <meta name="if:Single Column Mode" content="0" />
@@ -170,9 +169,9 @@
 </div>
 
 {block:IndexPage}
-  {block:ifShowCoverImage}
+  {block:ShowHeaderImage}
     <div class="cover-image" style="background-image: url('{HeaderImage}');"></div>
-  {/block:ifShowCoverImage}
+  {/block:ShowHeaderImage}
 {/block:IndexPage}
 
 
