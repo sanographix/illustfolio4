@@ -886,7 +886,7 @@
     display: block;
 }
 .footer-install-btn {
-    @include btn;
+    @include btn();
     border-color: $border;
     white-space: nowrap;
     &:hover {
