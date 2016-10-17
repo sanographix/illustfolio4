@@ -75,6 +75,9 @@
 }
 
 // page-index
+.section-post {
+    margin-top: 0;
+}
 
 // 投稿サムネイル
 .index-post-wrapper {
@@ -424,7 +427,7 @@
 
 // page-permalink
 .permalink-post {
-    margin: 2.5em auto;
+    margin: auto;
 }
 
 // photo, photoset, video
@@ -833,6 +836,7 @@
 // footer
 .section-footer {
     margin-bottom: 1em;
+    margin-top: 0;
     @media #{$mq-sm} {
         margin-bottom: 2em;
     }
