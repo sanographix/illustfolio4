@@ -54,3 +54,13 @@ h1,h2,h3,h4,h5,h6 {
         }
     }
 }
+
+// sticky footer 用
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+.site-content {
+  flex: 1;
+}

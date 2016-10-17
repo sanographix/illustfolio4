@@ -45,57 +45,46 @@ pageId = "index";
   </div>
 </div>
 
-{block:IndexPage}
-  {block:ShowHeaderImage}
-    <div class="cover-image" style="background-image: url('{HeaderImage}');"></div>
-  {/block:ShowHeaderImage}
-{/block:IndexPage}
+<div class="site-content">
 
-<%# Index page %>
-{block:IndexPage}
+  {block:IndexPage}
+    {block:ShowHeaderImage}
+      <div class="cover-image" style="background-image: url('{HeaderImage}');"></div>
+    {/block:ShowHeaderImage}
+  {/block:IndexPage}
 
-  <div class="section-post">
+  <%# Index page %>
+  {block:IndexPage}
 
-    <%# グリッドモード %>
-    {block:ifNotSingleColumnMode}
-      <div class="top-post-container
-        {select:Thumbnails Size}
-       ">
-        <%# Post %>
-        <div class="index-post-wrapper {select:Thumbnails Margin}">
-          {block:Posts}
-            <article class="post index-post {PostType}">
-              <div class="post-inner">
+    <div class="section-post">
 
-                <%# Post: text %>
-                {block:Text}
-                  <a href="{Permalink}" class="post-content-anchor">
-                    <div class="post-content-wrapper">
-                      <div class="post-content-posttype">
-                        {PostType}
+      <%# グリッドモード %>
+      {block:ifNotSingleColumnMode}
+        <div class="top-post-container
+          {select:Thumbnails Size}
+         ">
+          <%# Post %>
+          <div class="index-post-wrapper {select:Thumbnails Margin}">
+            {block:Posts}
+              <article class="post index-post {PostType}">
+                <div class="post-inner">
+
+                  <%# Post: text %>
+                  {block:Text}
+                    <a href="{Permalink}" class="post-content-anchor">
+                      <div class="post-content-wrapper">
+                        <div class="post-content-posttype">
+                          {PostType}
+                        </div>
+                        {block:Title}
+                          <div class="index-post-content index-post-title">{Title}</div>
+                        {/block:Title}
                       </div>
-                      {block:Title}
-                        <div class="index-post-content index-post-title">{Title}</div>
-                      {/block:Title}
-                    </div>
-                  </a>
-                {/block:Text}
+                    </a>
+                  {/block:Text}
 
-                <%# Post: photo %>
-                {block:Photo}
-                  <a href="{Permalink}">
-                    {block:IfCropThumbnails}
-                      <div class="post-photo-thumb" style="background-image: url('{PhotoURL-500}');"></div>
-                    {/block:IfCropThumbnails}
-                    {block:IfNotCropThumbnails}
-                      <img src="{PhotoURL-500}" alt="{PhotoAlt}" class="post-photo-img">
-                    {/block:IfNotCropThumbnails}
-                  </a>
-                {/block:Photo}
-
-                <%# Post: photoset %>
-                {block:Photoset}
-                  {block:Photos}
+                  <%# Post: photo %>
+                  {block:Photo}
                     <a href="{Permalink}">
                       {block:IfCropThumbnails}
                         <div class="post-photo-thumb" style="background-image: url('{PhotoURL-500}');"></div>
@@ -104,608 +93,623 @@ pageId = "index";
                         <img src="{PhotoURL-500}" alt="{PhotoAlt}" class="post-photo-img">
                       {/block:IfNotCropThumbnails}
                     </a>
-                  {/block:Photos}
+                  {/block:Photo}
+
+                  <%# Post: photoset %>
+                  {block:Photoset}
+                    {block:Photos}
+                      <a href="{Permalink}">
+                        {block:IfCropThumbnails}
+                          <div class="post-photo-thumb" style="background-image: url('{PhotoURL-500}');"></div>
+                        {/block:IfCropThumbnails}
+                        {block:IfNotCropThumbnails}
+                          <img src="{PhotoURL-500}" alt="{PhotoAlt}" class="post-photo-img">
+                        {/block:IfNotCropThumbnails}
+                      </a>
+                    {/block:Photos}
+                  {/block:Photoset}
+
+                  <%# Post: quote %>
+                  {block:Quote}
+                    <a href="{Permalink}" class="post-content-anchor">
+                      <div class="post-content-wrapper">
+                        <div class="post-content-posttype">
+                          {PostType}
+                        </div>
+                        <div class="index-post-content">
+                          {Quote}
+                        </div>
+                      </div>
+                    </a>
+                  {/block:Quote}
+
+                  <%# Post: link %>
+                  {block:Link}
+                    <a href="{Permalink}" class="post-content-anchor">
+                      <div class="post-content-wrapper">
+                        <div class="post-content-posttype">
+                          {PostType}
+                        </div>
+                        <div class="index-post-content">
+                          {Name}
+                        </div>
+                      </div>
+                    </a>
+                  {/block:Link}
+
+                  <%# Post: chat %>
+                  {block:Chat}
+                    <a href="{Permalink}" class="post-content-anchor">
+                      <div class="post-content-wrapper">
+                        <div class="post-content-posttype">
+                          {PostType}
+                        </div>
+                        {block:Title}
+                          <div class="index-post-content index-post-title">
+                            {Title}
+                          </div>
+                        {/block:Title}
+                      </div>
+                    </a>
+                  {/block:Chat}
+
+                  <%# Post: video %>
+                  {block:Video}
+                    <a href="{Permalink}" class="post-content-anchor">
+                      <div class="post-content-wrapper">
+                        <div class="post-content-posttype">
+                          {PostType}
+                        </div>
+                        {block:Caption}
+                          <div class="index-post-content">
+                            {Caption}
+                          </div>
+                        {/block:Caption}
+                      </div>
+                    </a>
+                  {/block:Video}
+
+                  <%# Post: audio %>
+                  {block:Audio}
+                    <a href="{Permalink}" class="post-content-anchor">
+                      <div class="post-content-wrapper">
+                        <div class="post-content-posttype">
+                          {PostType}
+                        </div>
+                        {block:Caption}
+                          <div class="index-post-content">
+                            {Caption}
+                          </div>
+                        {/block:Caption}
+                      </div>
+                    </a>
+                  {/block:Audio}
+
+                  <%# Post: answer %>
+                  {block:Answer}
+                    <a href="{Permalink}" class="post-content-anchor">
+                      <div class="post-content-wrapper">
+                        <div class="post-content-posttype">
+                          {PostType}
+                        </div>
+                        <div class="index-post-content index-post-title">
+                          {Question}
+                        </div>
+                      </div>
+                    </a>
+                  {/block:Answer}
+
+                  <%# indexページにもreblogボタンとかつける %>
+                  {block:IfShowIndexEntryFooter}
+                    <footer class="index-entry-footer">
+                      <div class="index-entry-footer-meta">
+                        <span class="meta-elements date">
+                          <a href="{Permalink}">{ShortMonth} {DayOfMonthWithZero}, {Year}</a>
+                        </span>
+                        {block:NoteCount}
+                          <span class="meta-elements notecount">
+                            <a href="{Permalink}">{NoteCount} Notes</a>
+                          </span>
+                        {/block:NoteCount}
+                      </div>
+                      <ul class="like_and_reblog_buttons">
+                        <li>{ReblogButton size="18"}</li>
+                        <li>{LikeButton size="18"}</li>
+                      </ul>
+                    </footer>
+                  {/block:IfShowIndexEntryFooter}
+                </div>
+              </article>
+            {/block:Posts}
+          </div>
+        </div>
+      {/block:ifNotSingleColumnMode}
+
+      <%# シングルカラムモード %>
+      {block:ifSingleColumnMode}
+        <div class="top-post-container top-single-column">
+          {block:Posts}
+            <article class="post permalink-post {TagsAsClasses} {PostType}">
+              <div class="l-container-mini section">
+                {block:Text}
+                  <header class="entry-header">
+                    {block:Title}
+                      <h1 class="entry-title"><a href="{Permalink}">{Title}</a></h1>
+                    {/block:Title}
+                  </header>
+                  <div class="entry-content">
+                    {Body}
+                  </div>
+                {/block:Text}
+
+                {block:Photo}
+                  <div class="entry-content">
+                    {LinkOpenTag}
+                      <div class="top-single-column-photo-content">
+                        <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
+                      </div>
+                    {LinkCloseTag}
+                    {block:Caption}
+                      <div class="caption">
+                        {Caption}
+                      </div>
+                    {/block:Caption}
+                  </div>
+                {/block:Photo}
+
+                {block:Photoset}
+                  <div class="entry-content">
+                    <div class="top-single-column-photo-content">
+                      {Photoset}
+                    </div>
+                    {block:Caption}
+                      <div class="caption">
+                        {Caption}
+                      </div>
+                    {/block:Caption}
+                  </div>
                 {/block:Photoset}
 
-                <%# Post: quote %>
                 {block:Quote}
-                  <a href="{Permalink}" class="post-content-anchor">
-                    <div class="post-content-wrapper">
-                      <div class="post-content-posttype">
-                        {PostType}
-                      </div>
-                      <div class="index-post-content">
-                        {Quote}
-                      </div>
-                    </div>
-                  </a>
+                  <div class="entry-content {Length}">
+                    <blockquote>“{Quote}”</blockquote>
+                    {block:Source}
+                      <p class="quote-source">
+                        {Source}
+                      </p>
+                    {/block:Source}
+                  </div>
                 {/block:Quote}
 
-                <%# Post: link %>
                 {block:Link}
-                  <a href="{Permalink}" class="post-content-anchor">
-                    <div class="post-content-wrapper">
-                      <div class="post-content-posttype">
-                        {PostType}
-                      </div>
-                      <div class="index-post-content">
-                        {Name}
-                      </div>
-                    </div>
-                  </a>
+                  <header class="entry-header">
+                    <h1 class="entry-title">
+                      <a href="{URL}" class="link-url" {Target}>{Name}</a>
+                    </h1>
+                  </header>
+                  <div class="entry-content">
+                    {block:Description}
+                      <div class="link-description">{Description}</div>
+                    {/block:Description}
+                  </div>
                 {/block:Link}
 
-                <%# Post: chat %>
                 {block:Chat}
-                  <a href="{Permalink}" class="post-content-anchor">
-                    <div class="post-content-wrapper">
-                      <div class="post-content-posttype">
-                        {PostType}
-                      </div>
-                      {block:Title}
-                        <div class="index-post-content index-post-title">
-                          {Title}
-                        </div>
-                      {/block:Title}
-                    </div>
-                  </a>
+                  <div class="entry-content">
+                    {block:Title}
+                      <h1 class="entry-title"><a href="{Permalink}">{Title}</a></h1>
+                    {/block:Title}
+                    <ul class="ul-chat">
+                      {block:Lines}
+                      <li class="{Alt} user_{UserNumber}">
+                      {block:Label}
+                      <span class="label">{Label}</span>
+                      {/block:Label}
+                      {Line}
+                      </li>
+                      {/block:Lines}
+                    </ul>
+                  </div>
                 {/block:Chat}
 
-                <%# Post: video %>
                 {block:Video}
-                  <a href="{Permalink}" class="post-content-anchor">
-                    <div class="post-content-wrapper">
-                      <div class="post-content-posttype">
-                        {PostType}
-                      </div>
-                      {block:Caption}
-                        <div class="index-post-content">
-                          {Caption}
-                        </div>
-                      {/block:Caption}
+                  <div class="entry-content">
+                    <div class="video-wrap">
+                      {Video-500}
                     </div>
-                  </a>
+                    {block:Caption}
+                      <div class="caption">
+                        {Caption}
+                      </div>
+                    {/block:Caption}
+                  </div>
                 {/block:Video}
 
-                <%# Post: audio %>
                 {block:Audio}
-                  <a href="{Permalink}" class="post-content-anchor">
-                    <div class="post-content-wrapper">
-                      <div class="post-content-posttype">
-                        {PostType}
+                  <div class="entry-content">
+                    {AudioPlayerBlack}
+                    {block:Caption}
+                      <div class="caption">
+                        {Caption}
                       </div>
-                      {block:Caption}
-                        <div class="index-post-content">
-                          {Caption}
-                        </div>
-                      {/block:Caption}
-                    </div>
-                  </a>
+                    {/block:Caption}
+                  </div>
                 {/block:Audio}
 
-                <%# Post: answer %>
                 {block:Answer}
-                  <a href="{Permalink}" class="post-content-anchor">
-                    <div class="post-content-wrapper">
-                      <div class="post-content-posttype">
-                        {PostType}
-                      </div>
-                      <div class="index-post-content index-post-title">
-                        {Question}
-                      </div>
-                    </div>
-                  </a>
+                  <div class="asker-group">
+                    <img src="{AskerPortraitURL-24}" width="24" height="24" /> {Asker}
+                  </div>
+                  <header class="entry-header">
+                    <h1 class="entry-title question">
+                      {Question}
+                    </h1>
+                  </header>
+                  <div class="entry-content">
+                    <div class="answer cont">{Answer}</div>
+                  </div>
                 {/block:Answer}
 
-                <%# indexページにもreblogボタンとかつける %>
-                {block:IfShowIndexEntryFooter}
-                  <footer class="index-entry-footer">
-                    <div class="index-entry-footer-meta">
-                      <span class="meta-elements date">
-                        <a href="{Permalink}">{ShortMonth} {DayOfMonthWithZero}, {Year}</a>
-                      </span>
+                <footer class="index-entry-footer">
+                  <div class="index-entry-footer-meta">
+                    <span class="meta-elements date">
+                      <a href="{Permalink}">{ShortMonth} {DayOfMonthWithZero}, {Year}</a>
+                    </span>
+                    {block:IfShowIndexEntryFooter}
                       {block:NoteCount}
                         <span class="meta-elements notecount">
                           <a href="{Permalink}">{NoteCount} Notes</a>
                         </span>
                       {/block:NoteCount}
-                    </div>
+                    {/block:IfShowIndexEntryFooter}
+                  </div>
+                  {block:IfShowIndexEntryFooter}
                     <ul class="like_and_reblog_buttons">
                       <li>{ReblogButton size="18"}</li>
                       <li>{LikeButton size="18"}</li>
                     </ul>
-                  </footer>
-                {/block:IfShowIndexEntryFooter}
+                  {/block:IfShowIndexEntryFooter}
+                </footer>
+
               </div>
             </article>
           {/block:Posts}
-        </div>
-      </div>
-    {/block:ifNotSingleColumnMode}
+        </div><%# END シングルカラムモード %>
+      {block:ifSingleColumnMode}
 
-    <%# シングルカラムモード %>
-    {block:ifSingleColumnMode}
-      <div class="top-post-container top-single-column">
-        {block:Posts}
-          <article class="post permalink-post {TagsAsClasses} {PostType}">
-            <div class="l-container-mini section">
-              {block:Text}
-                <header class="entry-header">
-                  {block:Title}
-                    <h1 class="entry-title"><a href="{Permalink}">{Title}</a></h1>
-                  {/block:Title}
-                </header>
-                <div class="entry-content">
-                  {Body}
-                </div>
-              {/block:Text}
-
-              {block:Photo}
-                <div class="entry-content">
-                  {LinkOpenTag}
-                    <div class="top-single-column-photo-content">
-                      <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
-                    </div>
-                  {LinkCloseTag}
-                  {block:Caption}
-                    <div class="caption">
-                      {Caption}
-                    </div>
-                  {/block:Caption}
-                </div>
-              {/block:Photo}
-
-              {block:Photoset}
-                <div class="entry-content">
-                  <div class="top-single-column-photo-content">
-                    {Photoset}
-                  </div>
-                  {block:Caption}
-                    <div class="caption">
-                      {Caption}
-                    </div>
-                  {/block:Caption}
-                </div>
-              {/block:Photoset}
-
-              {block:Quote}
-                <div class="entry-content {Length}">
-                  <blockquote>“{Quote}”</blockquote>
-                  {block:Source}
-                    <p class="quote-source">
-                      {Source}
-                    </p>
-                  {/block:Source}
-                </div>
-              {/block:Quote}
-
-              {block:Link}
-                <header class="entry-header">
-                  <h1 class="entry-title">
-                    <a href="{URL}" class="link-url" {Target}>{Name}</a>
-                  </h1>
-                </header>
-                <div class="entry-content">
-                  {block:Description}
-                    <div class="link-description">{Description}</div>
-                  {/block:Description}
-                </div>
-              {/block:Link}
-
-              {block:Chat}
-                <div class="entry-content">
-                  {block:Title}
-                    <h1 class="entry-title"><a href="{Permalink}">{Title}</a></h1>
-                  {/block:Title}
-                  <ul class="ul-chat">
-                    {block:Lines}
-                    <li class="{Alt} user_{UserNumber}">
-                    {block:Label}
-                    <span class="label">{Label}</span>
-                    {/block:Label}
-                    {Line}
-                    </li>
-                    {/block:Lines}
-                  </ul>
-                </div>
-              {/block:Chat}
-
-              {block:Video}
-                <div class="entry-content">
-                  <div class="video-wrap">
-                    {Video-500}
-                  </div>
-                  {block:Caption}
-                    <div class="caption">
-                      {Caption}
-                    </div>
-                  {/block:Caption}
-                </div>
-              {/block:Video}
-
-              {block:Audio}
-                <div class="entry-content">
-                  {AudioPlayerBlack}
-                  {block:Caption}
-                    <div class="caption">
-                      {Caption}
-                    </div>
-                  {/block:Caption}
-                </div>
-              {/block:Audio}
-
-              {block:Answer}
-                <div class="asker-group">
-                  <img src="{AskerPortraitURL-24}" width="24" height="24" /> {Asker}
-                </div>
-                <header class="entry-header">
-                  <h1 class="entry-title question">
-                    {Question}
-                  </h1>
-                </header>
-                <div class="entry-content">
-                  <div class="answer cont">{Answer}</div>
-                </div>
-              {/block:Answer}
-
-              <footer class="index-entry-footer">
-                <div class="index-entry-footer-meta">
-                  <span class="meta-elements date">
-                    <a href="{Permalink}">{ShortMonth} {DayOfMonthWithZero}, {Year}</a>
-                  </span>
-                  {block:IfShowIndexEntryFooter}
-                    {block:NoteCount}
-                      <span class="meta-elements notecount">
-                        <a href="{Permalink}">{NoteCount} Notes</a>
-                      </span>
-                    {/block:NoteCount}
-                  {/block:IfShowIndexEntryFooter}
-                </div>
-                {block:IfShowIndexEntryFooter}
-                  <ul class="like_and_reblog_buttons">
-                    <li>{ReblogButton size="18"}</li>
-                    <li>{LikeButton size="18"}</li>
-                  </ul>
-                {/block:IfShowIndexEntryFooter}
-              </footer>
-
-            </div>
-          </article>
-        {/block:Posts}
-      </div><%# END シングルカラムモード %>
-    {block:ifSingleColumnMode}
-
-  </div>
-
-  <%# ページャ index %>
-  {block:Pagination}
-    <div class="l-container">
-      <div class="pagenation pagenation-index">
-        {block:PreviousPage}
-          <a href="{PreviousPage}">Prev</a>
-        {/block:PreviousPage}
-        {block:NextPage}
-          <a href="{NextPage}" class="next" rel="next">Next</a>
-        {/block:NextPage}
-      </div>
     </div>
-  {/block:Pagination}
 
-{/block:IndexPage}
-
-<%# Permalink Page %>
-{block:PermalinkPage}
-  {block:Posts}
-    <article class="post permalink-post {TagsAsClasses} {PostType}">
-
-      <%# full-width image (photo and photoset post only) %>
-      {block:Photo}
-        <div class="l-container full-image">
-          {LinkOpenTag}
-            <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
-          {LinkCloseTag}
+    <%# ページャ index %>
+    {block:Pagination}
+      <div class="l-container">
+        <div class="pagenation pagenation-index">
+          {block:PreviousPage}
+            <a href="{PreviousPage}">Prev</a>
+          {/block:PreviousPage}
+          {block:NextPage}
+            <a href="{NextPage}" class="next" rel="next">Next</a>
+          {/block:NextPage}
         </div>
-      {/block:Photo}
+      </div>
+    {/block:Pagination}
 
-      {block:Photoset}
-        <div class="l-container full-image">
-          {Photoset}
-        </div>
-      {/block:Photoset}
+  {/block:IndexPage}
 
-      <div class="l-container-mini section">
+  <%# Permalink Page %>
+  {block:PermalinkPage}
+    {block:Posts}
+      <article class="post permalink-post {TagsAsClasses} {PostType}">
 
-        <%# post: text %>
-        {block:Text}
-          <header class="entry-header">
-            {block:Title}
-              <h1 class="entry-title"><a href="{Permalink}">{Title}</a></h1>
-            {/block:Title}
-          </header>
-          <div class="entry-content">
-            {Body}
-          </div>
-        {/block:Text}
-
-        <%# post: photo %>
+        <%# full-width image (photo and photoset post only) %>
         {block:Photo}
-          <div class="entry-content">
-            {block:Caption}
-              <div class="caption">
-                {Caption}
-              </div>
-            {/block:Caption}
+          <div class="l-container full-image">
+            {LinkOpenTag}
+              <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
+            {LinkCloseTag}
           </div>
         {/block:Photo}
 
-        <%# post: photoset %>
         {block:Photoset}
-          <div class="entry-content">
-            {block:Caption}
-              <div class="caption">
-                {Caption}
-              </div>
-            {/block:Caption}
+          <div class="l-container full-image">
+            {Photoset}
           </div>
         {/block:Photoset}
 
-        <%# post: quote %>
-        {block:Quote}
-          <div class="entry-content {Length}">
-            <blockquote>“{Quote}”</blockquote>
-            {block:Source}
-              <p class="quote-source">
-                {Source}
-              </p>
-            {/block:Source}
-          </div>
-        {/block:Quote}
+        <div class="l-container-mini section">
 
-        <%# post: link %>
-        {block:Link}
-          <header class="entry-header">
-            <h1 class="entry-title">
-              <a href="{URL}" class="link-url" {Target}>{Name}</a>
-            </h1>
-          </header>
-          <div class="entry-content">
-            {block:Description}
-              <div class="link-description">{Description}</div>
-            {/block:Description}
-          </div>
-        {/block:Link}
-
-        <%# post: chat %>
-        {block:Chat}
-          <div class="entry-content">
-            {block:Title}
-              <h1 class="entry-title"><a href="{Permalink}">{Title}</a></h1>
-            {/block:Title}
-            <ul class="ul-chat">
-              {block:Lines}
-              <li class="{Alt} user_{UserNumber}">
-              {block:Label}
-              <span class="label">{Label}</span>
-              {/block:Label}
-              {Line}
-              </li>
-              {/block:Lines}
-            </ul>
-          </div>
-        {/block:Chat}
-
-        <%# post: video %>
-        {block:Video}
-          <div class="entry-content">
-            <div class="video-wrap">
-              {Video-700}
+          <%# post: text %>
+          {block:Text}
+            <header class="entry-header">
+              {block:Title}
+                <h1 class="entry-title"><a href="{Permalink}">{Title}</a></h1>
+              {/block:Title}
+            </header>
+            <div class="entry-content">
+              {Body}
             </div>
-            {block:Caption}
-              <div class="caption">
-                {Caption}
-              </div>
-            {/block:Caption}
-          </div>
-        {/block:Video}
+          {/block:Text}
 
-        <%# post: audio %>
-        {block:Audio}
-          <div class="entry-content">
-            {AudioPlayerBlack}
-            {block:Caption}
-              <div class="caption">
-                {Caption}
-              </div>
-            {/block:Caption}
-          </div>
-        {/block:Audio}
-
-        <%# post: answer %>
-        {block:Answer}
-          <div class="asker-group">
-            <img src="{AskerPortraitURL-24}" width="24" height="24" /> {Asker}
-          </div>
-          <header class="entry-header">
-            <h1 class="entry-title question">
-              {Question}
-            </h1>
-          </header>
-          <div class="entry-content">
-            <div class="answer cont">{Answer}</div>
-          </div>
-        {/block:Answer}
-
-        <%# do not show in pages %>
-        {block:Date}
-          <%# entry footer %>
-          <footer class="entry-footer">
-
-            <div class="entry-footer-section article-meta">
-              <span class="meta-elements date">
-                <a href="{Permalink}">{ShortMonth} {DayOfMonthWithZero}, {Year}</a>
-              </span>
-              {block:ContentSource}
-                <span class="meta-elements content-source">
-                  <a href="{SourceURL}">
-                    {lang:Source}:
-                    {block:SourceLogo}
-                      <img src="{BlackLogoURL}" width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
-                    {/block:SourceLogo}
-                    {block:NoSourceLogo}
-                        {SourceTitle}
-                    {/block:NoSourceLogo}
-                  </a>
-                </span>
-              {/block:ContentSource}
+          <%# post: photo %>
+          {block:Photo}
+            <div class="entry-content">
+              {block:Caption}
+                <div class="caption">
+                  {Caption}
+                </div>
+              {/block:Caption}
             </div>
+          {/block:Photo}
 
-            <div class="entry-footer-section share">
-              <h3>Share</h3>
-              <ul class="like_and_reblog_buttons">
-                <li>{ReblogButton size="20"}</li>
-                <li>{LikeButton size="20"}</li>
-                <li>
-                  <a href="https://twitter.com/share?text={block:PostSummary}{URLEncodedPostSummary}{/block:PostSummary}&url={URLEncodedPermalink}">
-                    <img src="http://static.tumblr.com/xlsgtjb/HFfneerjd/social-twitter.svg" class="social-icon">
-                  </a>
+          <%# post: photoset %>
+          {block:Photoset}
+            <div class="entry-content">
+              {block:Caption}
+                <div class="caption">
+                  {Caption}
+                </div>
+              {/block:Caption}
+            </div>
+          {/block:Photoset}
+
+          <%# post: quote %>
+          {block:Quote}
+            <div class="entry-content {Length}">
+              <blockquote>“{Quote}”</blockquote>
+              {block:Source}
+                <p class="quote-source">
+                  {Source}
+                </p>
+              {/block:Source}
+            </div>
+          {/block:Quote}
+
+          <%# post: link %>
+          {block:Link}
+            <header class="entry-header">
+              <h1 class="entry-title">
+                <a href="{URL}" class="link-url" {Target}>{Name}</a>
+              </h1>
+            </header>
+            <div class="entry-content">
+              {block:Description}
+                <div class="link-description">{Description}</div>
+              {/block:Description}
+            </div>
+          {/block:Link}
+
+          <%# post: chat %>
+          {block:Chat}
+            <div class="entry-content">
+              {block:Title}
+                <h1 class="entry-title"><a href="{Permalink}">{Title}</a></h1>
+              {/block:Title}
+              <ul class="ul-chat">
+                {block:Lines}
+                <li class="{Alt} user_{UserNumber}">
+                {block:Label}
+                <span class="label">{Label}</span>
+                {/block:Label}
+                {Line}
                 </li>
-                <li>
-                  <a href="http://www.facebook.com/sharer.php?u={URLEncodedPermalink}">
-                    <img src="http://static.tumblr.com/xlsgtjb/evRneeqts/social-facebook.svg" class="social-icon">
-                  </a>
-                </li>
+                {/block:Lines}
               </ul>
             </div>
+          {/block:Chat}
 
-            {block:HasTags}
-              <div class="entry-footer-section hastags">
-                <h3>Tagged</h3>
-                <span class="meta-elements">
-                  {block:Tags}
-                    <a href="{TagURL}">#{Tag}</a>
-                  {/block:Tags}
+          <%# post: video %>
+          {block:Video}
+            <div class="entry-content">
+              <div class="video-wrap">
+                {Video-700}
+              </div>
+              {block:Caption}
+                <div class="caption">
+                  {Caption}
+                </div>
+              {/block:Caption}
+            </div>
+          {/block:Video}
+
+          <%# post: audio %>
+          {block:Audio}
+            <div class="entry-content">
+              {AudioPlayerBlack}
+              {block:Caption}
+                <div class="caption">
+                  {Caption}
+                </div>
+              {/block:Caption}
+            </div>
+          {/block:Audio}
+
+          <%# post: answer %>
+          {block:Answer}
+            <div class="asker-group">
+              <img src="{AskerPortraitURL-24}" width="24" height="24" /> {Asker}
+            </div>
+            <header class="entry-header">
+              <h1 class="entry-title question">
+                {Question}
+              </h1>
+            </header>
+            <div class="entry-content">
+              <div class="answer cont">{Answer}</div>
+            </div>
+          {/block:Answer}
+
+          <%# do not show in pages %>
+          {block:Date}
+            <%# entry footer %>
+            <footer class="entry-footer">
+
+              <div class="entry-footer-section article-meta">
+                <span class="meta-elements date">
+                  <a href="{Permalink}">{ShortMonth} {DayOfMonthWithZero}, {Year}</a>
                 </span>
+                {block:ContentSource}
+                  <span class="meta-elements content-source">
+                    <a href="{SourceURL}">
+                      {lang:Source}:
+                      {block:SourceLogo}
+                        <img src="{BlackLogoURL}" width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
+                      {/block:SourceLogo}
+                      {block:NoSourceLogo}
+                          {SourceTitle}
+                      {/block:NoSourceLogo}
+                    </a>
+                  </span>
+                {/block:ContentSource}
               </div>
-            {/block:HasTags}
 
-            {block:RebloggedFrom}
-              <div class="entry-footer-section rebloggedfrom">
-                <div class="entry-footer-section-inner">
-                  <h3>Reblogged from</h3>
-                  <a href="{ReblogParentURL}"><img src="{ReblogParentPortraitURL-16}" class="favicon"/> {ReblogParentName}</a>
-                </div>
-                <div class="entry-footer-section-inner">
-                  <h3>Originally posted by</h3>
-                  <a href="{ReblogRootURL}"><img src="{ReblogRootPortraitURL-16}" class="favicon"/> {ReblogRootName}</a>
-                </div>
+              <div class="entry-footer-section share">
+                <h3>Share</h3>
+                <ul class="like_and_reblog_buttons">
+                  <li>{ReblogButton size="20"}</li>
+                  <li>{LikeButton size="20"}</li>
+                  <li>
+                    <a href="https://twitter.com/share?text={block:PostSummary}{URLEncodedPostSummary}{/block:PostSummary}&url={URLEncodedPermalink}">
+                      <img src="http://static.tumblr.com/xlsgtjb/HFfneerjd/social-twitter.svg" class="social-icon">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://www.facebook.com/sharer.php?u={URLEncodedPermalink}">
+                      <img src="http://static.tumblr.com/xlsgtjb/evRneeqts/social-facebook.svg" class="social-icon">
+                    </a>
+                  </li>
+                </ul>
               </div>
-            {/block:RebloggedFrom}
 
-            {block:NoteCount}
-              <div class="entry-footer-section notecount">
-                <h3>{NoteCount} Notes</h3>
-                <div class="notecontainer">
-                  {PostNotes}
+              {block:HasTags}
+                <div class="entry-footer-section hastags">
+                  <h3>Tagged</h3>
+                  <span class="meta-elements">
+                    {block:Tags}
+                      <a href="{TagURL}">#{Tag}</a>
+                    {/block:Tags}
+                  </span>
                 </div>
-              </div>
-            {/block:NoteCount}
+              {/block:HasTags}
 
-          </footer>
+              {block:RebloggedFrom}
+                <div class="entry-footer-section rebloggedfrom">
+                  <div class="entry-footer-section-inner">
+                    <h3>Reblogged from</h3>
+                    <a href="{ReblogParentURL}"><img src="{ReblogParentPortraitURL-16}" class="favicon"/> {ReblogParentName}</a>
+                  </div>
+                  <div class="entry-footer-section-inner">
+                    <h3>Originally posted by</h3>
+                    <a href="{ReblogRootURL}"><img src="{ReblogRootPortraitURL-16}" class="favicon"/> {ReblogRootName}</a>
+                  </div>
+                </div>
+              {/block:RebloggedFrom}
 
-        {/block:Date}
+              {block:NoteCount}
+                <div class="entry-footer-section notecount">
+                  <h3>{NoteCount} Notes</h3>
+                  <div class="notecontainer">
+                    {PostNotes}
+                  </div>
+                </div>
+              {/block:NoteCount}
 
-      </div><%# container %>
+            </footer>
 
-    </article>
+          {/block:Date}
 
-  {/block:Posts}
-{/block:PermalinkPage}
+        </div><%# container %>
 
-<%# permalink pagination %>
-{block:PermalinkPagination}
-  <div class="pagenation pagenation-permalink">
-    {block:NextPost}
-      <a href="{NextPost}" class="next" rel="next">Newer Post</a>
-    {/block:NextPost}
-    {block:PreviousPost}
-      <a href="{PreviousPost}">Older Post</a>
-    {/block:PreviousPost}
-  </div>
-{/block:PermalinkPagination}
+      </article>
 
-{block:IndexPage}
-  {block:IfShowProfileSection}
-    <section class="section-profile section">
-      <div class="l-container-mini">
-        <div class="profile-wrapper">
-          <div class="profile-image">
-            <img src="{PortraitURL-128}">
-          </div>
-          <div class="profile-content">
-            <h2>{text:Your Name}</h2>
-            <p>{text:Profile}</p>
-            <ul class="social-accounts">
-              {block:IfYourWebsiteURL}
-              <li class="li-website">
-                <a href="{text:Your Website URL}" target="_blank">
-                  <svg class="social-accounts-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#aaa" d="M4.5,25.4V14.8L16,5.4l11.5,9.4v10.6c0,0.7-0.5,1.3-1.3,1.3H19v-8.5h-6v8.5H5.8C5.1,26.7,4.5,26.1,4.5,25.4z
-                  	 M0.9,14.3l-0.8-0.9c-0.2-0.3-0.2-0.7,0.1-0.9L15,0.4c0.6-0.5,1.4-0.5,2,0l4.1,3.3V2c0-0.4,0.3-0.7,0.7-0.7h3.8
-                  	c0.4,0,0.6,0.3,0.6,0.7v5.9l5.6,4.6c0.3,0.2,0.3,0.6,0.1,0.9l-0.8,0.9c-0.1,0.2-0.3,0.2-0.5,0.2h-1.1c-0.2,0-0.3-0.1-0.4-0.1L16.4,4
-                  	c-0.3-0.2-0.6-0.2-0.9,0L2.9,14.4c-0.1,0.1-0.2,0.1-0.4,0.1H1.4C1.2,14.5,1,14.4,0.9,14.3z"/></svg>
-                </a>
-              </li>
-              {/block:IfYourWebsiteURL}
-              {block:IfYourTwitterUsername}
-              <li class="li-twitter">
-                <a href="http://twitter.com/{text:Your Twitter Username}" target="_blank">
-                  <svg class="social-accounts-icon" xmlns="http://www.w3.org/2000/svg" viewBox="-623 385 32 32"><path fill="#aaa" d="M-591,391.1c-1.2,0.5-2.4,0.9-3.8,1c1.4-0.8,2.4-2.1,2.9-3.6c-1.3,0.8-2.7,1.3-4.2,1.6
-                  	c-1.2-1.3-2.9-2.1-4.8-2.1c-3.6,0-6.6,2.9-6.6,6.6c0,0.5,0.1,1,0.2,1.5c-5.5-0.3-10.3-2.9-13.5-6.9c-0.6,1-0.9,2.1-0.9,3.3
-                  	c0,2.3,1.2,4.3,2.9,5.5c-1.1,0-2.1-0.3-3-0.8c0,0,0,0.1,0,0.1c0,3.2,2.3,5.8,5.3,6.4c-0.6,0.1-1.1,0.2-1.7,0.2c-0.4,0-0.8,0-1.2-0.1
-                  	c0.8,2.6,3.3,4.5,6.1,4.6c-2.2,1.8-5.1,2.8-8.2,2.8c-0.5,0-1.1,0-1.6-0.1c2.9,1.9,6.4,2.9,10.1,2.9c12.1,0,18.7-10,18.7-18.7
-                  	c0-0.3,0-0.6,0-0.8C-593,393.5-591.9,392.4-591,391.1L-591,391.1z"/></svg>
-                </a>
-              </li>
-              {/block:IfYourTwitterUsername}
-              {block:IfYourFacebookUsername}
-              <li class="li-facebook">
-                <a href="http://www.facebook.com/{text:Your Facebook Username}" target="_blank">
-                  <svg class="social-accounts-icon" xmlns="http://www.w3.org/2000/svg" viewBox="-623 385 32 32"><path fill="#aaa" d="M-605,417h-6v-16h-4v-5.5l4,0l0-3.2c0-4.5,1.2-7.2,6.5-7.2h4.4v5.5h-2.8c-2.1,0-2.2,0.8-2.2,2.2l0,2.8h5
-                  	l-0.6,5.5l-4.4,0L-605,417L-605,417z"/></svg>
-                </a>
-              </li>
-              {/block:IfYourFacebookUsername}
-              {block:IfYourPixivID}
-              <li class="li-pixiv">
-                <a href="http://www.pixiv.net/member.php?id={text:Your Pixiv ID}" target="_blank">
-                  <svg class="social-accounts-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#aaa" d="M28,4.9c-2.5-2.2-6-3.5-10.1-3.5C7.3,1.4,0,9.6,0,9.6l2,3.2c0,0,1.1,0.1,0.5-1.8c0.5-1,1.5-2.3,3.5-3.8
-                  	c0,0,0,20.5,0,21.6c-0.9,0.2-2,0.7-1.2,1.5c1.3,0,4.9,0,5.9,0c0.8-0.8-0.4-1.2-1.2-1.5c0-0.8,0-5.1,0-5.1s4,1.6,8.4,1.6
-                  	c3.8,0,7.3-1.1,9.9-3.2c2.6-2,4.2-5.1,4.2-8.5C32,10.2,30.5,7.1,28,4.9z M24.9,20.4c-1.8,1.8-4.4,2.9-7.4,2.9c-3.3,0-6.1-0.6-8-1.6
-                  	c0,0,0-0.6,0-4.6c0-4.4,0-11.6,0-11.6c2-1.4,5.3-2.3,8-2.3c3.2,0,5.8,1.2,7.5,3.1c1.7,1.9,2.7,4.3,2.7,7.2
-                  	C27.7,16.4,26.7,18.7,24.9,20.4z"/></svg>
-                </a>
-              </li>
-              {/block:IfYourPixivID}
-              {block:IfYourInstagramUsername}
-              <li class="li-instagram">
-                <a href="http://instagram.com/{text:Your Instagram Username}" target="_blank">
-                  <svg class="social-accounts-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#aaa" d="M12,2.2h4.9c3.3.1,4.8,1.7,4.9,4.9.1,1.3.1,1.6.1,4.8s0,3.6-.1,4.8c-.1,3.2-1.7,4.8-4.9,4.9H7.2c-3.3-.1-4.8-1.7-4.9-4.9-.1-1.3-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-3.2,1.7-4.8,4.9-4.9ZM12,0H7.1C2.7.3.3,2.7.1,7.1,0,8.3,0,8.7,0,12s0,3.7.1,4.9c.2,4.4,2.6,6.8,7,7h9.9c4.4-.2,6.8-2.6,7-7,.1-1.3.1-1.7.1-4.9s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7Zm0,5.8A6.2,6.2,0,1,0,18.2,12,6.2,6.2,0,0,0,12,5.8ZM12,16a4,4,0,1,1,4-4A4,4,0,0,1,12,16ZM18.4,4.2a1.4,1.4,0,1,0,1.4,1.4A1.4,1.4,0,0,0,18.4,4.2Z"/></svg>
-                </a>
-              </li>
-              {/block:IfYourInstagramUsername}
-            </ul>
+    {/block:Posts}
+  {/block:PermalinkPage}
+
+  <%# permalink pagination %>
+  {block:PermalinkPagination}
+    <div class="pagenation pagenation-permalink">
+      {block:NextPost}
+        <a href="{NextPost}" class="next" rel="next">Newer Post</a>
+      {/block:NextPost}
+      {block:PreviousPost}
+        <a href="{PreviousPost}">Older Post</a>
+      {/block:PreviousPost}
+    </div>
+  {/block:PermalinkPagination}
+
+  {block:IndexPage}
+    {block:IfShowProfileSection}
+      <section class="section-profile section">
+        <div class="l-container-mini">
+          <div class="profile-wrapper">
+            <div class="profile-image">
+              <img src="{PortraitURL-128}">
+            </div>
+            <div class="profile-content">
+              <h2>{text:Your Name}</h2>
+              <p>{text:Profile}</p>
+              <ul class="social-accounts">
+                {block:IfYourWebsiteURL}
+                <li class="li-website">
+                  <a href="{text:Your Website URL}" target="_blank">
+                    <svg class="social-accounts-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#aaa" d="M4.5,25.4V14.8L16,5.4l11.5,9.4v10.6c0,0.7-0.5,1.3-1.3,1.3H19v-8.5h-6v8.5H5.8C5.1,26.7,4.5,26.1,4.5,25.4z
+                    	 M0.9,14.3l-0.8-0.9c-0.2-0.3-0.2-0.7,0.1-0.9L15,0.4c0.6-0.5,1.4-0.5,2,0l4.1,3.3V2c0-0.4,0.3-0.7,0.7-0.7h3.8
+                    	c0.4,0,0.6,0.3,0.6,0.7v5.9l5.6,4.6c0.3,0.2,0.3,0.6,0.1,0.9l-0.8,0.9c-0.1,0.2-0.3,0.2-0.5,0.2h-1.1c-0.2,0-0.3-0.1-0.4-0.1L16.4,4
+                    	c-0.3-0.2-0.6-0.2-0.9,0L2.9,14.4c-0.1,0.1-0.2,0.1-0.4,0.1H1.4C1.2,14.5,1,14.4,0.9,14.3z"/></svg>
+                  </a>
+                </li>
+                {/block:IfYourWebsiteURL}
+                {block:IfYourTwitterUsername}
+                <li class="li-twitter">
+                  <a href="http://twitter.com/{text:Your Twitter Username}" target="_blank">
+                    <svg class="social-accounts-icon" xmlns="http://www.w3.org/2000/svg" viewBox="-623 385 32 32"><path fill="#aaa" d="M-591,391.1c-1.2,0.5-2.4,0.9-3.8,1c1.4-0.8,2.4-2.1,2.9-3.6c-1.3,0.8-2.7,1.3-4.2,1.6
+                    	c-1.2-1.3-2.9-2.1-4.8-2.1c-3.6,0-6.6,2.9-6.6,6.6c0,0.5,0.1,1,0.2,1.5c-5.5-0.3-10.3-2.9-13.5-6.9c-0.6,1-0.9,2.1-0.9,3.3
+                    	c0,2.3,1.2,4.3,2.9,5.5c-1.1,0-2.1-0.3-3-0.8c0,0,0,0.1,0,0.1c0,3.2,2.3,5.8,5.3,6.4c-0.6,0.1-1.1,0.2-1.7,0.2c-0.4,0-0.8,0-1.2-0.1
+                    	c0.8,2.6,3.3,4.5,6.1,4.6c-2.2,1.8-5.1,2.8-8.2,2.8c-0.5,0-1.1,0-1.6-0.1c2.9,1.9,6.4,2.9,10.1,2.9c12.1,0,18.7-10,18.7-18.7
+                    	c0-0.3,0-0.6,0-0.8C-593,393.5-591.9,392.4-591,391.1L-591,391.1z"/></svg>
+                  </a>
+                </li>
+                {/block:IfYourTwitterUsername}
+                {block:IfYourFacebookUsername}
+                <li class="li-facebook">
+                  <a href="http://www.facebook.com/{text:Your Facebook Username}" target="_blank">
+                    <svg class="social-accounts-icon" xmlns="http://www.w3.org/2000/svg" viewBox="-623 385 32 32"><path fill="#aaa" d="M-605,417h-6v-16h-4v-5.5l4,0l0-3.2c0-4.5,1.2-7.2,6.5-7.2h4.4v5.5h-2.8c-2.1,0-2.2,0.8-2.2,2.2l0,2.8h5
+                    	l-0.6,5.5l-4.4,0L-605,417L-605,417z"/></svg>
+                  </a>
+                </li>
+                {/block:IfYourFacebookUsername}
+                {block:IfYourPixivID}
+                <li class="li-pixiv">
+                  <a href="http://www.pixiv.net/member.php?id={text:Your Pixiv ID}" target="_blank">
+                    <svg class="social-accounts-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#aaa" d="M28,4.9c-2.5-2.2-6-3.5-10.1-3.5C7.3,1.4,0,9.6,0,9.6l2,3.2c0,0,1.1,0.1,0.5-1.8c0.5-1,1.5-2.3,3.5-3.8
+                    	c0,0,0,20.5,0,21.6c-0.9,0.2-2,0.7-1.2,1.5c1.3,0,4.9,0,5.9,0c0.8-0.8-0.4-1.2-1.2-1.5c0-0.8,0-5.1,0-5.1s4,1.6,8.4,1.6
+                    	c3.8,0,7.3-1.1,9.9-3.2c2.6-2,4.2-5.1,4.2-8.5C32,10.2,30.5,7.1,28,4.9z M24.9,20.4c-1.8,1.8-4.4,2.9-7.4,2.9c-3.3,0-6.1-0.6-8-1.6
+                    	c0,0,0-0.6,0-4.6c0-4.4,0-11.6,0-11.6c2-1.4,5.3-2.3,8-2.3c3.2,0,5.8,1.2,7.5,3.1c1.7,1.9,2.7,4.3,2.7,7.2
+                    	C27.7,16.4,26.7,18.7,24.9,20.4z"/></svg>
+                  </a>
+                </li>
+                {/block:IfYourPixivID}
+                {block:IfYourInstagramUsername}
+                <li class="li-instagram">
+                  <a href="http://instagram.com/{text:Your Instagram Username}" target="_blank">
+                    <svg class="social-accounts-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#aaa" d="M12,2.2h4.9c3.3.1,4.8,1.7,4.9,4.9.1,1.3.1,1.6.1,4.8s0,3.6-.1,4.8c-.1,3.2-1.7,4.8-4.9,4.9H7.2c-3.3-.1-4.8-1.7-4.9-4.9-.1-1.3-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-3.2,1.7-4.8,4.9-4.9ZM12,0H7.1C2.7.3.3,2.7.1,7.1,0,8.3,0,8.7,0,12s0,3.7.1,4.9c.2,4.4,2.6,6.8,7,7h9.9c4.4-.2,6.8-2.6,7-7,.1-1.3.1-1.7.1-4.9s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7Zm0,5.8A6.2,6.2,0,1,0,18.2,12,6.2,6.2,0,0,0,12,5.8ZM12,16a4,4,0,1,1,4-4A4,4,0,0,1,12,16ZM18.4,4.2a1.4,1.4,0,1,0,1.4,1.4A1.4,1.4,0,0,0,18.4,4.2Z"/></svg>
+                  </a>
+                </li>
+                {/block:IfYourInstagramUsername}
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-  {/block:IfShowProfileSection}
-{/block:IndexPage}
+      </section>
+    {/block:IfShowProfileSection}
+  {/block:IndexPage}
 
-{block:IfShowTagList}
-  <div class="l-container l-section tag-list">
-    <h3>Tags</h3>
-    <ul id="tags" class="tagCloud"></ul>
-  </div>
-{/block:IfShowTagList}
+  {block:IfShowTagList}
+    <div class="l-container l-section tag-list">
+      <h3>Tags</h3>
+      <ul id="tags" class="tagCloud"></ul>
+    </div>
+  {/block:IfShowTagList}
+
+</div><%# END .site-content %>
 
 <!-- Note: Do not delete the following section.
 ここから先のセクションは消去しないでください -->
@@ -739,6 +743,5 @@ pageId = "index";
     </div>
   </div>
 </footer>
-
 
 <% include _footer %>
