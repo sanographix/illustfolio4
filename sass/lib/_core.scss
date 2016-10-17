@@ -160,7 +160,7 @@
 .post-content-anchor {
     background-color: $bg-light;
     background-size: cover;
-    background-position: center;
+    background-position: center 25%; // 縦長イラストで顔が表示されるようにちょっと上にしてる
     background-repeat: no-repeat;
     &:hover {
         text-decoration: none;
