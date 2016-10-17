@@ -12,10 +12,9 @@
     background-color: transparent;
     text-decoration: none;
     border: 1px solid $link;
-    transition: all .2s;
     &:hover {
         background-color: $link;
-        color: #fff;
+        color: $bg;
         text-decoration: none;
         border-color: transparent;
     }
@@ -25,16 +24,16 @@
     color: $base;
     &:hover {
         background-color: $base;
-        color: #fff;
+        color: $bg;
     }
 }
 @mixin btn-primary() {
     background-color: $link;
-    color: #fff;
+    color: $bg;
     border-color: $link;
     &:hover {
         background-color: $hover;
-        color: #fff;
+        color: $bg;
     }
 }
 @mixin btn-large() {

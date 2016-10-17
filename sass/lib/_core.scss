@@ -55,6 +55,7 @@
             color: $base;
             &:hover {
                 color: $hover;
+                text-decoration: none;
             }
         }
     }
@@ -381,6 +382,10 @@
         display: inline-block;
         text-decoration: none;
         margin: 0 1em;
+        color: $base;
+        &:hover {
+            color: $hover;
+        }
     }
 }
 
@@ -784,11 +789,12 @@
 }
 .profile-content {
     h2 {
-        font-size: 1rem;
+        font-size: 1.1rem;
         margin: .5em 0;
     }
     p {
         margin: .5em 0;
+        font-size: .85rem;
     }
 }
 
@@ -798,15 +804,15 @@
     li {
         display: inline-block;
         list-style: none;
-        margin-right: 1em;
+        margin-right: .7em;
         padding: 0;
         vertical-align: middle;
         a {
             border: 1px solid $border;
-            border-radius: 45px;
-            width: 45px;
-            height: 45px;
-            line-height: 45px;
+            border-radius: 42px;
+            width: 42px;
+            height: 42px;
+            line-height: 42px;
             display: inline-block;
             text-align: center;
             &:hover {
@@ -890,7 +896,7 @@
     border-color: $border;
     white-space: nowrap;
     &:hover {
-        text-decoration: none !important;
-        background-color: $border;
+        background-color: $bg-light;
+        color: $light;
     }
 }
