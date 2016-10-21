@@ -1,20 +1,22 @@
 // Color Variables
 
 $bg: #fff; // Background color
-$bg-light: rgba(0,0,10,.07);
+$bg-light: #eceff1;
 
-$base: #36393d; // Base text color
-$light: #878ea0; // Light text color
+$header: #1b1c1e; // Base text color
+$base: #455a64; // Base text color
+$light: #90a4ae; // Light text color
 
-$link: #5289DB; // Link text color
-$hover: darken($link,8%); // Link text color(hover)
+$link: $header; // Link text color
+$hover: #8e7fe5; // Link text color(hover)
 
 $border: #ddd; // Border color
 
+$red: #d81b60;
+$blue: #2196f3;
+
 $btn-tw: #55acee;
 $btn-fb: #3b5998;
-
-$globalheader-mask: rgba(255,255,255,.6);
 
 // Media Queries - Breakpoints
 

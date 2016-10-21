@@ -1,50 +1,53 @@
 // buttons
-@mixin btn() {
+.btn {
     display: inline-block;
     text-align: center;
     padding: .6em 1.2em;
     cursor: pointer;
     line-height: 1.5;
     font-size: 90%;
-    border-radius: .25em;
     overflow: hidden;
-    color: $link;
-    background-color: transparent;
+    color: $bg;
+    background-color: $header;
     text-decoration: none;
-    border: 1px solid $link;
+    border: transparent;
+    transition: all .2s;
+    text-transform: uppercase;
+    letter-spacing: .15em;
     &:hover {
-        background-color: $link;
+        background-color: $hover;
         color: $bg;
         text-decoration: none;
-        border-color: transparent;
     }
 }
-@mixin btn-light() {
+.btn-light {
     border-color: $light;
     color: $base;
     &:hover {
         background-color: $base;
+        border-color: $base;
         color: $bg;
     }
 }
-@mixin btn-primary() {
+.btn-primary {
     background-color: $link;
     color: $bg;
     border-color: $link;
     &:hover {
         background-color: $hover;
         color: $bg;
+        border-color: $hover;
     }
 }
-@mixin btn-large() {
-    padding: .7em;
-    font-size: 110%;
+.btn-large {
+    padding: 1em 1.3em;
+    font-size: 100%;
     box-sizing: border-box;
-    border-width: 2px;
+}
+
+.btn-full {
+    padding: .7em 2em;
+    font-size: 100%;
+    box-sizing: border-box;
     width: 100%;
-    margin: .2em 0;
-    @media #{$mq-sm} {
-        padding: .7em 2em;
-        width: auto;
-    }
 }

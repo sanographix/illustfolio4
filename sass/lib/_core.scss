@@ -1,906 +1,378 @@
 // Core (Main Style)
+body {
+    font-family: 'Halis GR', 'source-han-sans-japanese', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    background: $bg;
+    color: $base;
+    -webkit-font-smoothing: antialiased;
+    font-size: .85rem;
+    line-height: 1.5;
+    @media #{$mq-md} {
+        font-size: .9rem;
+    }
+}
+p {
+    line-height: 1.6;
+    letter-spacing: .05em;
+}
+.notice {
+    color: $light;
+    font-size: .85rem;
+}
+a {
+    color: $link;
+    transition: all .2s;
+    text-decoration: none;
+    &:hover {
+        color: $hover;
+    }
+}
+h1,h2 {
+    font-weight: normal;
+}
+h1,h2,h3,h4,h5,h6 {
+    line-height: 1.3;
+    color: $header;
+    letter-spacing: .1em;
+    a,a:hover {
+        color: $header;
+        text-decoration: none;
+    }
+}
 
-// header
-.header {
-    margin: 2em 0;
-    @media #{$mq-sm} {
-        margin: 4em 0;
-    }
-    @media #{$mq-lg} {
-        margin: 5em 0;
-    }
-}
-.header-wrapper {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    @media #{$mq-sm} {
-        flex-direction: row;
-    }
-}
-.header-box-title {
-    @media #{$mq-sm} {
-        width: 50%;
-    }
-}
-.header-box-nav {
-    @media #{$mq-sm} {
-        width: 50%;
-    }
-}
-.header-blog-title {
-    margin: 0 0 .6em;
+h1 {
     font-size: 1.5rem;
     @media #{$mq-sm} {
-        margin: 0;
+        font-size: 2.8rem;
+    }
+    @media #{$mq-md} {
+        font-size: 3.4rem;
     }
 }
-.nav {
-    ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-        @media #{$mq-sm} {
-            text-align: right;
+
+h2 {
+    font-size: 1.3rem;
+    @media #{$mq-sm} {
+        font-size: 1.5rem;
+    }
+    @media #{$mq-md} {
+        font-size: 1.8rem;
+    }
+}
+
+br.touch {
+    @media #{$mq-sm} {
+        display: none;
+    }
+}
+
+// global Header
+.l-globalHeader {
+    color: $header;
+    text-transform: uppercase;
+    a {
+        color: $header;
+    }
+}
+.globalHeader-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+    .globalHeader-logo {
+        a {
+            display: inline-block;
+            padding: 1em 1em 1em 0;
         }
     }
-    li {
-        margin: .4em .8em;
-        display: inline-block;
-        @media #{$mq-sm} {
-            margin: .4em 0 .4em 1.5em;
+    .globalHeader-nav {
+        ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            list-style: none;
         }
-        a {
-            color: $base;
-            &:hover {
-                color: $hover;
-                text-decoration: none;
+        li {
+            a {
+                display: inline-block;
+                padding: 1em;
+            }
+            &:last-child a {
+                padding-right: 0;
+            }
+        }
+        .tw {
+            svg {
+                width: 22px;
+                height: 22px;
             }
         }
     }
 }
 
-// カバー画像
-.cover-image {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin-bottom: 3em;
-    height: 50vw;
-    @media #{$mq-sm} {
-        height: 40vw;
-        max-height: 400px;
+// hero
+.l-hero {
+    text-align: center;
+    h1 {
+        margin: 1.5em 0 .5em;
+        position: relative;
+        left: .25em;
+    }
+    p {
+        text-transform: uppercase;
+        letter-spacing: .1em;
     }
 }
 
-// page-index
-.section-post {
-    margin-top: 0;
+.btn-wrapper {
+    margin: 2em;
+    text-align: center;
 }
 
-// 投稿サムネイル
-.index-post-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    // ちょっとマージンあける設定
-    &.margin-narrow {
-        margin-left: -2px;
-    }
-    // 多めにマージンあける設定
-    &.margin-wide {
-        margin-left: -2%;
-    }
-}
-
-.index-post {
-    overflow: hidden;
-    box-sizing: border-box;
-    // ちょっとマージンあける設定
-    .margin-narrow & {
-        padding-left: 2px;
-        padding-bottom: 2px;
-    }
-    // 多めにマージンあける設定
-    .margin-wide & {
-        padding-left: 2%;
-        padding-bottom: 2vw;
-    }
-}
-
-// フォトセット投稿は2番目以降消す
-.index-post.photo {
-    .post-inner > a:not(:first-child) {
-        display: none;
-    }
-}
-
-// サムネイルサイズ
-.size-xs,
-.size-s {
-    @include l-container();
-    .index-post {
-        width: 33.3333%;
-        @media #{$mq-sm} {
-            width: 20%;
-        }
-    }
-}
-.size-m {
-    @media #{$mq-sm} {
-        @include l-container();
-    }
-    .index-post {
-        width: 33.3333%;
-        @media #{$mq-sm} {
-            width: 25%;
-        }
-    }
-}
-.size-l {
-    .index-post {
-        width: 50%;
-        @media #{$mq-sm} {
-            width: 25%;
-        }
-    }
-}
-.size-xl {
-    .index-post {
-        width: 50%;
-        @media #{$mq-sm} {
-            width: 33.3333%;
-        }
-    }
-}
-
-// divにbackground-imageでサムネイル表示してるとき
-.post-photo-thumb,
-.post-content-anchor {
-    background-color: $bg-light;
-    background-size: cover;
-    background-position: center 25%; // 縦長イラストで顔が表示されるようにちょっと上にしてる
-    background-repeat: no-repeat;
-    &:hover {
-        text-decoration: none;
-    }
-    .size-xs & {
-        height: 15vw;
-        @media #{$mq-sm} {
-            height: 10vw;
-        }
-        @media #{$mq-md} {
-            height: 7vw;
-        }
-    }
-    .size-s & {
-        height: 33.3333vw;
-        @media #{$mq-sm} {
-            height: 144px;
-        }
-        @media #{$mq-md} {
-            height: 188px;
-        }
-        @media #{$mq-lg} {
-            height: 228px;
-        }
-    }
-    .size-m & {
-        height: 33.3333vw;
-        @media #{$mq-sm} {
-            height: 180px;
-        }
-        @media #{$mq-md} {
-            height: 235px;
-        }
-        @media #{$mq-lg} {
-            height: 285px;
-        }
-    }
-    .size-l & {
-        height: 50vw;
-        @media #{$mq-sm} {
-            height: 22vw;
-        }
-    }
-    .size-xl & {
-        height: 50vw;
-        @media #{$mq-sm} {
-            height: 25vw;
-        }
-    }
-}
-
-// サムネイルをクロップしない表示にしてるとき
-.post-photo-img {
-    display: block;
-    margin: auto;
-    max-width: 100%;
-    @media #{$mq-sm} {
-        max-height: 80vw;
-    }
-}
-
-// 写真以外の投稿, indexでグリッドになってる部品
-.post-content-anchor {
-    background-color: $bg-light;
-    display: block;
-    box-sizing: border-box;
-    padding: .6em;
-    color: $base;
-    overflow: hidden;
-}
-// 写真以外の投稿ではhiddenする
-.post-content-wrapper {
-    overflow: hidden;
-    .size-xs & {
-        height: calc(15vw - 1.2em);
-        @media #{$mq-sm} {
-            height: calc(10vw - 1.2em);
-        }
-        @media #{$mq-md} {
-            height: calc(7vw - 1.2em);
-        }
-    }
-    .size-s & {
-        height: calc(33.3333vw - 1.2em);
-        @media #{$mq-sm} {
-            height: calc(144px - 1.2em);
-        }
-        @media #{$mq-md} {
-            height: calc(188px - 1.2em);
-        }
-        @media #{$mq-lg} {
-            height: calc(228px - 1.2em);
-        }
-    }
-    .size-m & {
-        height: calc(33.3333vw - 1.2em);
-        @media #{$mq-sm} {
-            height: calc(180px - 1.2em);
-        }
-        @media #{$mq-md} {
-            height: calc(235px - 1.2em);
-        }
-        @media #{$mq-lg} {
-            height: calc(285px - 1.2em);
-        }
-    }
-    .size-l & {
-        height: calc(50vw - 1.2em);
-        @media #{$mq-sm} {
-            height: calc(20vw - 1.2em);
-        }
-    }
-    .size-xl & {
-        height: calc(50vw - 1.2em);
-        @media #{$mq-sm} {
-            height: calc(25vw - 1.2em);
-        }
-    }
-}
-.index-post-content {
-    > p:first-child {
-        margin-top: 0;
-    }
-    &.index-post-title {
-        @media #{$mq-sm} {
-            font-size: 1.4rem;
-        }
-    }
-}
-.post-content-posttype {
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: .9rem;
-    color: $light;
-    margin-bottom: .5em;
-}
-
-// indexページの記事フッタ
-.index-entry-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 1.5em;
+.hero-credit {
     font-size: .7rem;
-    box-sizing: border-box;
-    padding-left: .7em;
-    padding-right: .7em;
+    letter-spacing: .2em;
+    text-transform: uppercase;
     a {
-        color: $light;
+        font-weight: bold;
     }
-    .meta-elements {
-        display: block;
-        margin-bottom: .2em;
+}
+
+// section 汎用
+.l-section {
+    padding-top: 2em;
+    padding-bottom: 2em;
+    @media #{$mq-sm} {
+        padding-top: 4em;
+        padding-bottom: 4em;
+    }
+    h3 {
+        font-size: 1.3rem;
+        font-weight: normal;
+        margin: .5em 0;
+        @media #{$mq-sm} {
+            font-size: 1.5rem;
+        }
+    }
+    .section-topic {
+        margin-bottom: 2em;
+        @media #{$mq-sm} {
+            margin-bottom: 3em;
+        }
         &:last-child {
             margin-bottom: 0;
         }
     }
 }
-.index-entry-footer-meta {
-    .size-xxs &,
-    .size-xs &,
-    .size-s & {
-        display: none;
-        @media #{$mq-sm} {
-            display: block;
-        }
-    }
-}
-
-// シングルカラムモード
-.top-single-column {
-    .post {
-        margin: 0 0 4em;
-        @media #{$mq-sm} {
-            margin: 0 0 6em;
-        }
-    }
-    .top-single-column-photo-content {
-      margin-left: -10px;
-      margin-right: -10px;
-        @media (min-width: 540px) {
-          margin-left: 0;
-          margin-right: 0;
-        }
-        // フォトセットがスマホで崩れる対策
-        iframe.photoset {
-            display: block;
-            width: 100vw;
-            @media (min-width: 540px) {
-                width: 500px;
-            }
-        }
-    }
-    .l-container-mini {
-        @media (min-width: 540px) {
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-    }
-    iframe.photoset {
-        @media (min-width: 540px) {
-            width: 500px;
-        }
-    }
-    .index-entry-footer {
-      padding: 0;
-      margin-top: 1em;
-      font-size: .85rem;
-    }
-}
-
-// pager
-.pagenation {
-    margin: 3em 0;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 95%;
-    letter-spacing: .1em;
-    a {
-        display: inline-block;
-        text-decoration: none;
-        margin: 0 1em;
-        color: $base;
-        &:hover {
-            color: $hover;
-        }
-    }
-}
-
-// タグリスト
-.tag-list {
-    ul {
-        margin: 0;
-        padding: 0;
-        li {
-            list-style: none;
-            display: inline-block;
-            margin-right: .5em;
-            color: $light;
-            line-height: 2.5;
-            font-size: .8rem;
-            @media #{$mq-sm} {
-                font-size: .85rem;
-            }
-            a {
-                display: inline-block;
-                color: $light;
-                border: 1px solid $border;
-                padding: .2em .6em;
-                border-radius: 2em;
-                margin-bottom: .5em;
-                line-height: 1.4em;
-                &:hover {
-                    color: #fff;
-                    text-decoration: none;
-                    border-color: #fff;
-                }
-            }
-        }
-    }
-}
-
-// page-permalink
-.permalink-post {
-    margin: auto;
-}
-
-// photo, photoset, video
-.full-image {
+.section-header {
     text-align: center;
     margin-bottom: 2em;
-    margin-left: 0;
-    margin-right: 0;
     @media #{$mq-sm} {
-      margin-left: auto;
-      margin-right: auto;
-    }
-    // フォトセットがスマホで崩れる対策
-    iframe.photoset {
-        display: block;
-        width: 100vw;
-        margin-left: auto;
-        margin-right: auto;
-        @media #{$mq-sm} {
-            width: 700px;
-        }
-    }
-    img {
-        max-width: 100%;
-        .post.photo & {
-            max-height: 1000px;
-        }
-    }
-}
-
-// entry
-.entry-title {
-    font-size: 150%;
-    @media #{$mq-sm} {
-        font-size: 200%;
-    }
-}
-
-// entry-content の中の書式
-.entry-content {
-    line-height: 1.6;
-    word-wrap: break-word;
-    @media #{$mq-sm} {
-        font-size: 1rem;
-    }
-    p {
-        margin: 0 0 1em 0;
-    }
-    img,
-    video {
-        max-width: 100%;
-        height: auto;
-    }
-    .tumblr_video_container {
-        width: auto !important;
-        height: auto !important;
-    }
-    // Flickr で max-width 指定したときのアスペクト比をなおす
-     a[title*="Flickr"] img {
-        height: auto !important;
-     }
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        margin: 1em 0 0.8em 0;
-        line-height: 1.3;
-    }
-    h1 {
-        font-size: 150%;
-        @media #{$mq-md} {
-            font-size: 170%;
-        }
+        margin-bottom: 4em;
     }
     h2 {
-        font-size: 140%;
-        @media #{$mq-md} {
-            font-size: 160%;
+        margin: 0;
+    }
+}
+
+// intro
+.section-intro {
+    overflow: hidden;
+    .section-content {
+        text-align: center;
+        img {
+            max-width: 100%;
+            box-shadow: 0 5px 40px rgba(0,0,0,.2);
         }
     }
-    h3 {
-        font-size: 130%;
-        @media #{$mq-md} {
-            font-size: 140%;
+    .l-row {
+    }
+}
+
+// 新機能
+.section-new-feature {
+    overflow: hidden;
+    .section-content {
+    }
+    .section-header-badge {
+        border: 1px solid $header;
+        color: $header;
+        padding: .2em .5em .2em .7em;
+        letter-spacing: .2em;
+        display: inline-block;
+        font-size: .7rem;
+        margin-bottom: .4em;
+    }
+    .book-sample {
+        max-height: 150vw;
+        overflow: hidden;
+        @media #{$mq-sm} {
+            position: relative;
+            max-height: none;
+            overflow: visible;
+            img {
+                position: absolute;
+                top: 0;
+                right: 2em;
+                max-width: 800px;
+                box-shadow: 0 30px 30px rgba(0,0,0,.4);
+            }
         }
+    }
+}
+
+// レイアウト試すやつ
+.layout-img-wrapper {
+    .layout-img {
+        display: none;
+        &.is-active {
+            display: block;
+        }
+    }
+}
+
+// features
+.features-wrapper {
+    @media #{$mq-sm} {
+        display: flex;
+        justify-content: space-between;
+        .features-items {
+            width: 31%;
+        }
+    }
+    .features-items {
+        margin-bottom: 2em;
+    }
+    h3 {
+        font-size: 1.2rem;
+        font-weight: normal;
+        margin: .5em 0;
+        @media #{$mq-sm} {
+            text-align: center;
+        }
+    }
+}
+
+// start
+.section-start {
+    .section-header {
+        margin-bottom: 0;
+    }
+}
+
+// getmore
+.l-getmorethemes {
+    padding-bottom: 0;
+    .section-header {
+        margin-bottom: 2em;
+        h2 {
+            @media #{$mq-md} {
+                font-size: 2.6rem;
+            }
+        }
+        p {
+            margin-top: .5em;
+        }
+    }
+}
+.thumbnail {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    padding: 4px;
+    margin-bottom: 20px;
+    line-height: 1.428571429;
+    background-color: #fff;
+    border: 1px solid $border;
+    border-radius: 4px;
+    text-decoration: none;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    &:hover {
+        border-color: $link;
+    }
+    & > img {
+        display: block;
+        height: auto;
+        max-width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .caption {
+        padding: 9px;
+        color: #333;
+        text-align: left;
     }
     h4 {
         font-size: 120%;
-        @media #{$mq-md} {
-            font-size: 130%;
-        }
-    }
-    h5 {
-        font-size: 100%;
-        @media #{$mq-md} {
-            font-size: 110%;
-        }
-    }
-    ul,
-    ol,
-    dd {
-        margin: 0 0 1em 1.5em;
-        padding: 0;
-        li {
-            ul,ol {
-                margin-bottom: 0;
-            }
-        }
-    }
-    table {
-        border-collapse: collapse;
-        border-spacing: 0;
-        border-bottom: 1em;
-        margin-bottom: 1em;
-        width: 100%;
-        overflow: auto;
-        display: block;
-    }
-    table th,
-    table td {
-        border: 1px solid $border;
-        padding: 5px 10px;
-    }
-    table th {
-        background: $bg-light;
-    }
-    .hatena-asin-detail li {
-        line-height: 1.4;
-    }
-    blockquote {
-        margin: 1em 0;
-        padding: 5px 10px;
-        border-left: 2px solid $border;
-        color: $light;
-        p:last-child {
-            margin-bottom: 0;
-        }
-        @media #{$mq-sm} {
-            margin: 1.5em 2em;
-            padding: 5px 20px;
-        }
-    }
-    pre,
-    code {
-        font-family: 'Monaco', 'Consolas', 'Courier New', Courier, monospace, sans-serif;
-    }
-    pre {
-        padding: 15px;
-        background: $bg-light;
-        border: none;
-        word-wrap: normal;
-        overflow-x: auto;
-        font-size: 100%;
-        line-height: 1.3;
-        &>code {
-            margin: 0;
-            padding: 0;
-            white-space: pre;
-            border: none;
-            background-color: transparent;
-            font-family: 'Monaco', 'Consolas', 'Courier New', Courier, monospace, sans-serif;
-        }
-    }
-    code {
-        font-size: 90%;
-        margin: 0 2px;
-        padding: 0px 5px;
-        border: 1px solid $border;
-        background-color: $bg-light;
-        border-radius: 3px;
-    }
-    hr {
-        width: 20%;
-        margin: 3em auto;
-        border: 0;
-        border-top: 3px solid $border;
-    }
-}
-
-// video post
-.video-wrap {
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 30px;
-    height: 100%;
-    overflow: hidden;
-    iframe,
-    object,
-    embed {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-}
-
-// Answer post
-.answer {
-    .question {
-        border-radius: 5px;
-        padding: 15px;
-        font-size: 110%;
-        background: $bg-light;
-        margin-bottom: 1em;
-        position: relative;
-    }
-    .asker-group {
-        img {
-            vertical-align: middle;
-        }
-    }
-}
-
-
-// link
-.link {
-    .entry-title {
-        text-align: center;
-    }
-}
-.link-url {
-    display: block;
-    background-color: $link;
-    color: #fff;
-    padding: 1em .5em;
-    &:hover {
-        color: #fff;
-    }
-}
-
-// 記事フッタ
-.entry-footer {
-    color: $light;
-    font-size: 95%;
-    margin-top: 3em;
-    &:before {
-        content: "";
-        display: block;
-        background: $light;
-        width: 15px;
-        height: 1px;
-        margin-bottom: .5em;
-    }
-    a {
-        color: $light;
-        text-decoration: none;
-        &:hover {
-            color: $hover;
-        }
-    }
-}
-.entry-footer-section {
-    margin-bottom: 3em;
-    h3 {
-        text-transform: uppercase;
-        font-size: 110%;
-        margin: 0 0 .8em 0;
-        color: $base;
-    }
-}
-.article-meta {
-    .meta-elements {
-        margin-left: 1em;
-        &:first-child {
-            margin-left: 0;
-        }
-    }
-}
-.like_and_reblog_buttons {
-    margin: 1em 0;
-    padding: 0;
-    display: table;
-    > li {
-        display: table-cell;
-        text-align: center;
-        padding-right: 1.5em;
-        vertical-align: middle;
-        .social-icon {
-            width: 20px;
-            height: auto;
-            vertical-align: top;
-        }
-        &:last-child {
-            padding-right: 0em;
-        }
-    }
-}
-.rebloggedfrom {
-    display: table;
-    width: 100%;
-    table-layout: fixed;
-    .entry-footer-section-inner {
-        display: table-cell;
-    }
-    .favicon {
-        width: 20px;
-        height: 20px;
-        border-radius: 20px;
-        vertical-align: middle;
-    }
-}
-
-// tags
-.hastags {
-    .meta-elements {
-        a {
-            margin-right: .5em;
-        }
-    }
-}
-
-// notescount
-.notecontainer {
-    margin-bottom: 1em;
-    .notes {
-        margin: 0;
-        padding: 0;
-        li {
-            list-style: none;
-            padding: .5em 0;
-            border-bottom: 1px solid $border;
-            color: $light;
-            font-size: 90%;
-            a {
-                font-weight: bold;
-                color: $light;
-                text-decoration: none;
-            }
-            .avatar {
-                max-height: 16px;
-                width: auto;
-                vertical-align: middle;
-                margin-right: 3px;
-            }
-            blockquote {
-                margin: 1em 1em 1em 0;
-                padding-left: 1em;
-                border-left: 3px solid $border;
-                a {
-                    font-weight: normal;
-                    color: $light;
-                }
-            }
-        }
-    }
-}
-
-// profile module
-.section-profile {
-    text-align: center;
-    margin: 3em 0;
-}
-.profile-image {
-    img {
-        width: 64px;
-        height: 64px;
-        border-radius: 50%;
-    }
-}
-.profile-content {
-    h2 {
-        font-size: 1.1rem;
-        margin: .5em 0;
+        margin: .2em 0;
+        font-weight: normal;
     }
     p {
-        margin: .5em 0;
-        font-size: .85rem;
+        font-size: 80%;
+        margin: 0;
+        color: $light;
+        line-height: 1.4;
     }
 }
 
-.social-accounts {
-    margin: 1em 0;
-    padding: 0;
-    li {
-        display: inline-block;
-        list-style: none;
-        margin-right: .7em;
-        padding: 0;
-        vertical-align: middle;
-        a {
-            border: 1px solid $border;
-            border-radius: 42px;
-            width: 42px;
-            height: 42px;
-            line-height: 42px;
-            display: inline-block;
-            text-align: center;
-            &:hover {
-                text-decoration: none;
-            }
-        }
-        .social-accounts-icon {
-            vertical-align: middle;
-            display: block;
-            margin: auto;
-            line-height: 100%;
-            width: 18px;
-            height: 100%;
-        }
+// share
+.section-share {
+    h3 {
+        font-size: 1.2rem;
+        margin: 0;
+    }
+    .section-header {
+        margin-bottom: 1em;
+    }
+}
+.shareBtns {
+    display: flex;
+    justify-content: center;
+}
+.btn-tw,
+.btn-fb {
+    display: inline-block;
+    border-radius: 50%;
+    margin-left: 1em;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:first-child {
+        margin-left: 0;
+    }
+    svg {
+        width: 18px;
+        height: 18px;
+    }
+    @media #{$mq-sm} {
+        width: 50px;
+        height: 50px;
+    }
+}
+.btn-tw {
+    background-color: $btn-tw;
+    &:hover {
+        background-color: darken($btn-tw, 10%);
+    }
+}
+.btn-fb {
+    background-color: $btn-fb;
+    &:hover {
+        background-color: darken($btn-fb, 10%);
     }
 }
 
 // footer
 .section-footer {
-    margin-bottom: 1em;
-    margin-top: 0;
-    @media #{$mq-sm} {
-        margin-bottom: 2em;
-    }
-}
-.footer-content {
-    font-size: .75rem;
     text-align: center;
-    color: $light;
-    a {
-        font-weight: bold;
-        text-decoration: none;
-        color: $light;
-    }
-    span {
-        line-height: 1.4;
-    }
+    font-size: .7rem;
+    padding-top: 1em;
+    padding-bottom: 1em;
     @media #{$mq-sm} {
-        display: flex;
-        justify-content: space-between;
-    }
-}
-.footer-copyright {
-    margin-bottom: 2em;
-    align-items: center;
-    @media #{$mq-sm} {
-        text-align: left;
-        margin-bottom: 0;
-    }
-}
-.footer-theme {
-    text-align: left;
-    display: flex;
-    margin: auto;
-    align-items: center;
-    & > div {
-        vertical-align: middle;
-    }
-    @media #{$mq-sm} {
-        margin: 0;
-        text-align: right;
-    }
-}
-.footer-title {
-    display: block;
-    font-size: .9rem;
-}
-.footer-theme-author {
-    padding-right: 1em;
-    @media #{$mq-sm} {
-        min-width: 250px;
-    }
-}
-.footer-text {
-    margin-bottom: 0;
-}
-.footer-theme-illustfolio4 {
-    display: block;
-}
-.footer-install-btn {
-    @include btn();
-    border-color: $border;
-    white-space: nowrap;
-    &:hover {
-        background-color: $bg-light;
-        color: $light;
+        padding-top: 2em;
+        padding-bottom: 2em;
     }
 }

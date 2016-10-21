@@ -1,12 +1,12 @@
 {
-  "name": "illustfolio3",
+  "name": "rin",
   "version": "4.0.0",
-  "description": "Template for illustrators",
+  "description": "A Lean HTML & SASS Boilerplate",
   "author": "sanographix",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sanographix/illustfolio4"
+    "url": "https://github.com/sanographix/rin"
   },
   "devDependencies": {
     "browser-sync": "^2.14.2",

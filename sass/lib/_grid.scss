@@ -1,3 +1,12 @@
+// mixin
+@mixin clearfix() {
+    &:after {
+        content: " ";
+        display: block;
+        clear: both;
+    }
+}
+
 // grid
 .l-container {
     width: auto;
@@ -14,30 +23,8 @@
     @media #{$mq-lg} {
         width: 1140px;
     }
-}
 
-@mixin l-container() {
-    width: auto;
-    margin-left: 10px;
-    margin-right: 10px;
-    @media #{$mq-sm} {
-        width: 720px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    @media #{$mq-md} {
-        width: 940px;
-    }
-    @media #{$mq-lg} {
-        width: 1140px;
-    }
 }
-
-.l-container-mini {
-    @include l-container();
-    max-width: 700px;
-}
-
 .l-row {
     @include clearfix();
     @media #{$mq-sm} {
@@ -47,7 +34,7 @@
 }
 [class*="l-span"] {
     margin-bottom: 1em;
-@media #{$mq-sm} {
+    @media #{$mq-sm} {
         float: left;
         padding-right: 15px;
         padding-left: 15px;

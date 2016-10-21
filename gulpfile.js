@@ -53,7 +53,7 @@ gulp.task('imagemin', function() {
 var fs = require('fs');
 var json = JSON.parse(fs.readFileSync("site.json")); // parse json
 gulp.task("ejs", function() {
-    gulp.src(['templates/*.ejs','!' + 'templates/_*.ejs']) // Don't build html which starts from underline
+    gulp.src(['templates/**/*.ejs','!' + 'templates/**/_*.ejs']) // Don't build html which starts from underline
         .pipe(plumber())
         .pipe(ejs(json, {"ext": ".html"}))
         .pipe(gulp.dest('build'))
@@ -82,6 +82,6 @@ gulp.task('default',['browser-sync'], function() {
     gulp.watch('sass/**/*.scss',['sass']);
     gulp.watch('js/*.js',['js']);
     gulp.watch('images/**',['imagemin']);
-    gulp.watch("build/*.html", ['bs-reload']);
-    gulp.watch(['templates/*.ejs', 'site.json'], ['ejs']);
+    gulp.watch("build/**/*.html", ['bs-reload']);
+    gulp.watch(['templates/**/*.ejs', 'site.json'], ['ejs']);
 });

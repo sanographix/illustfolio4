@@ -1,27 +1,22 @@
-{block:IfShowTagList}
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script src="http://static.tumblr.com/xxf6ewk/hScof72wo/tumblrposts.js"></script>
-  <script>
-    $(document).ready(function(){
-      (function() {
-        var posts = new TumblrPosts({
-          domain: location.host,
-          maxNum:300
-        });
-        posts.bind(posts.EVENT_COMPLETE, function(e) {
-          var that = this;
-          $.each(this.getTags(), function(i, tag) {
-            var html = '<li class="level' + (tag.count % 6 + 1) + '">'
-            + '<a href="/tagged/' + tag.name + '">' + tag.name + '</a></li>';
-            $(html).appendTo($("ul#tags"));
-          });
-        });
-        posts.run();
-      })();
-    });
-  </script>
-{/block:IfShowTagList}
+<footer class="l-section section-footer">
+  <div class="l-container">
+    <p>
+      このサイトは、イラストポートフォリオサイトが一瞬で作れる無料Tumblrテーマ「Illustfolio 4」の紹介ページです。
+    </p>
+    <p>
+      <a href="<%= siteRootUrl %>" target="_blank">Illustfolio 4</a> theme designed by <a href="http://www.sanographix.net/" target="_blank">SANOGRAPHIX.NET</a><br>
+      Code licensed under MIT License.&nbsp;&nbsp;<a href="https://github.com/sanographix/illustfolio4">GitHub Project</a>
+      <br>
+      <a href="http://twitter.com/sanographix" target="_blank">Twitter</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="http://facebook.com/sanographix.net" target="_blank">Facebook</a>
+    </p>
+  </div>
+</footer>
 
-<script src="http://static.tumblr.com/xxf6ewk/WKAof732y/scripts.js"></script>
+<% if (pageId === 'index') { %>
+  <script src="js/scripts.js"></script>
+<% } else { %>
+  <script src="../js/scripts.js"></script>
+<% } %>
+
 </body>
 </html>

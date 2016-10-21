@@ -1,3 +1,8 @@
 {
-
+  "siteName": "Illustfolio 4",
+  "siteRootUrl": "https://sanographix.github.io/illustfolio4",
+  "ogImageUrl": "https://sanographix.github.io/illustfolio4/images/og-image.jpg",
+  "fbAppId": "547137951989818",
+  "twitterSite": "@sanographix",
+  "googleAnalyticsId": "UA-36621684-1"
 }
