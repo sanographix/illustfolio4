@@ -125,7 +125,10 @@ pageId = "index";
 
                   <%# Post: link %>
                   {block:Link}
-                    <a href="{Permalink}" class="post-content-anchor">
+                    <a href="{Permalink}" class="post-content-anchor
+                    {block:Thumbnail}has-thumbnail{/block:Thumbnail}"
+                    {block:Thumbnail}style="background-image: url('{ThumbnailURL}');"{/block:Thumbnail}
+                    >
                       <div class="post-content-wrapper">
                         <div class="post-content-posttype">
                           {PostType}
@@ -155,7 +158,9 @@ pageId = "index";
 
                   <%# Post: video %>
                   {block:Video}
-                    <a href="{Permalink}" class="post-content-anchor">
+                    <a href="{Permalink}" class="post-content-anchor {block:VideoThumbnail}has-thumbnail{/block:VideoThumbnail}"
+                    {block:VideoThumbnail}style="background-image: url('{VideoThumbnailURL}');"{/block:VideoThumbnail}
+                    >
                       <div class="post-content-wrapper">
                         <div class="post-content-posttype">
                           {PostType}
@@ -384,10 +389,10 @@ pageId = "index";
       <div class="l-container">
         <div class="pagenation pagenation-index">
           {block:PreviousPage}
-            <a href="{PreviousPage}">Prev</a>
+            <a href="{PreviousPage}" class="pager-prev">Prev</a>
           {/block:PreviousPage}
           {block:NextPage}
-            <a href="{NextPage}" class="next" rel="next">Next</a>
+            <a href="{NextPage}" class="pager-next" rel="next">Next</a>
           {/block:NextPage}
         </div>
       </div>
@@ -627,10 +632,10 @@ pageId = "index";
   {block:PermalinkPagination}
     <div class="pagenation pagenation-permalink">
       {block:NextPost}
-        <a href="{NextPost}" class="next" rel="next">Newer Post</a>
+        <a href="{NextPost}" class="pager-prev" rel="next">Newer Post</a>
       {/block:NextPost}
       {block:PreviousPost}
-        <a href="{PreviousPost}">Older Post</a>
+        <a href="{PreviousPost}" class="pager-next">Older Post</a>
       {/block:PreviousPost}
     </div>
   {/block:PermalinkPagination}

@@ -379,8 +379,11 @@
     margin: 3em 0;
     text-align: center;
     text-transform: uppercase;
-    font-size: 95%;
+    font-size: .7rem;
     letter-spacing: .1em;
+    @media #{$mq-sm} {
+        font-size: .85rem;
+    }
     a {
         display: inline-block;
         text-decoration: none;
@@ -388,7 +391,35 @@
         color: $base;
         &:hover {
             color: $hover;
+            &:before,
+            &:after {
+                border-color: $hover;
+            }
         }
+    }
+    .pager-prev:before {
+        content: "";
+        display: inline-block;
+        width: 1.2em;
+        height: 1.2em;
+        vertical-align: middle;
+        transform: rotate(-45deg);
+        border-left: 1px solid $base;
+        border-top: 1px solid $base;
+        position: relative;
+        bottom: .05em;
+    }
+    .pager-next:after {
+        content: "";
+        display: inline-block;
+        width: 1.2em;
+        height: 1.2em;
+        vertical-align: middle;
+        transform: rotate(45deg);
+        border-right: 1px solid $base;
+        border-top: 1px solid $base;
+        position: relative;
+        bottom: .05em;
     }
 }
 
