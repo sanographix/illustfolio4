@@ -234,6 +234,9 @@
 // 写真以外の投稿ではhiddenする
 .post-content-wrapper {
     overflow: hidden;
+    .has-thumbnail & {
+        visibility: hidden; // video投稿などにサムネイルがある場合は文字を非表示にする
+    }
     .size-xs & {
         height: calc(15vw - 1.2em);
         @media #{$mq-sm} {
