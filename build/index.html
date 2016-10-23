@@ -190,6 +190,12 @@
 
     <div class="section-post l-section">
 
+      {block:TagPage}
+        <div class="l-container">
+          <h3 class="tagged">Posts tagged "{Tag}"</h3>
+        </div>
+      {/block:TagPage}
+
       
       {block:ifNotSingleColumnMode}
         <div class="top-post-container
