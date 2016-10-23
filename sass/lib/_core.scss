@@ -311,9 +311,10 @@ br.touch {
         margin-bottom: 1em;
         img {
             width: 100%;
+            max-width: 360px;
             box-shadow: 0 5px 15px rgba(0,0,0,.2);
             display: block;
-            margin-bottom: 1.5em;
+            margin: 0 auto 1.5em;
         }
     }
     h3 {
@@ -338,7 +339,36 @@ br.touch {
 
 // start
 .section-start {
+    background: url('../images/getstart.jpg') no-repeat center;
+    background-size: cover;
+    color: $bg;
+    position: relative;
+    padding: 3em 0;
+    @media #{$mq-sm} {
+        padding: 6em 0;
+    }
+    @media #{$mq-md} {
+        padding: 8em 0;
+    }
+    .l-container {
+        position: relative;
+        z-index: 2;
+    }
+    .section-mask {
+        position: absolute;
+        background-color: rgba(0,0,0,.5);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    h2 {
+        color: $bg;
+    }
     .section-header {
+        margin-bottom: 0;
+    }
+    .btn-wrapper {
         margin-bottom: 0;
     }
 }
