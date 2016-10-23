@@ -222,11 +222,43 @@ br.touch {
 }
 
 // レイアウト試すやつ
+.layout-selector-wrapper {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    font-size: 1.3rem;
+}
+.layout-selector-btn {
+    padding: .3em .6em;
+    display: inline-block;
+    min-width: 2em;
+    cursor: pointer;
+    &:hover {
+        background-color: lighten($bg-light, 3%);
+    }
+    &.is-active {
+        background-color: $bg-light;
+    }
+}
 .layout-img-wrapper {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+    min-height: 500px;
     .layout-img {
-        display: none;
+        opacity: 0;
+        top: -1em;
+        transition: all .4s;
+        position: absolute;
         &.is-active {
-            display: block;
+            opacity: 1;
+            top: 0;
+            img {
+                display: block;
+                box-shadow: 0 10px 20px rgba(0,0,0,.2);
+            }
         }
     }
 }
