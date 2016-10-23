@@ -192,16 +192,16 @@
             height: 180px;
         }
         @media #{$mq-md} {
-            height: 235px;
+            height: 210px;
         }
         @media #{$mq-lg} {
-            height: 285px;
+            height: 250px;
         }
     }
     .size-l & {
         height: 50vw;
         @media #{$mq-sm} {
-            height: 22vw;
+            height: 20vw;
         }
     }
     .size-xl & {
