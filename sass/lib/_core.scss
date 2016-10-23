@@ -508,16 +508,26 @@
         font-size: 1rem;
     }
     p {
-        margin: 0 0 1em 0;
+        margin: 1em 0;
     }
     img,
     video {
         max-width: 100%;
         height: auto;
     }
+    iframe {
+        max-width: 100%;
+    }
+    // ニコニコ動画貼り付けたときにスマホで崩れるのを修正
+    & > script[src*="nicovideo"] + div {
+        max-width: 100%;
+    }
     .tumblr_video_container {
         width: auto !important;
-        height: auto !important;
+        height: 100vw !important;
+        iframe {
+            height: 100vw;
+        }
     }
     // Flickr で max-width 指定したときのアスペクト比をなおす
      a[title*="Flickr"] img {
