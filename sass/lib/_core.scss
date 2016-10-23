@@ -1,6 +1,6 @@
 // Core (Main Style)
 body {
-    font-family: 'Halis GR', 'source-han-sans-japanese', sans-serif;
+    font-family: 'brandon-grotesque', 'source-han-sans-japanese', sans-serif;
     font-style: normal;
     font-weight: 300;
     background: $bg;
@@ -8,6 +8,7 @@ body {
     -webkit-font-smoothing: antialiased;
     font-size: .85rem;
     line-height: 1.5;
+    text-transform: uppercase; // brandonを使いたいので
     @media #{$mq-md} {
         font-size: .9rem;
     }
@@ -125,12 +126,12 @@ br.touch {
 }
 
 .btn-wrapper {
-    margin: 2em;
+    margin: 2em 0 1.5em;
     text-align: center;
 }
 
 .hero-credit {
-    font-size: .7rem;
+    font-size: .6rem;
     letter-spacing: .2em;
     text-transform: uppercase;
     a {
@@ -181,11 +182,21 @@ br.touch {
     .section-content {
         text-align: center;
         img {
-            max-width: 100%;
             box-shadow: 0 5px 40px rgba(0,0,0,.2);
+            margin-left: -10px;
+            margin-right: -10px;
+            display: block;
+            width: 100vw;
+            @media #{$mq-sm} {
+                margin-left: 0;
+                margin-right: 0;
+                max-width: 100%;
+            }
         }
     }
-    .l-row {
+    .notice {
+        text-align: right;
+        text-transform: none;
     }
 }
 
@@ -193,6 +204,9 @@ br.touch {
 .section-new-feature {
     overflow: hidden;
     .section-content {
+        h4 {
+            text-align: center;
+        }
     }
     .section-header-badge {
         border: 1px solid $header;
@@ -227,13 +241,22 @@ br.touch {
     padding: 0;
     list-style: none;
     text-align: center;
-    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+    @media #{$mq-sm} {
+        flex-direction: column;
+    }
+    @media #{$mq-md} {
+        font-size: 1.3rem;
+    }
 }
 .layout-selector-btn {
-    padding: .3em .6em;
+    padding: .1em .6em;
     display: inline-block;
-    min-width: 2em;
+    min-width: 1.5em;
     cursor: pointer;
+    margin-bottom: 1em;
     &:hover {
         background-color: lighten($bg-light, 3%);
     }
@@ -246,12 +269,24 @@ br.touch {
     padding: 0;
     list-style: none;
     position: relative;
-    min-height: 500px;
+    min-height: 70vw;
+    @media #{$mq-sm} {
+        min-height: 340px;
+    }
+    @media #{$mq-md} {
+        min-height: 450px;
+    }
+    @media #{$mq-lg} {
+        min-height: 550px;
+    }
     .layout-img {
         opacity: 0;
         top: -1em;
         transition: all .4s;
         position: absolute;
+        img {
+            width: 100vw;
+        }
         &.is-active {
             opacity: 1;
             top: 0;
@@ -273,7 +308,13 @@ br.touch {
         }
     }
     .features-items {
-        margin-bottom: 2em;
+        margin-bottom: 1em;
+        img {
+            width: 100%;
+            box-shadow: 0 5px 15px rgba(0,0,0,.2);
+            display: block;
+            margin-bottom: 1.5em;
+        }
     }
     h3 {
         font-size: 1.2rem;
@@ -282,6 +323,16 @@ br.touch {
         @media #{$mq-sm} {
             text-align: center;
         }
+    }
+}
+.features-items-secondary {
+    @media #{$mq-sm} {
+        .features-items {
+            width: 23%;
+        }
+    }
+    h3 {
+        font-size: .9rem;
     }
 }
 
@@ -297,11 +348,6 @@ br.touch {
     padding-bottom: 0;
     .section-header {
         margin-bottom: 2em;
-        h2 {
-            @media #{$mq-md} {
-                font-size: 2.6rem;
-            }
-        }
         p {
             margin-top: .5em;
         }
