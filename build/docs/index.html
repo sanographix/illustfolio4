@@ -86,18 +86,17 @@
 <div class="container">
   <nav class="nav">
     <ul>
-      <li><a href="./" class="is-selected">ドキュメント ホーム</a></li>
-      <li><a href="./start.html" class="">はじめよう</a></li>
-      <li><a href="./customize.html" class="">各項目のカスタマイズ</a></li>
-      <li><a href="./publish.html" class="">いよいよ公開、その前に</a></li>
-      <li><a href="./tips.html" class="">うまく作るコツ</a></li>
-      <li><a href="./faq.html" class="">よくある質問</a></li>
+      <li><a href="./">ドキュメント ホーム</a></li>
+      <li><a href="./#install">インストールする</a></li>
+      <li><a href="./#post">記事を投稿する</a></li>
+      <li><a href="./#customize">各項目のカスタマイズ</a></li>
+      <li><a href="./#faq">よくある質問</a></li>
     </ul>
   </nav>
   <div class="main">
 
 
-  <h1>Illustfolio 4 ドキュメントへようこそ</h1>
+  <h1 id="index">Illustfolio 4 ドキュメントへようこそ</h1>
   <p>
   Illustfolio 4 はイラストレーターのための Tumblr テーマです。
   <a href="https://twitter.com/sanographix">@sanographix</a> が作っています。
@@ -121,31 +120,151 @@
     <li>Chrome for Android 最新版</li>
   </ul>
 
-  <h1>インストールする</h1>
+  <h1 id="install">インストールする</h1>
   <p>下記のリンクよりインストールできます。</p>
   <a href="https://www.tumblr.com/theme/40571" class="btn btn-large">インストールする</a>
 
-  <h1>各項目のカスタマイズ</h1>
+  <h1 id="post">記事を投稿する</h1>
+  <ul>
+    <li>イラストの投稿には、<b>「画像」形式で投稿することを強く推奨します</b>。
+    <ul>
+      <li>テキスト投稿よりも画像投稿のほうがの方が画像の解像度を高く投稿できるためです
+    </ul>
+  </ul>
 
-  <h1>よくある質問</h1>
+  <h1 id="customize">各項目のカスタマイズ</h1>
 
-  <h2>Q: ブログを非公開にしたところパスワード以外にも認証を求められる</h2>
-  <p>タグリストを無効にすると解決します。（タグ一覧を取得するためにブログが公開状態でなければなりません）</p>
+  <h3>モバイルレイアウトのチェックを外す</h3>
 
-  <h2>Q: スマホのブラウザで見たら違うテーマになっています</h2>
+  <ul>
+    <li>Tumblr のテーマカスタマイズ画面を開いて 「▾ 詳細設定」の<font color="red">「モバイルレイアウトを使用する」の チェックを外す</font>ことをおすすめします。
+    <ul>
+      <li>このチェックを外すことでスマートフォンでもIllustfolioが表示されます
+    </ul>
+  </ul>
+
+  <h2>レイアウトを決める</h2>
+
+  <figure>
+  	<img src="../images/docs/fig-1.png" style="max-width: 300px;">
+      <figcaption>「サムネイルサイズ」「サムネイル間の余白」を調整する</figcaption>
+  </figure>
+
+  <p>Illustfolio 4 は、「サムネイルサイズ」「サムネイル間の余白」の設定を変えることで、トップページをお好みのレイアウトで表示できるテーマです。</p>
+  <p>まずデザイン設定画面に遷移し、「<b>Thumbnails Size</b>」でお好みの大きさを選んでください。次に「<b>Thumbnails Margin</b>」で余白の量を調整してください。</p>
+
+  <p>あまり大きいサムネイルで表示したくない…という方は、「<b>Thumbnails Size</b>」に「XS」や「S」を、「<b>Thumbnails Margin</b>」に「Wide」を選択するとよいでしょう。</p>
+
+  <p>逆に、大きいサムネイルで表示したい方は、「<b>Thumbnails Size</b>」に「L」や「XL」を、「<b>Thumbnails Margin</b>」に「Narrow」や「None」を選択するとよいでしょう。</p>
+
+  <h2>その他の設定をする</h2>
+  <h3>テーマオプション</h3>
+  <table>
+    <tr>
+      <th>Title Logo</th>
+      <td>ブログタイトルを画像に置換できます。透過png推奨。表示させたい2倍のサイズで作成すると高解像度ディスプレイで綺麗に見えます（その場合、後述の「Title Logo Width」に表示させたい横幅を入力してください）。</td>
+    </tr>
+    <tr>
+      <th>Body</th>
+      <td>本文のフォントを指定できます。<br>デフォルト: Helvetica</td>
+    </tr>
+    <tr>
+      <th>Crop Thumbnails</th>
+      <td>トップページのサムネイルをトリミングするか選択できます。有効にしておくことをおすすめしますが、サイズがほぼ決まっている画像（書影など）のみを投稿したい場合、無効にすると表示が改善されることがあります。<br>デフォルト: 有効</td>
+    </tr>
+    <tr>
+      <th>Show Tag List</th>
+      <td>ページ下部にタグ一覧を表示します。なお<b>非公開ブログを作成するときは無効にしてください</b>（公開ブログでしかタグを取得できないためです）。<br>デフォルト: 有効</td>
+    </tr>
+    <tr>
+      <th>Show Profile Section</th>
+      <td>ページ下部にプロフィールを表示します。<br>デフォルト: 有効</td>
+    </tr>
+    <tr>
+      <th>Show Index Entry Footer</th>
+      <td>トップページのサムネイル下部にLikeやReblogボタンを表示します。<br>デフォルト: 無効</td>
+    </tr>
+    <tr>
+      <th>Single Column Mode</th>
+      <td>トップページのグリッド表示をやめて1カラムで表示します。ブログ的な表示にしたい場合にご利用ください。<br>デフォルト: 無効</td>
+    </tr>
+    <tr>
+      <th>Title Logo Width</th>
+      <td>タイトルロゴの横幅を数値で入力します（単位: px）。何も入力しない場合、画像を等倍で表示します。
+        <div class="example">
+          <span class="badge">例</span> 150
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th>Your Name</th>
+      <td>プロフィールに表示する名前を入力できます。</td>
+    </tr>
+    <tr>
+      <th>Profile</th>
+      <td>プロフィールに表示する本文を入力できます。簡単な自己紹介を入力するとよいでしょう。</td>
+    </tr>
+    <tr>
+      <th>Your Website URL</th>
+      <td>入力すると、プロフィールセクションにウェブサイトへのリンクを表示できます。
+        <div class="example">
+          <span class="badge">例</span> http://www.sanogrpahix.net
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th>Your Twitter Username</th>
+      <td>入力すると、プロフィールセクションにTwitterアカウントへのリンクを表示できます。
+        <div class="example">
+          <span class="badge">例</span> sanographix
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th>Your Facebook Username</th>
+      <td>入力すると、プロフィールセクションにFacebookアカウントへのリンクを表示できます。
+        <div class="example">
+          <span class="badge">例</span> sanographixnet
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th>Your Pixiv ID</th>
+      <td>入力すると、プロフィールセクションにPixiv IDへのリンクを表示できます。
+        <div class="example">
+          <span class="badge">例</span> 536147
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th>Your Instagram Username</th>
+      <td>入力すると、プロフィールセクションにInstagramアカウントへのリンクを表示できます。
+        <div class="example">
+          <span class="badge">例</span> sanographix
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <h1 id="faq">よくある質問</h1>
+
+  <h3>Q: ブログを非公開にしたところパスワード以外にも認証を求められる</h3>
+  <p>オプション「Show Tag List」を無効にすると解決します。（タグ一覧を取得するためにブログが公開状態でなければなりません）</p>
+
+  <h3>Q: スマホのブラウザで見たら違うテーマになっています</h3>
   <p>デフォルトのスマートフォンテーマが有効になっているためです。「▾ 詳細設定」の「モバイルレイアウトを使用する」の チェックを外してください。</p>
 
-  <h2>Q: 本当に無料ですか？</h2>
+  <h3>Q: 本当に無料ですか？</h3>
   <p>はい、無料です。<br>気に入っていただけたら、何か寄付していただけるとありがたいです（任意です）
   <a href="http://www.amazon.co.jp/registry/wishlist/2QLOE7F0CGUSX">http://www.amazon.co.jp/registry/wishlist/2QLOE7F0CGUSX</a></p>
 
-  <h2>Q: 商用利用してもいいですか？</h2>
+  <h3>Q: 商用利用してもいいですか？</h3>
   <p>問題ありません。ただし Tumblr の利用規約に違反するコンテンツには使えません。</p>
 
-  <h2>Q: HTML や CSS を改変してもいいですか？</h2>
+  <h3>Q: HTML や CSS を改変してもいいですか？</h3>
   <p>はい。MIT ライセンスですのでライセンスの範囲内で自由にカスタマイズできます。</p>
 
-  <h2>上記以外の質問</h2>
+  <h3>上記以外の質問</h3>
   <p><a href="http://www.sanographix.net/contact/">メールフォーム</a>よりお問い合わせください。なお、HTML/CSS/JSのカスタマイズについてのサポートは行っていません。</p>
 
 </div>

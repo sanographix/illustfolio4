@@ -14,11 +14,7 @@ body {
 
 // global Header
 .l-globalHeader {
-    background-color: $red;
-    color: $bg;
-    a {
-        color: $bg;
-    }
+    background-color: $bg-light;
 }
 .globalHeader-container {
     display: flex;
@@ -74,20 +70,12 @@ body {
     }
 }
 .nav {
-    background-color: $bg-light;
     padding: .5em 1em;
     margin-top: 1em;
     @media #{$mq-sm} {
         width: 200px;
         padding: 1em;
         margin-top: 0;
-    }
-    a.is-selected {
-        font-weight: bold;
-        color: $base;
-        &:before {
-            content: "👉 ";
-        }
     }
     ul {
         list-style: none;
