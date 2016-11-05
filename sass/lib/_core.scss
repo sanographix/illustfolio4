@@ -139,6 +139,11 @@
     }
 }
 .size-l {
+    @media #{$mq-sm} {
+        max-width: 1800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
     .index-post {
         width: 50%;
         @media #{$mq-sm} {
@@ -147,6 +152,11 @@
     }
 }
 .size-xl {
+    @media #{$mq-sm} {
+        max-width: 1800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
     .index-post {
         width: 50%;
         @media #{$mq-sm} {
