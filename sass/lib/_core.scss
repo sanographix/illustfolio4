@@ -183,7 +183,6 @@ br.touch {
 // intro
 .section-intro {
     overflow: hidden;
-    padding-bottom: 0; // 広告用
     .section-content {
         text-align: center;
         img {
@@ -223,10 +222,6 @@ br.touch {
 // 新機能
 .section-new-feature {
     overflow: hidden;
-    padding-top: 1em; // 広告用
-    @media #{$mq-sm} {
-        padding-top: 2em; // 広告用
-    }
     .section-content {
         h4 {
             text-align: center;
