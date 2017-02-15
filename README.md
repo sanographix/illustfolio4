@@ -4,6 +4,12 @@ The easiest way to make your own portfolio
 
 - <https://sanographix.github.io/illustfolio4>
 
+## How to install
+
+- <https://sanographix.github.io/illustfolio4/docs/>
+
+# For developers
+
 ## Set Up
 
     $ npm install
