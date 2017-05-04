@@ -35,6 +35,11 @@ pageId = "index";
                 <a href="/ask">{AskLabel}</a>
               </li>
             {/block:AskEnabled}
+            {block:SubmissionsEnabled}
+              <li>
+                <a href="/submit">{SubmitLabel}</a>
+              </li>
+            {/block:SubmissionsEnabled}
             <li>
               <a href="/archive">Archive</a>
             </li>
