@@ -7,7 +7,6 @@ body {
     color: $base;
     font-size: .85rem;
     line-height: 1.5;
-    text-transform: uppercase; // brandonを使いたいので
     @media #{$mq-md} {
         font-size: .9rem;
     }
@@ -35,6 +34,7 @@ h1,h2,h3,h4,h5,h6 {
     line-height: 1.3;
     color: $header;
     letter-spacing: .1em;
+    text-transform: uppercase; // brandonを使いたいので
     a,a:hover {
         color: $header;
         text-decoration: none;
@@ -402,6 +402,7 @@ br.touch {
 // 導入事例
 .l-case {
     background-color: $bg-light;
+    text-transform: uppercase; // brandonを使いたいので
     .l-row {
         > div {
             margin-bottom: 1.5em;
@@ -546,6 +547,7 @@ br.touch {
     font-size: .7rem;
     padding-top: 1em;
     padding-bottom: 1em;
+    text-transform: uppercase; // brandonを使いたいので
     @media #{$mq-sm} {
         padding-top: 2em;
         padding-bottom: 2em;
