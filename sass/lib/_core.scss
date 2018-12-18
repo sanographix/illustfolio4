@@ -404,15 +404,14 @@ br.touch {
     background-color: $bg-light;
     text-transform: uppercase; // brandonを使いたいので
     .l-row {
-        > div {
+        display: flex;
+        flex-wrap: wrap;
+        & > div {
             margin-bottom: 1.5em;
-        }
-        &:last-child > div {
-            margin-bottom: 0;
         }
         img {
             display: block;
-            margin: 0 auto .7em;
+            margin-bottom: .7em;
             transition: all .2s;
         }
         span {
@@ -425,7 +424,22 @@ br.touch {
             box-shadow: 0 5px 10px rgba(0,0,0,0.3);
         }
     }
+    .case-low {
+        flex-direction: row;
+        margin-left: -10px;
+        margin-right: -10px;
+        .l-span4 {
+            box-sizing: border-box;
+            flex-basis: 50%;
+            padding-left: 10px;
+            padding-right: 10px;
+            @media #{$mq-md} {
+                flex-basis: 33.33333333%;
+            }
+        }
+    }
 }
+
 
 // issue5同人誌
 .l-issue5 {
