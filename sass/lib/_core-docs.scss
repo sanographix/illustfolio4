@@ -104,6 +104,10 @@ body {
         flex: 1;
         margin-left: 5%;
     }
+    a:not([class*='btn']) {
+        color: darken($hover, 10%);
+        text-decoration: underline;
+    }
     img {
         max-width: 100%;
     }
