@@ -5,14 +5,14 @@ body {
     font-weight: 300;
     background: $bg;
     color: $base;
-    font-size: .85rem;
+    font-size: .9rem;
     line-height: 1.5;
     @media #{$mq-md} {
-        font-size: .9rem;
+        font-size: 1rem;
     }
 }
 p {
-    line-height: 1.6;
+    line-height: 1.75;
     letter-spacing: .05em;
 }
 .notice {
@@ -42,7 +42,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 h1 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     @media #{$mq-sm} {
         font-size: 2.8rem;
     }
@@ -52,12 +52,12 @@ h1 {
 }
 
 h2 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     @media #{$mq-sm} {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
     }
     @media #{$mq-md} {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 }
 
@@ -131,7 +131,6 @@ br.touch {
         left: .25em;
     }
     p {
-        text-transform: uppercase;
         letter-spacing: .1em;
     }
 }
@@ -242,6 +241,7 @@ br.touch {
         display: inline-block;
         font-size: .7rem;
         margin-bottom: .4em;
+        text-transform: uppercase;
     }
     .book-sample {
         max-height: 150vw;
@@ -360,6 +360,7 @@ br.touch {
     }
     h3 {
         font-size: .9rem;
+        text-transform: initial;
     }
 }
 
