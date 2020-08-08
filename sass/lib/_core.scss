@@ -534,10 +534,7 @@
     }
     .tumblr_video_container {
         width: auto !important;
-        height: 100vw !important;
-        iframe {
-            height: 100vw;
-        }
+        height: auto !important;
     }
     // Flickr で max-width 指定したときのアスペクト比をなおす
      a[title*="Flickr"] img {
