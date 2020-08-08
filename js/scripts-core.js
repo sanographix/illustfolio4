@@ -17,14 +17,16 @@
   handle(mediaQuery);
   // ウィンドウサイズが変更されても実行されるように
   mediaQuery.addListener(handle);
-  function handle(mq) {
-    for (i = 0; i < video.length; i++) {
-      if (mq.matches) {
-        videoWrap.classList.add("video-wrap");
-        video[i].parentNode.insertBefore(videoWrap, video[i]);
-        videoWrap.appendChild(video[i]);
-      } else {
-        videoWrap.classList.remove("video-wrap");
+  if ( video ) {
+    function handle(mq) {
+      for (i = 0; i < video.length; i++) {
+        if (mq.matches) {
+          videoWrap.classList.add("video-wrap");
+          video[i].parentNode.insertBefore(videoWrap, video[i]);
+          videoWrap.appendChild(video[i]);
+        } else {
+          videoWrap.classList.remove("video-wrap");
+        }
       }
     }
   }
