@@ -389,11 +389,21 @@ br.touch {
 .tumblr-feature {
     border-radius: 8px;
     box-shadow: 0 4px 24px rgba(0,0,0,.15);
-    padding: 2em;
+    padding: 2em 1.5em 1.5em;
     max-width: 800px;
-    margin: 4em auto 0;
+    margin: 2.5em auto 0;
+    background: url('../images/airmail.svg') no-repeat 4% 4%;
+    background-size: 130px;
+    @media #{$mq-sm} {
+        padding: 2em;
+        background-position: 4% 10%;
+        background-size: 18%;
+    }
     h3 {
         text-align: center;
+    }
+    p:last-child {
+        margin-bottom: 0;
     }
 }
 
