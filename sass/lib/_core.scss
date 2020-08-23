@@ -470,15 +470,14 @@ br.touch {
     }
     .case-low {
         flex-direction: row;
-        margin-left: -16px;
-        margin-right: -16px;
+        margin-left: -8px;
         .l-span4 {
             box-sizing: border-box;
-            flex-basis: 50%;
-            padding-left: 16px;
-            padding-right: 16px;
+            flex-basis: calc(50% - 8px);
+            margin-left: 8px;
             @media #{$mq-md} {
                 flex-basis: 33.33333333%;
+                margin-left: 0;
             }
         }
     }
