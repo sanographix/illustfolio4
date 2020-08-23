@@ -139,6 +139,12 @@ br.touch {
     margin: 2em 0 1.5em;
     text-align: center;
 }
+.btn-label {
+    display: block;
+    letter-spacing: .1em;
+    margin: 0 auto 1em;
+    font-size: .9em;
+}
 
 .hero-credit {
     font-size: .6rem;
@@ -193,8 +199,8 @@ br.touch {
         text-align: center;
         img {
             box-shadow: 0 5px 40px rgba(0,0,0,.2);
-            margin-left: -10px;
-            margin-right: -10px;
+            margin-left: -16px;
+            margin-right: -16px;
             display: block;
             width: 100vw;
             @media #{$mq-sm} {
@@ -364,6 +370,18 @@ br.touch {
     }
 }
 
+// tumblrの利点
+.tumblr-feature {
+    border-radius: 8px;
+    box-shadow: 0 4px 24px rgba(0,0,0,.15);
+    padding: 2em;
+    max-width: 800px;
+    margin: 4em auto 0;
+    h3 {
+        text-align: center;
+    }
+}
+
 // start
 .section-start {
     background: url('../images/getstart.jpg') no-repeat center;
@@ -383,7 +401,7 @@ br.touch {
     }
     .section-mask {
         position: absolute;
-        background-color: rgba(0,0,0,.5);
+        background-color: rgba(0,0,0,.7);
         top: 0;
         left: 0;
         width: 100%;
@@ -427,13 +445,13 @@ br.touch {
     }
     .case-low {
         flex-direction: row;
-        margin-left: -10px;
-        margin-right: -10px;
+        margin-left: -16px;
+        margin-right: -16px;
         .l-span4 {
             box-sizing: border-box;
             flex-basis: 50%;
-            padding-left: 10px;
-            padding-right: 10px;
+            padding-left: 16px;
+            padding-right: 16px;
             @media #{$mq-md} {
                 flex-basis: 33.33333333%;
             }
