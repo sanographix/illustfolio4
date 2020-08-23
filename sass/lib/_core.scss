@@ -341,13 +341,6 @@ br.touch {
     }
     .features-items {
         margin-bottom: 2em;
-        img {
-            width: 100%;
-            max-width: 360px;
-            box-shadow: 0 5px 15px rgba(0,0,0,.2);
-            display: block;
-            margin: 0 auto 1.5em;
-        }
     }
     h3 {
         font-size: 1.2rem;
@@ -358,15 +351,37 @@ br.touch {
         }
     }
 }
-.features-items-secondary {
-    @media #{$mq-sm} {
-        .features-items {
-            width: 23%;
-        }
+.features-items-primary {
+    img {
+        width: 100%;
+        max-width: 360px;
+        box-shadow: 0 5px 15px rgba(0,0,0,.2);
+        display: block;
+        margin: 0 auto 1.5em;
     }
-    h3 {
-        font-size: .9rem;
-        text-transform: initial;
+}
+.features-items-secondary {
+    max-width: 920px;
+    margin-left: auto;
+    margin-right: auto;
+    .features-items {
+        display: flex;
+        @media #{$mq-sm} {
+            width: 23%;
+            display: block;
+        }
+        img {
+            margin-right: 1em;
+            @media #{$mq-sm} {
+                display: block;
+                margin: 0 auto 1.5em;
+            }
+        }
+        h3 {
+            flex: 1;
+            font-size: .9rem;
+            text-transform: initial;
+        }
     }
 }
 
@@ -458,7 +473,14 @@ br.touch {
         }
     }
 }
-
+.case-footer {
+    text-align: right;
+    margin-top: 1em;
+    p {
+        font-size: .8em;
+        margin: 0;
+    }
+}
 
 // issue5同人誌
 .l-issue5 {
