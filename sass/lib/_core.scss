@@ -452,20 +452,25 @@ br.touch {
         flex-wrap: wrap;
         & > div {
             margin-bottom: 1.5em;
-        }
-        img {
-            display: block;
-            margin-bottom: .7em;
-            transition: all .2s;
+            & > a {
+                display: block;
+                & > img {
+                    display: block;
+                    margin-bottom: .7em;
+                    transition: all .2s;
+                }
+                &:hover > img {
+                    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+                }
+            }
         }
         span {
             display: block;
-            text-align: center;
             color: $base;
-            font-size: .8rem;
-        }
-        a:hover img {
-            box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+            font-size: .7rem;
+            @media #{$mq-md} {
+                font-size: .8rem;
+            }
         }
     }
     .case-low {
@@ -478,6 +483,24 @@ br.touch {
             @media #{$mq-md} {
                 flex-basis: 33.33333333%;
                 margin-left: 0;
+            }
+        }
+    }
+    .credit {
+        position: relative;
+        text-align: left;
+        padding-left: 32px;
+        @media #{$mq-md} {
+            padding-left: 40px;
+        }
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            max-width: 24px;
+            border-radius: 32px;
+            @media #{$mq-md} {
+                max-width: 32px;
             }
         }
     }
