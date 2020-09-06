@@ -514,6 +514,43 @@ br.touch {
     }
 }
 
+// faq
+.faq {
+    max-width: 728px;
+    margin: auto;
+    details {
+        box-shadow: 0 4px 24px rgba(0,0,0,.15);
+        letter-spacing: .075em;
+        summary {
+            padding: 1.25em;
+            font-size: 105%;
+            &:hover {
+                cursor: pointer;
+                color: $link;
+            }
+            &:focus {
+                outline: none;
+            }
+        }
+        div {
+            padding: .5em 1em 1.5em;
+            p {
+                margin: 0;
+                & + p {
+                    margin-top: .75em;
+                }
+            }
+            strong {
+                background: linear-gradient(transparent 65%,#ffff85 0);
+                font-weight: bold;
+            }
+        }
+    }
+    details + details {
+        margin-top: 1em;
+    }
+}
+
 // issue5同人誌
 .l-issue5 {
     text-align: center;
