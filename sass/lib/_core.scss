@@ -70,7 +70,6 @@ br.touch {
 // global Header
 .l-globalHeader {
     color: $header;
-    text-transform: uppercase;
     a {
         color: $header;
     }
@@ -81,17 +80,14 @@ br.touch {
     align-items: top;
     .globalHeader-logo {
         .globalHeader-logo-title {
+            text-transform: uppercase;
             display: inline-block;
             padding: 1em .5em 1em 0;
         }
     }
     .madeby {
-        display: none;
         font-size: .8em;
-        font-style: italic;
-        @media #{$mq-sm} {
-            display: inline;
-        }
+        display: inline;
     }
     .globalHeader-nav {
         ul {
