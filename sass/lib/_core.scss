@@ -658,6 +658,32 @@
         border: 0;
         border-top: 3px solid $border;
     }
+    // NPF(Neue Post Format)
+    & > figure {
+        margin: 24px -10px;
+        @media (min-width: 540px) {
+            margin-left: 0;
+            margin-right: 0;
+        }
+        @media #{$mq-md} {
+            margin-left: -120px;
+            margin-right: -120px;
+        }
+        @media #{$mq-lg} {
+            margin-left: -220px;
+            margin-right: -220px;
+        }
+        img {
+            max-height: 1280px;
+            display: block;
+            margin: auto;
+        }
+        // GIF attributio
+        .tmblr-attribution {
+            text-align: center;
+            font-size: 80%;
+        }
+    }
 }
 
 // video post
