@@ -10,8 +10,7 @@
 
 (function() {
   var mediaQuery = matchMedia('(max-width: 768px)');
-  var video = document.querySelectorAll('.post.video .entry-content iframe');
-  var videoWrap = document.createElement("div");
+  var video = document.querySelectorAll('.post.permalink-post .entry-content iframe');
 
   // ページが読み込まれた時に実行
   handle(mediaQuery);
@@ -21,6 +20,7 @@
     function handle(mq) {
       for (i = 0; i < video.length; i++) {
         if (mq.matches) {
+          var videoWrap = document.createElement("div");
           videoWrap.classList.add("video-wrap");
           video[i].parentNode.insertBefore(videoWrap, video[i]);
           videoWrap.appendChild(video[i]);
