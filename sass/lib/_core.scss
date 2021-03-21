@@ -311,6 +311,11 @@
     margin-bottom: .5em;
 }
 
+// NPFでのサムネイル生成用にbodyを持っておく
+.index-post-content-text-body {
+    display: none;
+}
+
 // indexページの記事フッタ
 .index-entry-footer {
     display: flex;
@@ -467,11 +472,6 @@
             }
         }
     }
-}
-
-// page-permalink
-.permalink-post {
-    margin: auto;
 }
 
 // photo, photoset, video
@@ -658,6 +658,41 @@
         border: 0;
         border-top: 3px solid $border;
     }
+
+    // NPF(Neue Post Format)
+    & > figure {
+        margin: 24px 0;
+        // GIF attributio
+        .tmblr-attribution {
+            text-align: center;
+            font-size: 80%;
+        }
+    }
+}
+
+// パーマリンクのとき画像サイズを大きくする
+.permalink-post {
+    .entry-content > figure {
+        margin: 24px -10px;
+        @media (min-width: 540px) {
+            margin-left: 0;
+            margin-right: 0;
+        }
+        @media #{$mq-md} {
+            margin-left: -120px;
+            margin-right: -120px;
+        }
+        @media #{$mq-lg} {
+            margin-left: -220px;
+            margin-right: -220px;
+        }
+        img {
+            max-height: 1280px;
+            display: block;
+            margin: auto;
+        }
+    }
+
 }
 
 // video post

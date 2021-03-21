@@ -92,6 +92,7 @@ pageId = "index";
                         {/block:Title}
                       </div>
                     </a>
+                    <div class="index-post-content-text-body">{Body}</div>
                   {/block:Text}
 
                   <%# Post: photo %>
@@ -245,7 +246,7 @@ pageId = "index";
       {block:ifSingleColumnMode}
         <div class="top-post-container top-single-column">
           {block:Posts}
-            <article class="post permalink-post {TagsAsClasses} {PostType}">
+            <article class="post {TagsAsClasses} {PostType}">
               <div class="l-container-mini section">
                 {block:Text}
                   <header class="entry-header">
@@ -411,7 +412,7 @@ pageId = "index";
 
   <%# Permalink Page %>
   {block:PermalinkPage}
-    {block:Posts}
+    {block:Posts inlineMediaWidth="1280"}
       <article class="post permalink-post {TagsAsClasses} {PostType}">
 
         <%# full-width image (photo and photoset post only) %>
