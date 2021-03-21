@@ -311,6 +311,11 @@
     margin-bottom: .5em;
 }
 
+// NPFでのサムネイル生成用にbodyを持っておく
+.index-post-content-text-body {
+    display: none;
+}
+
 // indexページの記事フッタ
 .index-entry-footer {
     display: flex;

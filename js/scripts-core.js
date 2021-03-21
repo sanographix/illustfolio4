@@ -31,3 +31,24 @@
     }
   }
 }());
+
+// NPFまたはテキスト投稿で、トップページグリッドレイアウト用のサムネイルを生成する
+(function() {
+  var post = document.querySelectorAll('.index-post.text');
+  for (var i = 0; i < post.length; i++) {
+    if ( post[i] ) {
+      // 最初のサムネイルを見つける
+      var postImg = post[i].querySelector(".index-post-content-text-body img");
+      if ( postImg ) {
+        var anchor = post[i].querySelector(".post-content-anchor");
+
+        // 画像投稿と同じ構造にする
+        var thumb = postImg.getAttribute('src');
+        anchor.insertAdjacentHTML('afterbegin', "<div class='post-photo-thumb' style='background-image: url(" + thumb + "');'></div>");
+
+        anchor.classList.remove('post-content-anchor');
+        post[i].querySelector(".post-content-wrapper").style.display='none';
+      }
+    }
+  }
+}());
