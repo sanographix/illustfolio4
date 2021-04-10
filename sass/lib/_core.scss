@@ -152,6 +152,24 @@ br.touch {
     }
 }
 
+.info-update {
+    margin-top: 1em;
+    a {
+        display: inline-block;
+        background: #e2dfec;
+        padding: .5em 1em;
+        line-height: 1.25;
+        border-radius: 3em;
+        strong {
+            font-weight: 700;
+        }
+        &:hover {
+            color: initial;
+            background-color: #c6bce8;
+        }
+    }
+}
+
 // section 汎用
 .l-section {
     padding-top: 2em;
