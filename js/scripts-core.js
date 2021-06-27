@@ -10,7 +10,7 @@
 
 (function() {
   var mediaQuery = matchMedia('(max-width: 768px)');
-  var video = document.querySelectorAll('.post .entry-content iframe');
+  var video = document.querySelectorAll('.post .entry-content iframe[src*="youtube.com/embed"]');
 
   // ページが読み込まれた時に実行
   handle(mediaQuery);
