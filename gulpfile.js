@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
+const cssnano = require('gulp-cssnano');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify-es').default;
 const browserSync = require('browser-sync');
@@ -19,6 +20,7 @@ gulp.task('sass', function (done) {
                 cascade: false
             })
         ]))
+        .pipe(cssnano())
         .pipe(gulp.dest('build/css'))
         .pipe(reload({stream:true}));
     done();
