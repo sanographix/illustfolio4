@@ -1,11 +1,10 @@
-<% var
-pageTitle = "ドキュメント";
+<% pageTitle = "ドキュメント";
 pageId = "docs-index";
 pageUrl = "/docs/";
 pageDescription = "Tokusetsu 3 docs";
 %>
-<% include ../_header %>
-<% include _docs-nav %>
+<%- include('../_header') %>
+<%- include('_docs-nav') %>
 
   <h1 id="index">Illustfolio 4 ドキュメントへようこそ</h1>
   <p>
@@ -213,5 +212,5 @@ pageDescription = "Tokusetsu 3 docs";
   <a href="http://konel-works.com/issue5/"><img src="../images/konelmag-issue5-ogimage.jpg"></a>
 
 
-<% include _docs-footer %>
-<% include ../_footer %>
+<%- include('_docs-footer') %>
+<%- include('../_footer') %>
