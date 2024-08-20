@@ -799,6 +799,7 @@ textarea {
 }
 @media (min-width: 992px) {
   .illustfolioNavbarAnnouncement {
+    gap: 8px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
@@ -817,7 +818,6 @@ textarea {
 }
 @media (min-width: 992px) {
   .illustfolioNavbarAnnouncement .banner-button {
-    margin-left: 8px;
     display: inline-block;
   }
 }
