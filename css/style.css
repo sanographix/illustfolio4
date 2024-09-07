@@ -1538,7 +1538,24 @@ h2 {
   color: #333;
   text-align: left;
 }
+.thumbnail .new {
+  display: inline-block;
+  padding: 4px 6px;
+  font-size: 11px;
+  text-transform: uppercase;
+  background: linear-gradient(-45deg, #7986ff, #ff9d7c);
+  color: #fff;
+  line-height: 1;
+  border-radius: 100px;
+  margin-right: 0.4em;
+}
 .thumbnail h4 {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   font-size: 120%;
   margin: 0.2em 0;
   font-weight: normal;
