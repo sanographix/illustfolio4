@@ -384,6 +384,7 @@ br.touch {
     margin-right: auto;
     .features-items {
         display: flex;
+        align-items: center;
         @media #{$mq-sm} {
             width: 23%;
             display: block;
