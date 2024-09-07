@@ -621,7 +621,20 @@ br.touch {
         color: #333;
         text-align: left;
     }
+    .new {
+        display: inline-block;
+        padding: 4px 6px;
+        font-size: 11px;
+        text-transform: uppercase;
+        background: linear-gradient(-45deg, #7986ff, #ff9d7c);
+        color: #fff;
+        line-height: 1;
+        border-radius: 100px;
+        margin-right: 0.4em;
+    }
     h4 {
+        display: inline-flex;
+        align-items: center;
         font-size: 120%;
         margin: .2em 0;
         font-weight: normal;
