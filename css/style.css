@@ -1054,6 +1054,9 @@ h2 {
 .section-header h2 {
   margin: 0;
 }
+.section-header .header-link {
+  text-decoration: underline;
+}
 
 .section-intro {
   overflow: hidden;
