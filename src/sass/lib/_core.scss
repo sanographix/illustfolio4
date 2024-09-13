@@ -426,6 +426,31 @@ br.touch {
     }
 }
 
+// Illustfolioを選ぶ理由
+.section-trusted {
+    padding-block: 52px;
+    background-image: url(../images/trusted_bg.jpg);
+    background-repeat: repeat;
+    background-position: 0 0;
+    background-size: 640px 460px;
+    animation: moveBackground 30s linear infinite;
+    .trusted-inner {
+        text-align: center;
+        max-width: 720px;
+        background-color: rgba(255, 255, 255, 0.9490196078);
+        padding: 32px;
+        border-radius: 16px;
+    }
+}
+@keyframes moveBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -640px 0;
+    }
+}
+
 // start
 .section-start {
     background: url('../images/getstart.jpg') no-repeat center;

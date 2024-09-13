@@ -1404,6 +1404,40 @@ h2 {
   margin-bottom: 0;
 }
 
+.section-trusted {
+  padding-block: 52px;
+  background-image: url(../images/trusted_bg.jpg);
+  background-repeat: repeat;
+  background-position: 0 0;
+  background-size: 640px 460px;
+  -webkit-animation: moveBackground 30s linear infinite;
+  animation: moveBackground 30s linear infinite;
+}
+.section-trusted .trusted-inner {
+  text-align: center;
+  max-width: 720px;
+  background-color: rgba(255, 255, 255, 0.9490196078);
+  padding: 32px;
+  border-radius: 16px;
+}
+
+@-webkit-keyframes moveBackground {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -640px 0;
+  }
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -640px 0;
+  }
+}
 .section-start {
   background: url("../images/getstart.jpg") no-repeat center;
   background-size: cover;
