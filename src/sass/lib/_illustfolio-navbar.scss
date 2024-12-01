@@ -56,6 +56,9 @@
         flex-direction: row;
         align-items: center;
     }
+    strong {
+        font-weight: bold;
+    }
     .banner-button {
         display: none;
         border-radius: 1000px;
