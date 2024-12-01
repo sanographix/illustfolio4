@@ -892,6 +892,9 @@ textarea {
     align-items: center;
   }
 }
+.illustfolioNavbarAnnouncement strong {
+  font-weight: bold;
+}
 .illustfolioNavbarAnnouncement .banner-button {
   display: none;
   border-radius: 1000px;
