@@ -595,19 +595,45 @@ br.touch {
     }
 }
 
-// issue5同人誌
-.l-issue5 {
-    text-align: center;
+// ポートフォリオお役立ち情報
+.section-tips {
+    display: grid;
+    gap: 32px;
     .section-header {
-        margin-bottom: 1.5em;
+        margin: 0;
     }
-    img {
-        max-width: 100%;
-        @media #{$mq-md} {
-            max-width: 800px;
+}
+.tips-articles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 24px;
+    .tips-item {
+        a {
+            display: grid;
+            gap: 8px;
+            cursor: pointer;
+            &:hover {
+                img {
+                    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+                }
+            }
+        }
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+        }
+        h4 {
+            font-size: 17px;
+            margin: 0;
+            letter-spacing: initial;
+            line-height: 1.5;
+            font-weight: normal;
         }
     }
 }
+
 
 // getmore
 .l-getmorethemes {

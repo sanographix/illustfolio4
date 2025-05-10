@@ -1616,19 +1616,40 @@ h2 {
   margin-top: 1em;
 }
 
-.l-issue5 {
-  text-align: center;
+.section-tips {
+  display: grid;
+  gap: 32px;
 }
-.l-issue5 .section-header {
-  margin-bottom: 1.5em;
+.section-tips .section-header {
+  margin: 0;
 }
-.l-issue5 img {
-  max-width: 100%;
+
+.tips-articles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 24px;
 }
-@media (min-width: 992px) {
-  .l-issue5 img {
-    max-width: 800px;
-  }
+.tips-articles .tips-item a {
+  display: grid;
+  gap: 8px;
+  cursor: pointer;
+}
+.tips-articles .tips-item a:hover img {
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+.tips-articles .tips-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+.tips-articles .tips-item h4 {
+  font-size: 17px;
+  margin: 0;
+  letter-spacing: initial;
+  line-height: 1.5;
+  font-weight: normal;
 }
 
 .l-getmorethemes {
