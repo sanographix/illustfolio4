@@ -71,3 +71,32 @@ btn_single.addEventListener("click", function() {
     img_single.classList.toggle('is-active');
     btn_single.classList.toggle('is-active');
 });
+
+// Installボタンを押したら、作者からのメッセージ(Lumina誘導)パネルを開く
+var ctaPanel = document.getElementById('ctaPanel');
+var installBtns = document.querySelectorAll('.js-install-btn');
+
+for (var j = 0; j < installBtns.length; j++) {
+    installBtns[j].addEventListener('click', function(e) {
+        e.preventDefault();
+        // 押されたボタンの親(.btn-wrapper)の中にパネルを移動して、ボタンの真下に出す
+        this.closest('.btn-wrapper').appendChild(ctaPanel);
+        ctaPanel.classList.add('is-active');
+        // 開いたクリックが、下の「外側クリックで閉じる」処理に届かないようにする
+        e.stopPropagation();
+    });
+}
+
+// パネルの外側をクリックしたら閉じる
+document.addEventListener('click', function(e) {
+    if (!e.target.closest('#ctaPanel')) {
+        ctaPanel.classList.remove('is-active');
+    }
+});
+
+// Escキーでも閉じる
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        ctaPanel.classList.remove('is-active');
+    }
+});
