@@ -158,14 +158,11 @@
     <p><strong>ILLUSTFOLIO 4</strong>: イラストポートフォリオサイトが一瞬でつくれるTUMBLRテーマ</p>
     <div class="btn-wrapper">
       <span class="btn-label">永久に無料</span>
-      <a href="./docs" class="btn btn-large">Install Illustfolio 4</a>
+      <a href="./docs" class="btn js-install-btn btn-large" onClick="ga('send', 'event', 'illustfolio4-install', 'Click', 'hero');">Install Illustfolio 4</a>
     </div>
     <div class="hero-credit">
       Version 4.1<br>
       Created &amp; Maintained by <a href="https://twitter.com/sanographix">@sanographix</a>
-    </div>
-    <div class="info-update">
-      <a href="https://text.sanographix.net/entry/illustfolio-4point1"><strong>サムネイルアップデート！</strong> バージョン4.1の更新内容</a>
     </div>
   </div>
 </header>
@@ -441,7 +438,7 @@
     <div class="section-content">
       <div class="btn-wrapper">
         <span class="btn-label">永久に無料</span>
-        <a href="./docs" class="btn btn-large start-btn btn-wh">Install ILLUSTFOLIO 4</a>
+        <a href="./docs" class="btn js-install-btn btn-large start-btn btn-wh" onClick="ga('send', 'event', 'illustfolio4-install', 'Click', 'start');">Install ILLUSTFOLIO 4</a>
       </div>
     </div>
   </div>
@@ -732,7 +729,7 @@
     </header>
     <div class="section-content">
       <div class="btn-wrapper">
-        <a href="./docs" class="btn btn-large start-btn btn-wh">Install ILLUSTFOLIO 4</a>
+        <a href="./docs" class="btn js-install-btn btn-large start-btn btn-wh" onClick="ga('send', 'event', 'illustfolio4-install', 'Click', 'footer');">Install ILLUSTFOLIO 4</a>
       </div>
     </div>
   </div>
@@ -830,6 +827,19 @@
   </div>
 </section>
 
+<!-- Installボタンを押したときに出る、作者からのメッセージ（位置はJSでボタンの下に移動する） -->
+<div class="cta-panel" id="ctaPanel">
+  <div class="cta-panel-text">
+    <p>👋 こんにちは！ 作者のsanographixです。実は「Illustfolio Lumina」を新開発しました。</p>
+    <p>多くのクリエイターのみなさんの声をもとに、従来から大きく進化させています。</p>
+    <p>Illustfolio 4を選んでいただけるのは本当にありがたいのですが、できればLuminaもチェックしていただけると嬉しいです。</p>
+  </div>
+  <div class="cta-panel-actions">
+    <a href="https://illustfolio-lumina.sanographix.net/ja/" class="cta-panel-btn cta-panel-btn-primary" onClick="ga('send', 'event', 'illustfolio4-lumina-panel', 'Click', 'lumina');">Illustfolio Luminaを見てみる</a>
+    <a href="./docs" class="cta-panel-btn cta-panel-btn-secondary" onClick="ga('send', 'event', 'illustfolio4-lumina-panel', 'Click', 'skip');">いいえ、Illustfolio 4を使います</a>
+  </div>
+</div>
+
 <footer class="l-section section-footer">
   <div class="l-container">
     <p>
@@ -846,7 +856,7 @@
 </footer>
 
 
-  <script src="js/scripts.js"></script>
+  <script src="js/scripts-core.js"></script>
 
 
 </body>
